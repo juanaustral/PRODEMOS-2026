@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRODEMOS OTRA VEZ — Portugal vs España</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ═══════════════════════════════════════
+   BACKGROUND
+   ═══════════════════════════════════════ */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #07070a;
+  color: #e4e4e7;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 15% 25%, rgba(20, 80, 160, .06), transparent),
+    radial-gradient(ellipse 60% 40% at 85% 75%, rgba(180, 40, 40, .05), transparent),
+    radial-gradient(ellipse 50% 60% at 50% 50%, rgba(255, 200, 50, .03), transparent);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ── Floating World Cups ── */
+.floating-cups {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.floating-cup {
+  position: absolute;
+  opacity: .04;
+  animation: floatCup 20s ease-in-out infinite;
+}
+
+.floating-cup:nth-child(1) {
+  top: 5%;
+  left: 3%;
+  width: 120px;
+  animation-delay: 0s;
+  animation-duration: 25s;
+}
+
+.floating-cup:nth-child(2) {
+  top: 60%;
+  right: 2%;
+  width: 90px;
+  animation-delay: -7s;
+  animation-duration: 22s;
+}
+
+.floating-cup:nth-child(3) {
+  bottom: 8%;
+  left: 12%;
+  width: 70px;
+  animation-delay: -14s;
+  animation-duration: 28s;
+}
+
+.floating-cup:nth-child(4) {
+  top: 25%;
+  right: 8%;
+  width: 50px;
+  animation-delay: -4s;
+  animation-duration: 18s;
+}
+
+.floating-cup:nth-child(5) {
+  top: 80%;
+  left: 50%;
+  width: 60px;
+  animation-delay: -10s;
+  animation-duration: 30s;
+}
+
+@keyframes floatCup {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateY(-18px) rotate(3deg) scale(1.02);
+  }
+  50% {
+    transform: translateY(-8px) rotate(-2deg) scale(.98);
+  }
+  75% {
+    transform: translateY(-25px) rotate(4deg) scale(1.01);
+  }
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 30px 16px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ═══════════════════════════════════════
+   HEADER
+   ═══════════════════════════════════════ */
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+  animation: fadeDown .7s ease-out;
+  position: relative;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.header-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  object-fit: contain;
+  flex-shrink: 0;
+  filter: drop-shadow(0 4px 12px rgba(255, 200, 50, .15));
+}
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: -.5px;
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 30%, #fcd34d 60%, #fbbf24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+}
+
+.header .sub {
+  color: #52525b;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.header .sub .highlight {
+  color: #fbbf24;
+}
+
+/* ── Match badge ── */
+.match-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(20, 20, 24, .7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, .06);
+  border-radius: 16px;
+  padding: 12px 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, .3);
+}
+
+.team-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 14px 6px 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.team-box:hover {
+  transform: scale(1.03);
+}
+
+.team-box.team-por {
+  background: linear-gradient(135deg, rgba(0, 102, 51, .35), rgba(0, 80, 40, .15));
+  border: 1px solid rgba(0, 153, 76, .2);
+  color: #6fcf97;
+}
+
+.team-box.team-por:hover {
+  box-shadow: 0 0 20px rgba(0, 153, 76, .15);
+}
+
+.team-box.team-esp {
+  background: linear-gradient(135deg, rgba(198, 11, 30, .3), rgba(160, 10, 25, .12));
+  border: 1px solid rgba(198, 11, 30, .2);
+  color: #f28b82;
+}
+
+.team-box.team-esp:hover {
+  box-shadow: 0 0 20px rgba(198, 11, 30, .15);
+}
+
+.team-box svg.flag-mini {
+  width: 24px;
+  height: 16px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.match-badge .vs {
+  color: #52525b;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+.match-badge .result {
+  color: #71717a;
+  font-size: 12px;
+  padding-left: 10px;
+  border-left: 1px solid rgba(255, 255, 255, .06);
+}
+
+.match-badge .result .real-label {
+  color: #52525b;
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+.match-badge .result .real-score {
+  color: #63636e;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 13px;
+}
+
+/* ── Fixture button ── */
+.header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+.btn-fixture {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Inter', sans-serif;
+  color: #fbbf24;
+  background: rgba(251, 191, 36, .08);
+  border: 1px solid rgba(251, 191, 36, .15);
+  cursor: pointer;
+  transition: all .2s;
+  text-decoration: none;
+}
+
+.btn-fixture:hover {
+  background: rgba(251, 191, 36, .15);
+  border-color: rgba(251, 191, 36, .25);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(251, 191, 36, .1);
+}
+
+.btn-fixture svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ── Tournament info line ── */
+.tournament-info {
+  text-align: center;
+  margin: 16px 0 28px;
+  color: #52525b;
+  font-size: 12px;
+  font-weight: 500;
+  animation: fadeDown .7s ease-out .1s both;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tournament-info .sep {
+  opacity: .25;
+  font-size: 8px;
+}
+
+/* ═══════════════════════════════════════
+   3-COLUMN GRID
+   ═══════════════════════════════════════ */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+@media(max-width:920px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* ── Column card ── */
+.column {
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(18, 18, 22, .7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, .04);
+  animation: fadeUp .6s ease-out both;
+}
+
+.column:nth-child(1) {
+  animation-delay: .1s;
+}
+.column:nth-child(2) {
+  animation-delay: .25s;
+}
+.column:nth-child(3) {
+  animation-delay: .4s;
+}
+
+/* ── Column headers with team colors ── */
+.column-header {
+  padding: 16px 18px 14px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.column-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 8%;
+  right: 8%;
+  height: 2px;
+  border-radius: 2px;
+}
+
+.column-header .icon {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 2px;
+}
+
+.column-header .title {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+
+.column-header .count {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  margin-top: 4px;
+  opacity: .6;
+}
+
+/* Portugal column */
+.col-portugal .column-header {
+  background: linear-gradient(180deg, rgba(0, 90, 45, .25), transparent);
+}
+
+.col-portugal .column-header .title {
+  color: #6fcf97;
+}
+
+.col-portugal .column-header::after {
+  background: linear-gradient(90deg, transparent, rgba(0, 153, 76, .4), transparent);
+}
+
+/* Empate column */
+.col-empate .column-header {
+  background: linear-gradient(180deg, rgba(180, 140, 30, .18), transparent);
+}
+
+.col-empate .column-header .title {
+  color: #e8c45a;
+}
+
+.col-empate .column-header::after {
+  background: linear-gradient(90deg, transparent, rgba(232, 196, 90, .3), transparent);
+}
+
+/* Spain column */
+.col-espana .column-header {
+  background: linear-gradient(180deg, rgba(180, 20, 30, .2), transparent);
+}
+
+.col-espana .column-header .title {
+  color: #f06a6a;
+}
+
+.col-espana .column-header::after {
+  background: linear-gradient(90deg, transparent, rgba(240, 106, 106, .35), transparent);
+}
+
+.column-body {
+  padding: 14px 16px 18px;
+}
+
+.column-body.empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  color: #3f3f46;
+  font-size: 13px;
+  font-style: italic;
+}
+
+/* ── Subgroup cards ── */
+.subgroup {
+  margin-bottom: 12px;
+  animation: fadeIn .4s ease-out both;
+  background: rgba(255, 255, 255, .025);
+  border: 1px solid rgba(255, 255, 255, .04);
+  border-radius: 12px;
+  padding: 12px 14px 14px;
+  transition: border-color .2s, background .2s, box-shadow .2s;
+}
+
+.subgroup:hover {
+  border-color: rgba(255, 255, 255, .08);
+  background: rgba(255, 255, 255, .035);
+}
+
+.subgroup:last-child {
+  margin-bottom: 0;
+}
+
+.subgroup:nth-child(1) {
+  animation-delay: .1s;
+}
+.subgroup:nth-child(2) {
+  animation-delay: .18s;
+}
+.subgroup:nth-child(3) {
+  animation-delay: .26s;
+}
+.subgroup:nth-child(4) {
+  animation-delay: .34s;
+}
+.subgroup:nth-child(5) {
+  animation-delay: .42s;
+}
+
+.subgroup-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.score-badge {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 3px 14px;
+  border-radius: 8px;
+  letter-spacing: 1px;
+  color: #f4f4f5;
+}
+
+.col-portugal .score-badge {
+  background: rgba(0, 153, 76, .14);
+  border: 1px solid rgba(0, 153, 76, .2);
+}
+
+.col-empate .score-badge {
+  background: rgba(232, 196, 90, .12);
+  border: 1px solid rgba(232, 196, 90, .18);
+}
+
+.col-espana .score-badge {
+  background: rgba(198, 11, 30, .14);
+  border: 1px solid rgba(198, 11, 30, .2);
+}
+
+.subgroup-header .chip-count {
+  font-size: 11px;
+  color: #52525b;
+  font-weight: 500;
+  margin-left: auto;
+  background: rgba(255, 255, 255, .035);
+  padding: 2px 10px;
+  border-radius: 10px;
+}
+
+.subgroup .users {
+  margin-top: 0;
+}
+
+/* ── User chips ── */
+.users {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.user-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+  background: rgba(39, 39, 42, .5);
+  border: 1px solid rgba(255, 255, 255, .05);
+  color: #d4d4d8;
+  transition: all .2s cubic-bezier(.4, 0, .2, 1);
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+}
+
+.user-chip::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 60%, rgba(255, 255, 255, .03));
+  pointer-events: none;
+}
+
+.user-chip:hover {
+  background: rgba(63, 63, 70, .7);
+  border-color: rgba(255, 255, 255, .1);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+}
+
+/* ── Tiebreak labels ── */
+.tiebreak-group {
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(255, 255, 255, .04);
+}
+
+.tiebreak-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: #71717a;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 0 6px;
+}
+
+.tiebreak-label .dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.tiebreak-label .dot-por {
+  background: #2ecc71;
+  box-shadow: 0 0 6px rgba(46, 204, 113, .25);
+}
+
+.tiebreak-label .dot-esp {
+  background: #e74c3c;
+  box-shadow: 0 0 6px rgba(231, 76, 60, .25);
+}
+
+/* ═══════════════════════════════════════
+   FUTURE MATCHES (hidden, prepared)
+   ═══════════════════════════════════════ */
+.future-matches {
+  display: none;
+  margin-top: 32px;
+}
+
+.future-matches.visible {
+  display: block;
+}
+
+.future-matches .section-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #52525b;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, .04);
+}
+
+/* ═══════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════ */
+.footer {
+  margin-top: 40px;
+  padding: 24px 20px 20px;
+  text-align: center;
+  background: rgba(18, 18, 22, .5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, .04);
+  border-radius: 16px;
+  animation: fadeUp .6s ease-out .5s both;
+}
+
+.footer .results-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  font-size: 13px;
+  color: #52525b;
+  margin-bottom: 14px;
+}
+
+.footer .results-line .sep {
+  opacity: .25;
+}
+
+.footer .results-line .real-score {
+  color: #52525b;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: .3px;
+}
+
+.footer .divider {
+  width: 60px;
+  height: 1px;
+  margin: 0 auto 14px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .06), transparent);
+}
+
+.footer .credit .label {
+  font-size: 10px;
+  font-weight: 500;
+  color: #3f3f46;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+
+.footer .credit .name {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  text-decoration: none;
+  display: inline-block;
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #fcd34d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: opacity .2s;
+}
+
+.footer .credit .name:hover {
+  opacity: .8;
+}
+
+/* ═══════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════ */
+@media(max-width:920px) {
+  .container {
+    padding: 20px 12px;
+  }
+  .header h1 {
+    font-size: 22px;
+  }
+  .match-badge {
+    gap: 10px;
+    padding: 10px 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .header-actions {
+    flex-direction: column;
+  }
+}
+
+@media(max-width:480px) {
+  body {
+    padding: 0;
+  }
+  .container {
+    padding: 16px 10px;
+  }
+  .team-box {
+    padding: 4px 10px 4px 8px;
+    font-size: 12px;
+  }
+  .team-box svg.flag-mini {
+    width: 18px;
+    height: 12px;
+  }
+  .column-body {
+    padding: 12px 12px 16px;
+  }
+  .user-chip {
+    font-size: 11px;
+    padding: 4px 10px;
+  }
+  .header-logo {
+    width: 40px;
+    height: 40px;
+  }
+  .header h1 {
+    font-size: 18px;
+  }
+}
+
+/* ═══════════════════════════════════════
+   FLAG SVG STYLES
+   ═══════════════════════════════════════ */
+svg.flag-mini {
+  width: 24px;
+  height: 16px;
+  border-radius: 3px;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+</style>
+</head>
+<body>
+
+<!-- ══ Floating World Cups ══ -->
+<div class="floating-cups">
+  <!-- Trophy 1 -->
+  <svg class="floating-cup" viewBox="0 0 100 160" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="50" cy="150" rx="25" ry="6" fill="#fbbf24" opacity=".3"/>
+    <rect x="43" y="80" width="14" height="70" rx="3" fill="#fbbf24"/>
+    <ellipse cx="50" cy="82" rx="16" ry="6" fill="#fbbf24"/>
+    <path d="M35 72 Q20 50 22 30 Q24 10 50 8 Q76 10 78 30 Q80 50 65 72" fill="none" stroke="#fbbf24" stroke-width="3"/>
+    <ellipse cx="50" cy="22" rx="18" ry="6" fill="#fbbf24" opacity=".5"/>
+    <path d="M62 30 Q65 22 60 20" fill="none" stroke="#fbbf24" stroke-width="2"/>
+    <path d="M38 30 Q35 22 40 20" fill="none" stroke="#fbbf24" stroke-width="2"/>
+    <circle cx="50" cy="18" r="4" fill="#fbbf24" opacity=".6"/>
+  </svg>
+  <!-- Trophy 2 -->
+  <svg class="floating-cup" viewBox="0 0 100 160" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="50" cy="150" rx="25" ry="6" fill="#fbbf24" opacity=".3"/>
+    <rect x="43" y="80" width="14" height="70" rx="3" fill="#fbbf24"/>
+    <ellipse cx="50" cy="82" rx="16" ry="6" fill="#fbbf24"/>
+    <path d="M35 72 Q20 50 22 30 Q24 10 50 8 Q76 10 78 30 Q80 50 65 72" fill="none" stroke="#fbbf24" stroke-width="3"/>
+    <ellipse cx="50" cy="22" rx="18" ry="6" fill="#fbbf24" opacity=".5"/>
+  </svg>
+  <!-- Trophy 3 -->
+  <svg class="floating-cup" viewBox="0 0 100 160" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="50" cy="150" rx="25" ry="6" fill="#fbbf24" opacity=".3"/>
+    <rect x="43" y="80" width="14" height="70" rx="3" fill="#fbbf24"/>
+    <ellipse cx="50" cy="82" rx="16" ry="6" fill="#fbbf24"/>
+    <path d="M35 72 Q20 50 22 30 Q24 10 50 8 Q76 10 78 30 Q80 50 65 72" fill="none" stroke="#fbbf24" stroke-width="3"/>
+    <circle cx="50" cy="18" r="4" fill="#fbbf24" opacity=".6"/>
+  </svg>
+  <!-- Trophy 4 -->
+  <svg class="floating-cup" viewBox="0 0 100 160" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="50" cy="150" rx="20" ry="5" fill="#fbbf24" opacity=".3"/>
+    <rect x="44" y="85" width="12" height="65" rx="3" fill="#fbbf24"/>
+    <ellipse cx="50" cy="85" rx="14" ry="5" fill="#fbbf24"/>
+    <path d="M36 76 Q22 55 24 35 Q26 14 50 12 Q74 14 76 35 Q78 55 64 76" fill="none" stroke="#fbbf24" stroke-width="2.5"/>
+  </svg>
+  <!-- Trophy 5 -->
+  <svg class="floating-cup" viewBox="0 0 100 160" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="50" cy="150" rx="20" ry="5" fill="#fbbf24" opacity=".3"/>
+    <rect x="44" y="85" width="12" height="65" rx="3" fill="#fbbf24"/>
+    <path d="M36 76 Q22 55 24 35 Q26 14 50 12 Q74 14 76 35 Q78 55 64 76" fill="none" stroke="#fbbf24" stroke-width="2.5"/>
+    <circle cx="50" cy="18" r="3.5" fill="#fbbf24" opacity=".6"/>
+  </svg>
+</div>
+
+<div class="container">
+
+<!-- ═══════════ HEADER ═══════════ -->
+<div class="header">
+  <div class="header-brand">
+    <img class="header-logo" src="logo-prodeca.png" alt="PRODEMOS OTRA VEZ">
+    <h1>PRODEMOS OTRA VEZ ?</h1>
+  </div>
+  <div class="sub">Torneo de amigos &middot; <span class="highlight">ProdeCA</span> &middot; Mundial 2026</div>
+
+  <div class="match-badge">
+    <div class="team-box team-por">
+      <svg class="flag-mini" viewBox="0 0 28 19" xmlns="http://www.w3.org/2000/svg">
+        <rect width="28" height="19" fill="#060"/>
+        <rect width="9.3" height="19" fill="#da291c"/>
+        <circle cx="9.5" cy="9.5" r="4.5" fill="#ffd700"/>
+        <circle cx="9.5" cy="9.5" r="3.5" fill="#da291c"/>
+        <circle cx="9.5" cy="9.5" r="2.5" fill="#ffd700"/>
+      </svg>
+      <span>Portugal</span>
+    </div>
+    <span class="vs">VS</span>
+    <div class="team-box team-esp">
+      <svg class="flag-mini" viewBox="0 0 28 19" xmlns="http://www.w3.org/2000/svg">
+        <rect width="28" height="19" fill="#c60b1e"/>
+        <rect y="3.2" width="28" height="5.5" fill="#ffc400"/>
+        <rect y="10.3" width="28" height="5.5" fill="#ffc400"/>
+      </svg>
+      <span>Espa&ntilde;a</span>
+    </div>
+    <span class="result">
+      <span class="real-label">Resultado:</span>
+      <strong class="real-score">&mdash; pendiente &mdash;</strong>
+    </span>
+  </div>
+
+  <div class="header-actions">
+    <a class="btn-fixture" href="https://juanaustral.github.io/visormundial/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+        <path d="M2 17l10 5 10-5"/>
+        <path d="M2 12l10 5 10-5"/>
+      </svg>
+      Ver Fixture Mundial 2026
+    </a>
+  </div>
+</div>
+
+<div class="tournament-info">
+  <span>Match 93</span>
+  <span class="sep">&bull;</span>
+  <span>Octavos de final</span>
+  <span class="sep">&bull;</span>
+  <span>24 participantes</span>
+  <span class="sep">&bull;</span>
+  <span>PRODEMOS OTRA VEZ ?</span>
+</div>
+
+<!-- ═══════════ 3-COLUMN GRID ═══════════ -->
+<div class="grid">
+
+<!-- ─── COL 1: GANA PORTUGAL ─── -->
+<div class="column col-portugal">
+  <div class="column-header">
+    <div class="icon">&#9917;</div>
+    <div class="title">Gana Portugal</div>
+    <span class="count">4 participantes</span>
+  </div>
+  <div class="column-body">
+
+    <div class="subgroup">
+      <div class="subgroup-header">
+        <span class="score-badge">2 &ndash; 0</span>
+        <span class="chip-count">1</span>
+      </div>
+      <div class="users">
+        <span class="user-chip">Gustavo Pereyra</span>
+      </div>
+    </div>
+
+    <div class="subgroup">
+      <div class="subgroup-header">
+        <span class="score-badge">2 &ndash; 1</span>
+        <span class="chip-count">2</span>
+      </div>
+      <div class="users">
+        <span class="user-chip">Juan Martinez Garcia</span>
+        <span class="user-chip">Maximiliano Ruiz Diaz</span>
+      </div>
+    </div>
+
+    <div class="subgroup">
+      <div class="subgroup-header">
+        <span class="score-badge">3 &ndash; 2</span>
+        <span class="chip-count">1</span>
+      </div>
+      <div class="users">
+        <span class="user-chip">Florencia</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── COL 2: EMPATE ─── -->
+<div class="column col-empate">
+  <div class="column-header">
+    <div class="icon">&#9888;</div>
+    <div class="title">Empate</div>
+    <span class="count">4 participantes</span>
+  </div>
+  <div class="column-body">
+
+    <div class="subgroup">
+      <div class="subgroup-header">
+        <span class="score-badge">2 &ndash; 2</span>
+        <span class="chip-count">4</span>
+      </div>
+
+      <div class="users" style="margin-bottom:8px">
+        <span class="user-chip">Esther Mar&iacute;a Ribeiro</span>
+        <span class="user-chip">Lucas Bejarano</span>
+        <span class="user-chip">Gabriel Moreno</span>
+        <span class="user-chip">Franco Pellegrino</span>
+      </div>
+
+      <div class="tiebreak-group">
+        <div class="tiebreak-label"><span class="dot dot-por"></span> Creen que gana Portugal</div>
+        <div class="users" style="margin-bottom:8px">
+          <span class="user-chip">Esther Mar&iacute;a Ribeiro</span>
+          <span class="user-chip">Lucas Bejarano</span>
+        </div>
+        <div class="tiebreak-label"><span class="dot dot-esp"></span> Creen que gana Espa&ntilde;a</div>
+        <div class="users">
+          <span class="user-chip">Gabriel Moreno</span>
+          <span class="user-chip">Franco Pellegrino</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ─── COL 3: GANA ESPAÑA ─── -->
+<div class="column col-espana">
+  <div class="column-header">
+    <div class="icon">&#9917;</div>
+    <div class="title">Gana Espa&ntilde;a</div>
+    <span class="count">16 participantes</span>
+  </div>
+  <div class="column-body">
+
+    <div class="subgroup">
+      <div class="subgroup-header">
+        <span class="score-badge">0 &ndash; 1</span>
+        <span class="chip-count">3</span>
+      </div>
+      <div class="users">
+        <span class="user-chip">Miguel M</span>
+        <span class="user-chip">Mart&iacute;n Baigorria</span>
+        <span class="user-chip">Karen Elizondo</span>
+      </div>
+    </div>
+
+    <div class="subgroup">
+      <div class="subgroup-header">
+        <span class="score-badge">1 &ndash; 2</span>
+        <span class="chip-count">9</span>
+      </div>
+      <div class="users">
+        <span class="user-chip">Luis Duprat</span>
+        <span class="user-chip">Gabriela Monaco</span>
+        <span class="user-chip">Mauricio Moreno</span>
+        <span class="user-chip">Ruben777</span>
+        <span class="user-chip">Gerardo De Marco</span>
+        <span class="user-chip">Guille Calde</span>
+        <span class="user-chip">Juan Manuel Lucero</span>
+        <span class="user-chip">elmasternero</span>
+        <span class="user-chip">Cristian Ochoa</span>
+      </div>
+    </div>
+
+    <div class="subgroup">
+      <div class="subgroup-header">
+        <span class="score-badge">1 &ndash; 3</span>
+        <span class="chip-count">3</span>
+      </div>
+      <div class="users">
+        <span class="user-chip">Noly Moreno</span>
+        <span class="user-chip">Rodrigo Tumbarello</span>
+        <span class="user-chip">Carlos Sarmiento</span>
+      </div>
+    </div>
+
+    <div class="subgroup">
+      <div class="subgroup-header">
+        <span class="score-badge">2 &ndash; 3</span>
+        <span class="chip-count">1</span>
+      </div>
+      <div class="users">
+        <span class="user-chip">Florencia Escortichini</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+<!-- ═══════════ FUTURE MATCHES (prepared, hidden) ═══════════ -->
+<div class="future-matches" id="future-matches">
+  <div class="section-title">Proximos Partidos</div>
+  <div class="grid" id="future-grid">
+    <!-- Future match cards injected here dynamically -->
+  </div>
+</div>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<div class="footer">
+  <div class="results-line">
+    <span>Match 93</span>
+    <span class="sep">&bull;</span>
+    <span>Mundial 2026 &mdash; Octavos de final</span>
+    <span class="sep">&bull;</span>
+    <span>Resultado real: <strong class="real-score">&mdash; pendiente &mdash;</strong></span>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="credit">
+    <div class="label">Desarrollado por</div>
+    <a class="name" href="https://juanmartinezgarcia.com" target="_blank" rel="noopener">Juan Martinez Garcia</a>
+  </div>
+</div>
+
+</div>
+</body>
+</html>
