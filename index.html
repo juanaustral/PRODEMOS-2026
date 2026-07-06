@@ -127,10 +127,16 @@ body::before{
 .col-espana .column-header .title{color:#f06a6a}
 .col-espana .column-header::after{background:linear-gradient(90deg,transparent,rgba(240,106,106,.35),transparent)}
 
-.column-body{padding:0}
+.column-body{padding:12px 14px 16px}
 
 /* ── Subgroup cards ── */
-.subgroup{margin-bottom:14px;animation:fadeIn .4s ease-out both}
+.subgroup{
+  margin-bottom:10px;animation:fadeIn .4s ease-out both;
+  background:rgba(255,255,255,.015);
+  border:1px solid rgba(255,255,255,.03);
+  border-radius:10px;padding:10px 12px 12px
+}
+.subgroup:hover{border-color:rgba(255,255,255,.06);background:rgba(255,255,255,.02)}
 .subgroup:last-child{margin-bottom:0}
 .subgroup:nth-child(1){animation-delay:.08s}
 .subgroup:nth-child(2){animation-delay:.16s}
@@ -203,8 +209,8 @@ body::before{
 @keyframes modalIn{from{opacity:0;transform:scale(.95) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
 
 /* ── Match result divider ── */
-.match-result{margin:16px 0 0;padding:16px 0 12px;border-top:1px solid rgba(255,255,255,.04)
-.match-result .result-head{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px}
+.match-result{margin:18px 0 4px;padding:16px 18px;background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:12px}
+.match-result .result-head{display:flex;align-items:center;justify-content:center;gap:10px}
 .match-result .result-head .badge-result{padding:4px 14px;border-radius:8px;font-size:12px;font-weight:700;font-family:'JetBrains Mono',monospace}
 .match-result .result-head .badge-result.por-win{background:rgba(0,153,76,.15);border:1px solid rgba(0,153,76,.2);color:#6fcf97}
 .match-result .result-head .badge-result.esp-win{background:rgba(198,11,30,.15);border:1px solid rgba(198,11,30,.2);color:#f06a6a}
