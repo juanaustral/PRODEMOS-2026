@@ -15,14 +15,9 @@ body{
 }
 body::before{
   content:'';position:fixed;inset:0;
-  background:
-    radial-gradient(ellipse 70% 50% at 15% 25%,rgba(20,80,160,.06),transparent),
-    radial-gradient(ellipse 60% 40% at 85% 75%,rgba(180,40,40,.05),transparent),
-    radial-gradient(ellipse 50% 60% at 50% 50%,rgba(255,200,50,.03),transparent);
+  background:radial-gradient(ellipse 70% 50% at 15% 25%,rgba(20,80,160,.06),transparent),radial-gradient(ellipse 60% 40% at 85% 75%,rgba(180,40,40,.05),transparent),radial-gradient(ellipse 50% 60% at 50% 50%,rgba(255,200,50,.03),transparent);
   pointer-events:none;z-index:0;
 }
-
-/* ── Floating cups ── */
 .floating-cups{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
 .floating-cup{position:absolute;opacity:.035;animation:floatCup 20s ease-in-out infinite;object-fit:contain;filter:brightness(1.2) drop-shadow(0 0 8px rgba(251,191,36,.08))}
 .cup-1{top:3%;left:2%;width:65px;animation-delay:0s;animation-duration:25s}
@@ -37,7 +32,7 @@ body::before{
   75%{transform:translateY(-25px) rotate(4deg) scale(1.01)}
 }
 
-.container{max-width:1200px;margin:0 auto;padding:30px 16px;position:relative;z-index:1}
+.container{max-width:1120px;margin:0 auto;padding:30px 16px;position:relative;z-index:1}
 
 /* ── Header ── */
 .header{text-align:center;margin-bottom:28px;animation:fadeDown .7s ease-out}
@@ -47,7 +42,6 @@ body::before{
 .header .sub{color:#52525b;font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
 .header .sub .highlight{color:#fbbf24}
 
-/* ── Match badge ── */
 .match-badge{
   display:inline-flex;align-items:center;gap:14px;
   background:rgba(20,20,24,.7);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
@@ -66,38 +60,35 @@ body::before{
 .match-badge .result .real-label{color:#52525b;font-size:10px;font-weight:500;text-transform:uppercase;letter-spacing:.5px}
 .match-badge .result .real-score{color:#63636e;font-weight:500;font-style:italic;font-size:13px}
 
-/* ── Header actions ── */
 .header-actions{display:flex;align-items:center;justify-content:center;gap:10px;margin-top:14px;flex-wrap:wrap}
-.btn-fixture{
+.btn-header{
   display:inline-flex;align-items:center;gap:7px;
   padding:8px 18px;border-radius:10px;font-size:13px;font-weight:600;
-  font-family:'Inter',sans-serif;
-  color:#fbbf24;background:rgba(251,191,36,.08);
-  border:1px solid rgba(251,191,36,.15);
-  cursor:pointer;transition:all .2s;text-decoration:none;
+  font-family:'Inter',sans-serif;cursor:pointer;transition:all .2s;text-decoration:none;border:1px solid;
 }
-.btn-fixture:hover{background:rgba(251,191,36,.15);border-color:rgba(251,191,36,.25);transform:translateY(-1px);box-shadow:0 4px 16px rgba(251,191,36,.1)}
-.btn-fixture svg{width:15px;height:15px;flex-shrink:0}
+.btn-header:hover{transform:translateY(-1px)}
+.btn-header svg{width:15px;height:15px;flex-shrink:0}
+.btn-fixture{color:#fbbf24;background:rgba(251,191,36,.08);border-color:rgba(251,191,36,.15)}
+.btn-fixture:hover{background:rgba(251,191,36,.15);border-color:rgba(251,191,36,.25);box-shadow:0 4px 16px rgba(251,191,36,.1)}
 .btn-matches{color:#6fcf97;background:rgba(111,207,151,.08);border-color:rgba(111,207,151,.15)}
 .btn-matches:hover{background:rgba(111,207,151,.15);border-color:rgba(111,207,151,.25);box-shadow:0 4px 16px rgba(111,207,151,.1)}
+.btn-ranking{color:#a78bfa;background:rgba(167,139,250,.08);border-color:rgba(167,139,250,.15)}
+.btn-ranking:hover{background:rgba(167,139,250,.15);border-color:rgba(167,139,250,.25);box-shadow:0 4px 16px rgba(167,139,250,.1)}
 
-/* ── Tournament info ── */
 .tournament-info{text-align:center;margin:14px 0 24px;color:#52525b;font-size:12px;font-weight:500;animation:fadeDown .7s ease-out .1s both;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
 .tournament-info .sep{opacity:.25;font-size:8px}
 
-/* ═══════════════════════════════════════
-   MATCH SECTION
-   ═══════════════════════════════════════ */
+/* ── Match section ── */
 .match-section{margin-bottom:40px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.04)}
 .match-section:last-child{border-bottom:none;margin-bottom:0}
 .match-section-header{text-align:center;margin-bottom:18px;animation:fadeDown .6s ease-out}
 .match-section-header .match-title{font-size:15px;font-weight:700;color:#e4e4e7;letter-spacing:.5px;margin-bottom:2px}
 .match-section-header .match-phrase{font-size:12px;color:#52525b}
 
-/* ── 4-column grid ── */
-.grid{display:grid;grid-template-columns:1fr 1fr 1fr 1.1fr;gap:14px}
-@media(max-width:1100px){.grid{grid-template-columns:1fr 1fr;gap:16px}}
-@media(max-width:620px){.grid{grid-template-columns:1fr;gap:16px}}
+/* ── 3-column grid ── */
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
+@media(max-width:900px){.grid{grid-template-columns:1fr 1fr;gap:14px}}
+@media(max-width:580px){.grid{grid-template-columns:1fr;gap:14px}}
 
 /* ── Column card ── */
 .column{
@@ -109,7 +100,6 @@ body::before{
 .column:nth-child(1){animation-delay:.08s}
 .column:nth-child(2){animation-delay:.18s}
 .column:nth-child(3){animation-delay:.28s}
-.column:nth-child(4){animation-delay:.38s}
 
 .column-header{padding:14px 16px 12px;text-align:center;position:relative;overflow:hidden}
 .column-header::after{content:'';position:absolute;bottom:0;left:8%;right:8%;height:2px;border-radius:2px}
@@ -126,19 +116,15 @@ body::before{
 .col-espana .column-header{background:linear-gradient(180deg,rgba(180,20,30,.2),transparent)}
 .col-espana .column-header .title{color:#f06a6a}
 .col-espana .column-header::after{background:linear-gradient(90deg,transparent,rgba(240,106,106,.35),transparent)}
-.col-ranking .column-header{background:linear-gradient(180deg,rgba(100,80,160,.2),transparent)}
-.col-ranking .column-header .title{color:#a78bfa}
-.col-ranking .column-header::after{background:linear-gradient(90deg,transparent,rgba(167,139,250,.3),transparent)}
 
 .column-body{padding:12px 14px 16px}
-.column-body.empty{display:flex;align-items:center;justify-content:center;min-height:80px;color:#3f3f46;font-size:12px;font-style:italic}
 
 /* ── Subgroup cards ── */
 .subgroup{
   margin-bottom:10px;animation:fadeIn .4s ease-out both;
   background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.04);
   border-radius:10px;padding:10px 12px 12px;
-  transition:border-color .2s,background .2s,box-shadow .2s;
+  transition:border-color .2s,background .2s;
 }
 .subgroup:hover{border-color:rgba(255,255,255,.07);background:rgba(255,255,255,.03)}
 .subgroup:last-child{margin-bottom:0}
@@ -155,6 +141,7 @@ body::before{
 .col-empate .score-badge{background:rgba(232,196,90,.11);border:1px solid rgba(232,196,90,.16)}
 .col-espana .score-badge{background:rgba(198,11,30,.13);border:1px solid rgba(198,11,30,.18)}
 .subgroup-header .chip-count{font-size:10px;color:#52525b;font-weight:500;margin-left:auto;background:rgba(255,255,255,.035);padding:2px 8px;border-radius:8px}
+
 .users{display:flex;flex-wrap:wrap;gap:4px}
 .user-chip{
   display:inline-flex;align-items:center;gap:4px;
@@ -165,32 +152,61 @@ body::before{
 .user-chip::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 60%,rgba(255,255,255,.03));pointer-events:none}
 .user-chip:hover{background:rgba(63,63,70,.7);border-color:rgba(255,255,255,.1);transform:translateY(-1px);box-shadow:0 2px 8px rgba(0,0,0,.25)}
 .user-chip .pts{color:#71717a;font-weight:400;font-size:10px}
+.user-chip .delta{color:#4ade80;font-weight:600;font-size:10px;display:inline-flex;align-items:center;gap:1px}
+.user-chip .delta .arrow{font-size:10px;line-height:1}
 
-/* ── Tiebreak labels ── */
+/* ── Tiebreak ── */
 .tiebreak-group{margin-top:8px;padding-top:6px;border-top:1px solid rgba(255,255,255,.04)}
 .tiebreak-label{font-size:10px;font-weight:500;color:#71717a;display:flex;align-items:center;gap:5px;padding:4px 0 5px}
 .tiebreak-label .dot{width:6px;height:6px;border-radius:50%;display:inline-block;flex-shrink:0}
 .tiebreak-label .dot-por{background:#2ecc71;box-shadow:0 0 5px rgba(46,204,113,.25)}
 .tiebreak-label .dot-esp{background:#e74c3c;box-shadow:0 0 5px rgba(231,76,60,.25)}
 
-/* ── Ranking column ── */
-.ranking-list{display:flex;flex-direction:column;gap:3px}
+/* ── RANKING MODAL ── */
+.modal-overlay{
+  display:none;position:fixed;inset:0;z-index:100;
+  background:rgba(0,0,0,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+  align-items:center;justify-content:center;padding:20px;
+}
+.modal-overlay.open{display:flex}
+.modal{
+  background:#121216;border:1px solid rgba(255,255,255,.06);border-radius:20px;
+  width:100%;max-width:520px;max-height:80vh;overflow-y:auto;
+  animation:modalIn .25s ease-out;box-shadow:0 24px 80px rgba(0,0,0,.5);
+}
+.modal-header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px 22px 14px;border-bottom:1px solid rgba(255,255,255,.04);
+  position:sticky;top:0;background:#121216;z-index:2;border-radius:20px 20px 0 0;
+}
+.modal-header h2{font-size:16px;font-weight:700;color:#e4e4e7}
+.modal-header .close{
+  width:32px;height:32px;border-radius:50%;border:none;background:rgba(255,255,255,.06);
+  color:#71717a;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  transition:all .2s;font-family:'Inter',sans-serif;
+}
+.modal-header .close:hover{background:rgba(255,255,255,.1);color:#e4e4e7}
+.modal-body{padding:14px 22px 22px}
 .rank-item{
-  display:flex;align-items:center;gap:8px;
-  padding:5px 10px;border-radius:8px;font-size:12px;
+  display:flex;align-items:center;gap:10px;
+  padding:7px 12px;border-radius:10px;font-size:13px;
   background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.03);
-  transition:background .15s;
+  margin-bottom:4px;transition:background .15s;
 }
 .rank-item:hover{background:rgba(255,255,255,.04)}
-.rank-item .pos{font-weight:600;color:#71717a;min-width:22px;font-size:11px;font-family:'JetBrains Mono',monospace;text-align:right}
+.rank-item .rpos{font-weight:600;color:#71717a;min-width:24px;font-size:12px;font-family:'JetBrains Mono',monospace;text-align:right}
 .rank-item .rname{flex:1;color:#d4d4d8;font-weight:500}
-.rank-item .rpts{font-weight:600;color:#a78bfa;font-size:12px;font-family:'JetBrains Mono',monospace}
+.rank-item .rpts{font-weight:600;color:#a78bfa;font-size:13px;font-family:'JetBrains Mono',monospace}
+.rank-item .rdelta{font-size:11px;font-weight:600;display:inline-flex;align-items:center;gap:2px}
+.rank-item .rdelta.up{color:#4ade80}
+.rank-item .rdelta.down{color:#f87171}
+.rank-item .rdelta.zero{color:#52525b}
 .rank-item.top3{background:rgba(167,139,250,.06);border-color:rgba(167,139,250,.1)}
-.rank-item.top3 .rpts{color:#a78bfa}
 .rank-item.self{background:rgba(251,191,36,.06);border-color:rgba(251,191,36,.12)}
 .rank-item.self .rname{color:#fbbf24;font-weight:600}
+@keyframes modalIn{from{opacity:0;transform:scale(.95) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
 
-/* ── Future matches section ── */
+/* ── Future matches ── */
 .future-matches{display:none;margin-top:28px}
 .future-matches.visible{display:block}
 .future-matches .section-title{font-size:13px;font-weight:700;color:#52525b;text-transform:uppercase;letter-spacing:2px;text-align:center;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.04)}
@@ -210,19 +226,16 @@ body::before{
 .footer .credit .name{
   font-size:17px;font-weight:700;letter-spacing:.3px;text-decoration:none;display:inline-block;
   background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 50%,#fcd34d 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  transition:opacity .2s;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;transition:opacity .2s;
 }
 .footer .credit .name:hover{opacity:.8}
 
-/* ── Animations ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
-/* ── Responsive ── */
-@media(max-width:920px){.container{padding:20px 12px}.header h1{font-size:22px}.match-badge{gap:10px;padding:10px 16px;flex-wrap:wrap;justify-content:center}.header-actions{flex-direction:column}.match-section-header .match-title{font-size:14px}}
-@media(max-width:480px){.container{padding:14px 8px}.team-box{padding:4px 8px 4px 6px;font-size:11px}.team-box svg.flag-mini{width:16px;height:11px}.column-body{padding:10px 10px 14px}.user-chip{font-size:10px;padding:3px 8px}.header-logo{width:38px;height:38px}.header h1{font-size:17px}}
+@media(max-width:920px){.container{padding:20px 12px}.header h1{font-size:22px}.match-badge{gap:10px;padding:10px 16px;flex-wrap:wrap;justify-content:center}}
+@media(max-width:480px){.container{padding:14px 8px}.team-box{padding:4px 8px 4px 6px;font-size:11px}.team-box svg.flag-mini{width:16px;height:11px}.column-body{padding:10px 10px 14px}.user-chip{font-size:10px;padding:3px 8px}.header-logo{width:38px;height:38px}.header h1{font-size:17px}.modal{max-width:100%;border-radius:16px;max-height:90vh}}
 </style>
 </head>
 <body>
@@ -237,7 +250,6 @@ body::before{
 
 <div class="container">
 
-<!-- ═══════════ HEADER ═══════════ -->
 <div class="header">
   <div class="header-brand">
     <img class="header-logo" src="logo-prodeca.png" alt="PRODEMOS OTRA VEZ">
@@ -267,36 +279,37 @@ body::before{
   </div>
 
   <div class="header-actions">
-    <a class="btn-fixture" href="https://juanaustral.github.io/fixture2026/" target="_blank" rel="noopener">
+    <a class="btn-header btn-fixture" href="https://juanaustral.github.io/fixture2026/" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
       </svg>
       Ver Fixture
     </a>
-    <a class="btn-fixture btn-matches" href="https://juanaustral.github.io/visormundial/" target="_blank" rel="noopener">
+    <a class="btn-header btn-matches" href="https://juanaustral.github.io/visormundial/" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
       </svg>
       Ver Partidos
     </a>
+    <button class="btn-header btn-ranking" onclick="document.getElementById('rankModal').classList.add('open')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="4" y1="21" x2="4" y2="14"/><line x1="10" y1="21" x2="10" y2="9"/><line x1="16" y1="21" x2="16" y2="2"/><line x1="22" y1="21" x2="22" y2="12"/>
+      </svg>
+      Ranking
+    </button>
   </div>
 </div>
 
-<!-- ═══════════ MATCH 93: PORTUGAL vs ESPAÑA ═══════════ -->
+<!-- ═══ MATCH 93: PORTUGAL vs ESPAÑA ═══ -->
 <div class="match-section">
   <div class="match-section-header">
     <div class="match-title">Match 93 &middot; Octavos de final &middot; 06/07</div>
     <div class="match-phrase">Votaciones registradas al momento del partido</div>
   </div>
-
   <div class="grid">
 
-  <!-- ─── COL 1: GANA PORTUGAL ─── -->
   <div class="column col-portugal">
-    <div class="column-header">
-      <div class="title">Gana Portugal</div>
-      <span class="count">4 participantes</span>
-    </div>
+    <div class="column-header"><div class="title">Gana Portugal</div><span class="count">4</span></div>
     <div class="column-body">
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">2 &ndash; 0</span><span class="chip-count">1</span></div>
@@ -316,43 +329,29 @@ body::before{
     </div>
   </div>
 
-  <!-- ─── COL 2: EMPATE ─── -->
   <div class="column col-empate">
-    <div class="column-header">
-      <div class="title">Empate</div>
-      <span class="count">4 participantes</span>
-    </div>
+    <div class="column-header"><div class="title">Empate</div><span class="count">4</span></div>
     <div class="column-body">
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">2 &ndash; 2</span><span class="chip-count">4</span></div>
-        <div class="users" style="margin-bottom:6px">
-          <span class="user-chip">Esther Mar&iacute;a Ribeiro <span class="pts">(23)</span></span>
+        <div class="users" style="margin-bottom:5px">
+          <span class="user-chip">Esther M. Ribeiro <span class="pts">(23)</span></span>
           <span class="user-chip">Lucas Bejarano <span class="pts">(18)</span></span>
           <span class="user-chip">Gabriel Moreno <span class="pts">(23)</span></span>
           <span class="user-chip">Franco Pellegrino <span class="pts">(15)</span></span>
         </div>
         <div class="tiebreak-group">
           <div class="tiebreak-label"><span class="dot dot-por"></span> Creen que gana Portugal</div>
-          <div class="users" style="margin-bottom:6px">
-            <span class="user-chip">Esther Mar&iacute;a Ribeiro <span class="pts">(23)</span></span>
-            <span class="user-chip">Lucas Bejarano <span class="pts">(18)</span></span>
-          </div>
+          <div class="users" style="margin-bottom:5px"><span class="user-chip">Esther M. Ribeiro <span class="pts">(23)</span></span><span class="user-chip">Lucas Bejarano <span class="pts">(18)</span></span></div>
           <div class="tiebreak-label"><span class="dot dot-esp"></span> Creen que gana Espa&ntilde;a</div>
-          <div class="users">
-            <span class="user-chip">Gabriel Moreno <span class="pts">(23)</span></span>
-            <span class="user-chip">Franco Pellegrino <span class="pts">(15)</span></span>
-          </div>
+          <div class="users"><span class="user-chip">Gabriel Moreno <span class="pts">(23)</span></span><span class="user-chip">Franco Pellegrino <span class="pts">(15)</span></span></div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ─── COL 3: GANA ESPAÑA ─── -->
   <div class="column col-espana">
-    <div class="column-header">
-      <div class="title">Gana Espa&ntilde;a</div>
-      <span class="count">16 participantes</span>
-    </div>
+    <div class="column-header"><div class="title">Gana Espa&ntilde;a</div><span class="count">16</span></div>
     <div class="column-body">
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">0 &ndash; 1</span><span class="chip-count">3</span></div>
@@ -371,7 +370,7 @@ body::before{
           <span class="user-chip">Ruben777 <span class="pts">(23)</span></span>
           <span class="user-chip">Gerardo De Marco <span class="pts">(19)</span></span>
           <span class="user-chip">Guille Calde <span class="pts">(19)</span></span>
-          <span class="user-chip">Juan Manuel Lucero <span class="pts">(17)</span></span>
+          <span class="user-chip">Juan M. Lucero <span class="pts">(17)</span></span>
           <span class="user-chip">elmasternero <span class="pts">(13)</span></span>
           <span class="user-chip">Cristian Ochoa <span class="pts">(9)</span></span>
         </div>
@@ -391,58 +390,33 @@ body::before{
     </div>
   </div>
 
-  <!-- ─── COL 4: RANKING ─── -->
-  <div class="column col-ranking">
-    <div class="column-header">
-      <div class="title">Ranking</div>
-      <span class="count">24 participantes</span>
-    </div>
-    <div class="column-body">
-      <div class="ranking-list">
-        <div class="rank-item top3"><span class="pos">1</span><span class="rname">Luis Duprat</span><span class="rpts">29</span></div>
-        <div class="rank-item top3"><span class="pos">2</span><span class="rname">Noly Moreno</span><span class="rpts">28</span></div>
-        <div class="rank-item top3"><span class="pos">2</span><span class="rname">Gabriela Monaco</span><span class="rpts">28</span></div>
-        <div class="rank-item"><span class="pos">3</span><span class="rname">Miguel M</span><span class="rpts">26</span></div>
-        <div class="rank-item"><span class="pos">3</span><span class="rname">Mart&iacute;n Baigorria</span><span class="rpts">26</span></div>
-        <div class="rank-item"><span class="pos">4</span><span class="rname">Mauricio Moreno</span><span class="rpts">24</span></div>
-        <div class="rank-item"><span class="pos">4</span><span class="rname">Rodrigo Tumbarello</span><span class="rpts">24</span></div>
-        <div class="rank-item"><span class="pos">5</span><span class="rname">Ruben777</span><span class="rpts">23</span></div>
-        <div class="rank-item"><span class="pos">5</span><span class="rname">Gabriel Moreno</span><span class="rpts">23</span></div>
-        <div class="rank-item"><span class="pos">5</span><span class="rname">Esther Mar&iacute;a Ribeiro</span><span class="rpts">23</span></div>
-        <div class="rank-item"><span class="pos">5</span><span class="rname">Carlos Sarmiento</span><span class="rpts">23</span></div>
-        <div class="rank-item"><span class="pos">6</span><span class="rname">Florencia Escortichini</span><span class="rpts">22</span></div>
-        <div class="rank-item"><span class="pos">7</span><span class="rname">Maximiliano Ruiz Diaz</span><span class="rpts">20</span></div>
-        <div class="rank-item self"><span class="pos">7</span><span class="rname">Juan Martinez Garcia</span><span class="rpts">20</span></div>
-        <div class="rank-item"><span class="pos">7</span><span class="rname">Florencia</span><span class="rpts">20</span></div>
-        <div class="rank-item"><span class="pos">7</span><span class="rname">Karen Elizondo</span><span class="rpts">20</span></div>
-        <div class="rank-item"><span class="pos">8</span><span class="rname">Gerardo De Marco</span><span class="rpts">19</span></div>
-        <div class="rank-item"><span class="pos">8</span><span class="rname">Guille Calde</span><span class="rpts">19</span></div>
-        <div class="rank-item"><span class="pos">9</span><span class="rname">Lucas Bejarano</span><span class="rpts">18</span></div>
-        <div class="rank-item"><span class="pos">9</span><span class="rname">Gustavo Pereyra</span><span class="rpts">18</span></div>
-        <div class="rank-item"><span class="pos">10</span><span class="rname">Juan Manuel Lucero</span><span class="rpts">17</span></div>
-        <div class="rank-item"><span class="pos">11</span><span class="rname">Franco Pellegrino</span><span class="rpts">15</span></div>
-        <div class="rank-item"><span class="pos">12</span><span class="rname">elmasternero</span><span class="rpts">13</span></div>
-        <div class="rank-item"><span class="pos">13</span><span class="rname">Cristian Ochoa</span><span class="rpts">9</span></div>
-      </div>
-    </div>
-  </div>
-
   </div>
 </div>
 
-<!-- ═══════════ FUTURE MATCHES (hidden, prepared) ═══════════ -->
+<!-- ═══ FUTURE MATCHES (hidden) ═══ -->
 <div class="future-matches" id="future-matches">
   <div class="section-title">Proximos Partidos</div>
   <div id="future-grid"></div>
 </div>
 
-<!-- ═══════════ FOOTER ═══════════ -->
+<!-- ═══ RANKING MODAL ═══ -->
+<div class="modal-overlay" id="rankModal" onclick="if(event.target===this)this.classList.remove('open')">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>Ranking PRODEMOS OTRA VEZ</h2>
+      <button class="close" onclick="document.getElementById('rankModal').classList.remove('open')">&times;</button>
+    </div>
+    <div class="modal-body" id="rankBody">
+      <!-- injected by JS -->
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
 <div class="footer">
   <div class="results-line">
-    <span>PRODEMOS OTRA VEZ ?</span>
-    <span class="sep">&bull;</span>
-    <span>Match 93 &middot; 06/07</span>
-    <span class="sep">&bull;</span>
+    <span>PRODEMOS OTRA VEZ ?</span><span class="sep">&bull;</span>
+    <span>Match 93 &middot; 06/07</span><span class="sep">&bull;</span>
     <span>Resultado: <strong class="real-score">&mdash; pendiente &mdash;</strong></span>
   </div>
   <div class="divider"></div>
@@ -453,5 +427,50 @@ body::before{
 </div>
 
 </div>
+
+<script>
+// ── Ranking data (update this when adding a new match) ──
+const RANKING = [
+  { pos: 1,  name: "Luis Duprat",              pts: 29, delta: 0 },
+  { pos: 2,  name: "Noly Moreno",               pts: 28, delta: 0 },
+  { pos: 2,  name: "Gabriela Monaco",           pts: 28, delta: 0 },
+  { pos: 3,  name: "Miguel M",                  pts: 26, delta: 0 },
+  { pos: 3,  name: "Mart\u00edn Baigorria",      pts: 26, delta: 0 },
+  { pos: 4,  name: "Mauricio Moreno",           pts: 24, delta: 0 },
+  { pos: 4,  name: "Rodrigo Tumbarello",        pts: 24, delta: 0 },
+  { pos: 5,  name: "Ruben777",                  pts: 23, delta: 0 },
+  { pos: 5,  name: "Gabriel Moreno",            pts: 23, delta: 0 },
+  { pos: 5,  name: "Esther M. Ribeiro",         pts: 23, delta: 0 },
+  { pos: 5,  name: "Carlos Sarmiento",          pts: 23, delta: 0 },
+  { pos: 6,  name: "Florencia Escortichini",    pts: 22, delta: 0 },
+  { pos: 7,  name: "Maximiliano Ruiz Diaz",     pts: 20, delta: 0 },
+  { pos: 7,  name: "Juan Martinez Garcia",      pts: 20, delta: 0 },
+  { pos: 7,  name: "Florencia",                 pts: 20, delta: 0 },
+  { pos: 7,  name: "Karen Elizondo",            pts: 20, delta: 0 },
+  { pos: 8,  name: "Gerardo De Marco",          pts: 19, delta: 0 },
+  { pos: 8,  name: "Guille Calde",              pts: 19, delta: 0 },
+  { pos: 9,  name: "Lucas Bejarano",            pts: 18, delta: 0 },
+  { pos: 9,  name: "Gustavo Pereyra",           pts: 18, delta: 0 },
+  { pos: 10, name: "Juan M. Lucero",            pts: 17, delta: 0 },
+  { pos: 11, name: "Franco Pellegrino",         pts: 15, delta: 0 },
+  { pos: 12, name: "elmasternero",              pts: 13, delta: 0 },
+  { pos: 13, name: "Cristian Ochoa",            pts: 9,  delta: 0 },
+];
+
+// ── Render ranking modal from data ──
+function renderRank() {
+  const body = document.getElementById('rankBody');
+  body.innerHTML = RANKING.map(r => {
+    const cls = ['rank-item'];
+    if (r.pos <= 2) cls.push('top3');
+    if (r.name === 'Juan Martinez Garcia') cls.push('self');
+    let deltaHtml = '';
+    if (r.delta > 0) deltaHtml = `<span class="rdelta up">&#x2191;+${r.delta}</span>`;
+    else if (r.delta < 0) deltaHtml = `<span class="rdelta down">&#x2193;${r.delta}</span>`;
+    return `<div class="${cls.join(' ')}"><span class="rpos">${r.pos}</span><span class="rname">${r.name}</span><span class="rpts">${r.pts}</span>${deltaHtml}</div>`;
+  }).join('');
+}
+renderRank();
+</script>
 </body>
 </html>
