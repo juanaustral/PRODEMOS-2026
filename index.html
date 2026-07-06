@@ -41,6 +41,14 @@ body::before{
 .header .sub{color:#52525b;font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
 .header .sub .highlight{color:#fbbf24}
 
+/* ── Next match widget ── */
+.next-match{margin-bottom:20px;padding:14px 20px;background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.12);border-radius:14px;text-align:center;animation:fadeDown .7s ease-out .05s both;transition:border-color .2s,box-shadow .2s}
+.next-match:hover{border-color:rgba(251,191,36,.2);box-shadow:0 0 20px rgba(251,191,36,.05)}
+.next-match .label{font-size:10px;font-weight:600;color:#fbbf24;text-transform:uppercase;letter-spacing:2px;margin-bottom:3px}
+.next-match .match{font-size:15px;font-weight:700;color:#e4e4e7;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+.next-match .match .vs-sm{color:#52525b;font-size:11px;font-weight:500;letter-spacing:1px}
+.next-match .time{font-size:12px;color:#a78bfa;font-weight:600;margin-top:4px}
+
 .match-badge{
   display:inline-flex;align-items:center;gap:14px;
   background:rgba(20,20,24,.7);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
@@ -267,6 +275,16 @@ body::before{
     <h1>PRODEMOS OTRA VEZ ?</h1>
   </div>
   <div class="sub">Torneo de amigos &middot; <span class="highlight">ProdeCA</span> &middot; Mundial 2026</div>
+
+  <div class="next-match">
+    <div class="label">Proximo Partido</div>
+    <div class="match">
+      <span>United States</span>
+      <span class="vs-sm">vs</span>
+      <span>Belgium</span>
+    </div>
+    <div class="time">Hoy &middot; 21:00 ARG</div>
+  </div>
 
   <div class="match-badge">
     <div class="team-box team-por">
