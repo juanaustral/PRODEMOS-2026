@@ -69,6 +69,9 @@ body::before{
 
 /* ── Match card container ── */
 .match-card{background:rgba(18,18,22,.3);border:1px solid rgba(255,255,255,.04);border-radius:20px;padding:24px 22px 22px;margin-bottom:28px;animation:fadeUp .6s ease-out .1s both}
+.match-card-title{text-align:center;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.04)}
+.match-card-title .phase{font-size:11px;font-weight:600;color:#52525b;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:2px}
+.match-card-title .date{font-size:11px;color:#3f3f46}
 
 .header-actions{display:flex;align-items:center;justify-content:center;gap:10px;margin:16px 0 20px;flex-wrap:wrap}
 .btn-header{
@@ -91,9 +94,6 @@ body::before{
 /* ── Match section ── */
 .match-section{margin-bottom:0;padding-bottom:0;border-bottom:none}
 .match-section:last-child{border-bottom:none;margin-bottom:0}
-.match-section-header{text-align:center;margin-bottom:18px;animation:fadeDown .6s ease-out}
-.match-section-header .match-title{font-size:15px;font-weight:700;color:#e4e4e7;letter-spacing:.5px;margin-bottom:2px}
-.match-section-header .match-phrase{font-size:12px;color:#52525b}
 
 /* ── 3-column grid ── */
 .grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px}
@@ -127,16 +127,10 @@ body::before{
 .col-espana .column-header .title{color:#f06a6a}
 .col-espana .column-header::after{background:linear-gradient(90deg,transparent,rgba(240,106,106,.35),transparent)}
 
-.column-body{padding:12px 14px 16px}
+.column-body{padding:0}
 
 /* ── Subgroup cards ── */
-.subgroup{
-  margin-bottom:10px;animation:fadeIn .4s ease-out both;
-  background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.04);
-  border-radius:10px;padding:10px 12px 12px;
-  transition:border-color .2s,background .2s;
-}
-.subgroup:hover{border-color:rgba(255,255,255,.07);background:rgba(255,255,255,.03)}
+.subgroup{margin-bottom:14px;animation:fadeIn .4s ease-out both}
 .subgroup:last-child{margin-bottom:0}
 .subgroup:nth-child(1){animation-delay:.08s}
 .subgroup:nth-child(2){animation-delay:.16s}
@@ -209,15 +203,13 @@ body::before{
 @keyframes modalIn{from{opacity:0;transform:scale(.95) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
 
 /* ── Match result divider ── */
-.match-result{margin:14px 0 0;padding:14px 16px;background:rgba(18,18,22,.5);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.04);border-radius:14px;
-}
+.match-result{margin:16px 0 0;padding:16px 0 12px;border-top:1px solid rgba(255,255,255,.04)
 .match-result .result-head{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px}
 .match-result .result-head .badge-result{padding:4px 14px;border-radius:8px;font-size:12px;font-weight:700;font-family:'JetBrains Mono',monospace}
 .match-result .result-head .badge-result.por-win{background:rgba(0,153,76,.15);border:1px solid rgba(0,153,76,.2);color:#6fcf97}
 .match-result .result-head .badge-result.esp-win{background:rgba(198,11,30,.15);border:1px solid rgba(198,11,30,.2);color:#f06a6a}
 .match-result .result-head .badge-result.draw{background:rgba(232,196,90,.12);border:1px solid rgba(232,196,90,.18);color:#e8c45a}
 .match-result .result-head .badge-result.pending{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:#52525b}
-.match-result .result-detail{text-align:center;font-size:12px;color:#52525b;margin-bottom:10px}
 .match-result .scorers{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
 .match-result .scorers .scorer-chip{padding:3px 10px;border-radius:14px;font-size:11px;font-weight:500;background:rgba(39,39,42,.5);border:1px solid rgba(255,255,255,.05);color:#d4d4d8}
 .match-result .scorers .scorer-chip .spts{color:#4ade80;font-weight:600}
@@ -293,15 +285,20 @@ body::before{
   <div class="next-match">
     <div class="label">Proximo Partido</div>
     <div class="match">
-      <span>United States</span>
+      <span>Estados Unidos</span>
       <span class="vs-sm">vs</span>
-      <span>Belgium</span>
+      <span>Bélgica</span>
     </div>
     <div class="time">Hoy &middot; 21:00 ARG</div>
   </div>
 </div>
 
 <div class="match-card">
+
+  <div class="match-card-title">
+    <div class="phase">Octavos de final &middot; Match 93</div>
+    <div class="date">Domingo 6 de Julio de 2026</div>
+  </div>
 
   <div class="match-badge">
     <div class="team-box team-por">
@@ -328,7 +325,6 @@ body::before{
   <div class="result-head">
     <span class="badge-result esp-win">Portugal 0 &ndash; 1 Espa&ntilde;a</span>
   </div>
-  <div class="result-detail">Aciertos del partido &middot; Octavos de final &middot; 06/07</div>
   <div class="scorers">
     <span class="scorer-chip">Miguel M <span class="spts">+3</span></span>
     <span class="scorer-chip">Mart&iacute;n Baigorria <span class="spts">+3</span></span>
@@ -353,10 +349,6 @@ body::before{
 
 <!-- ═══ MATCH 93: PORTUGAL vs ESPAÑA ═══ -->
 <div class="match-section">
-  <div class="match-section-header">
-    <div class="match-title">Match 93 &middot; Octavos de final &middot; 06/07</div>
-    <div class="match-phrase">Votaciones registradas al momento del partido</div>
-  </div>
   <div class="grid">
 
   <div class="column col-portugal">
