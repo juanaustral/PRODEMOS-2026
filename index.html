@@ -26,10 +26,9 @@ body::before{
 .cup-4{top:20%;right:6%;width:35px;animation-delay:-4s;animation-duration:18s}
 .cup-5{top:75%;left:45%;width:30px;animation-delay:-10s;animation-duration:30s}
 @keyframes floatCup{
-  0%,100%{transform:translateY(0) rotate(0deg) scale(1)}
-  25%{transform:translateY(-18px) rotate(3deg) scale(1.02)}
-  50%{transform:translateY(-8px) rotate(-2deg) scale(.98)}
-  75%{transform:translateY(-25px) rotate(4deg) scale(1.01)}
+  0%,100%{transform:translateY(0) rotate(0deg)}
+  33%{transform:translateY(-14px) rotate(2deg)}
+  66%{transform:translateY(-6px) rotate(-1.5deg)}
 }
 
 .container{max-width:1120px;margin:0 auto;padding:30px 16px;position:relative;z-index:1}
@@ -152,8 +151,6 @@ body::before{
 .user-chip::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 60%,rgba(255,255,255,.03));pointer-events:none}
 .user-chip:hover{background:rgba(63,63,70,.7);border-color:rgba(255,255,255,.1);transform:translateY(-1px);box-shadow:0 2px 8px rgba(0,0,0,.25)}
 .user-chip .pts{color:#71717a;font-weight:400;font-size:10px}
-.user-chip .delta{color:#4ade80;font-weight:600;font-size:10px;display:inline-flex;align-items:center;gap:1px}
-.user-chip .delta .arrow{font-size:10px;line-height:1}
 
 /* ── Tiebreak ── */
 .tiebreak-group{margin-top:8px;padding-top:6px;border-top:1px solid rgba(255,255,255,.04)}
@@ -197,14 +194,28 @@ body::before{
 .rank-item .rpos{font-weight:600;color:#71717a;min-width:24px;font-size:12px;font-family:'JetBrains Mono',monospace;text-align:right}
 .rank-item .rname{flex:1;color:#d4d4d8;font-weight:500}
 .rank-item .rpts{font-weight:600;color:#a78bfa;font-size:13px;font-family:'JetBrains Mono',monospace}
-.rank-item .rdelta{font-size:11px;font-weight:600;display:inline-flex;align-items:center;gap:2px}
-.rank-item .rdelta.up{color:#4ade80}
-.rank-item .rdelta.down{color:#f87171}
-.rank-item .rdelta.zero{color:#52525b}
 .rank-item.top3{background:rgba(167,139,250,.06);border-color:rgba(167,139,250,.1)}
-.rank-item.self{background:rgba(251,191,36,.06);border-color:rgba(251,191,36,.12)}
-.rank-item.self .rname{color:#fbbf24;font-weight:600}
 @keyframes modalIn{from{opacity:0;transform:scale(.95) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
+
+/* ── Match result divider ── */
+.match-result{
+  margin:10px 0 28px;padding:18px 20px;
+  background:rgba(18,18,22,.5);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border:1px solid rgba(255,255,255,.04);border-radius:14px;
+  animation:fadeUp .6s ease-out .4s both;
+}
+.match-result .result-head{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:10px}
+.match-result .result-head .badge-result{padding:4px 14px;border-radius:8px;font-size:12px;font-weight:700;font-family:'JetBrains Mono',monospace}
+.match-result .result-head .badge-result.por-win{background:rgba(0,153,76,.15);border:1px solid rgba(0,153,76,.2);color:#6fcf97}
+.match-result .result-head .badge-result.esp-win{background:rgba(198,11,30,.15);border:1px solid rgba(198,11,30,.2);color:#f06a6a}
+.match-result .result-head .badge-result.draw{background:rgba(232,196,90,.12);border:1px solid rgba(232,196,90,.18);color:#e8c45a}
+.match-result .result-head .badge-result.pending{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:#52525b}
+.match-result .result-detail{text-align:center;font-size:12px;color:#52525b;margin-bottom:10px}
+.match-result .scorers{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.match-result .scorers .scorer-chip{padding:3px 10px;border-radius:14px;font-size:11px;font-weight:500;background:rgba(39,39,42,.5);border:1px solid rgba(255,255,255,.05);color:#d4d4d8}
+.match-result .scorers .scorer-chip .spts{color:#4ade80;font-weight:600}
+.match-result .scorers.empty{color:#3f3f46;font-style:italic}
+.match-result .no-result{text-align:center;color:#3f3f46;font-size:12px;font-style:italic;padding:4px 0}
 
 /* ── Future matches ── */
 .future-matches{display:none;margin-top:28px}
@@ -393,6 +404,14 @@ body::before{
   </div>
 </div>
 
+<!-- ═══ RESULTADO MATCH 93 ═══ -->
+<div class="match-result" id="result-93">
+  <div class="result-head">
+    <span class="badge-result pending">&mdash; Resultado pendiente &mdash;</span>
+  </div>
+  <div class="no-result">El partido aun no finalizo. Los aciertos y puntos se mostraran aqui cuando el resultado este disponible.</div>
+</div>
+
 <!-- ═══ FUTURE MATCHES (hidden) ═══ -->
 <div class="future-matches" id="future-matches">
   <div class="section-title">Proximos Partidos</div>
@@ -429,32 +448,32 @@ body::before{
 </div>
 
 <script>
-// ── Ranking data (update this when adding a new match) ──
+// ── Ranking data (update when adding a new match) ──
 const RANKING = [
-  { pos: 1,  name: "Luis Duprat",              pts: 29, delta: 0 },
-  { pos: 2,  name: "Noly Moreno",               pts: 28, delta: 0 },
-  { pos: 2,  name: "Gabriela Monaco",           pts: 28, delta: 0 },
-  { pos: 3,  name: "Miguel M",                  pts: 26, delta: 0 },
-  { pos: 3,  name: "Mart\u00edn Baigorria",      pts: 26, delta: 0 },
-  { pos: 4,  name: "Mauricio Moreno",           pts: 24, delta: 0 },
-  { pos: 4,  name: "Rodrigo Tumbarello",        pts: 24, delta: 0 },
-  { pos: 5,  name: "Ruben777",                  pts: 23, delta: 0 },
-  { pos: 5,  name: "Gabriel Moreno",            pts: 23, delta: 0 },
-  { pos: 5,  name: "Esther M. Ribeiro",         pts: 23, delta: 0 },
-  { pos: 5,  name: "Carlos Sarmiento",          pts: 23, delta: 0 },
-  { pos: 6,  name: "Florencia Escortichini",    pts: 22, delta: 0 },
-  { pos: 7,  name: "Maximiliano Ruiz Diaz",     pts: 20, delta: 0 },
-  { pos: 7,  name: "Juan Martinez Garcia",      pts: 20, delta: 0 },
-  { pos: 7,  name: "Florencia",                 pts: 20, delta: 0 },
-  { pos: 7,  name: "Karen Elizondo",            pts: 20, delta: 0 },
-  { pos: 8,  name: "Gerardo De Marco",          pts: 19, delta: 0 },
-  { pos: 8,  name: "Guille Calde",              pts: 19, delta: 0 },
-  { pos: 9,  name: "Lucas Bejarano",            pts: 18, delta: 0 },
-  { pos: 9,  name: "Gustavo Pereyra",           pts: 18, delta: 0 },
-  { pos: 10, name: "Juan M. Lucero",            pts: 17, delta: 0 },
-  { pos: 11, name: "Franco Pellegrino",         pts: 15, delta: 0 },
-  { pos: 12, name: "elmasternero",              pts: 13, delta: 0 },
-  { pos: 13, name: "Cristian Ochoa",            pts: 9,  delta: 0 },
+  { pos: 1,  name: "Luis Duprat",              pts: 29 },
+  { pos: 2,  name: "Noly Moreno",               pts: 28 },
+  { pos: 2,  name: "Gabriela Monaco",           pts: 28 },
+  { pos: 3,  name: "Miguel M",                  pts: 26 },
+  { pos: 3,  name: "Mart\u00edn Baigorria",      pts: 26 },
+  { pos: 4,  name: "Mauricio Moreno",           pts: 24 },
+  { pos: 4,  name: "Rodrigo Tumbarello",        pts: 24 },
+  { pos: 5,  name: "Ruben777",                  pts: 23 },
+  { pos: 5,  name: "Gabriel Moreno",            pts: 23 },
+  { pos: 5,  name: "Esther M. Ribeiro",         pts: 23 },
+  { pos: 5,  name: "Carlos Sarmiento",          pts: 23 },
+  { pos: 6,  name: "Florencia Escortichini",    pts: 22 },
+  { pos: 7,  name: "Maximiliano Ruiz Diaz",     pts: 20 },
+  { pos: 7,  name: "Juan Martinez Garcia",      pts: 20 },
+  { pos: 7,  name: "Florencia",                 pts: 20 },
+  { pos: 7,  name: "Karen Elizondo",            pts: 20 },
+  { pos: 8,  name: "Gerardo De Marco",          pts: 19 },
+  { pos: 8,  name: "Guille Calde",              pts: 19 },
+  { pos: 9,  name: "Lucas Bejarano",            pts: 18 },
+  { pos: 9,  name: "Gustavo Pereyra",           pts: 18 },
+  { pos: 10, name: "Juan M. Lucero",            pts: 17 },
+  { pos: 11, name: "Franco Pellegrino",         pts: 15 },
+  { pos: 12, name: "elmasternero",              pts: 13 },
+  { pos: 13, name: "Cristian Ochoa",            pts: 9  },
 ];
 
 // ── Render ranking modal from data ──
@@ -463,11 +482,7 @@ function renderRank() {
   body.innerHTML = RANKING.map(r => {
     const cls = ['rank-item'];
     if (r.pos <= 2) cls.push('top3');
-    if (r.name === 'Juan Martinez Garcia') cls.push('self');
-    let deltaHtml = '';
-    if (r.delta > 0) deltaHtml = `<span class="rdelta up">&#x2191;+${r.delta}</span>`;
-    else if (r.delta < 0) deltaHtml = `<span class="rdelta down">&#x2193;${r.delta}</span>`;
-    return `<div class="${cls.join(' ')}"><span class="rpos">${r.pos}</span><span class="rname">${r.name}</span><span class="rpts">${r.pts}</span>${deltaHtml}</div>`;
+    return `<div class="${cls.join(' ')}"><span class="rpos">${r.pos}</span><span class="rname">${r.name}</span><span class="rpts">${r.pts}</span></div>`;
   }).join('');
 }
 renderRank();
