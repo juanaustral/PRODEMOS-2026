@@ -284,8 +284,8 @@ body::before{
       <span>Espa&ntilde;a</span>
     </div>
     <span class="result">
-      <span class="real-label">Resultado:</span>
-      <strong class="real-score">&mdash; pendiente &mdash;</strong>
+      <span class="real-label">Final:</span>
+      <strong>0</strong> &ndash; <strong>1</strong>
     </span>
   </div>
 
@@ -314,9 +314,29 @@ body::before{
 <!-- ═══ RESULTADO MATCH 93 ═══ -->
 <div class="match-result" id="result-93">
   <div class="result-head">
-    <span class="badge-result pending">&mdash; Resultado pendiente &mdash;</span>
+    <span class="badge-result esp-win">Portugal 0 &ndash; 1 Espa&ntilde;a</span>
   </div>
-  <div class="no-result">El partido aun no finalizo. Los aciertos y puntos se mostraran aqui cuando el resultado este disponible.</div>
+  <div class="result-detail">Aciertos del partido &middot; Octavos de final &middot; 06/07</div>
+  <div class="scorers">
+    <span class="scorer-chip">Miguel M <span class="spts">+3</span></span>
+    <span class="scorer-chip">Mart&iacute;n Baigorria <span class="spts">+3</span></span>
+    <span class="scorer-chip">Karen Elizondo <span class="spts">+3</span></span>
+    <span class="scorer-chip">Luis Duprat <span class="spts">+1</span></span>
+    <span class="scorer-chip">Noly Moreno <span class="spts">+1</span></span>
+    <span class="scorer-chip">Gabriela Monaco <span class="spts">+1</span></span>
+    <span class="scorer-chip">Mauricio Moreno <span class="spts">+1</span></span>
+    <span class="scorer-chip">Rodrigo Tumbarello <span class="spts">+1</span></span>
+    <span class="scorer-chip">Ruben777 <span class="spts">+1</span></span>
+    <span class="scorer-chip">Gabriel Moreno <span class="spts">+1</span></span>
+    <span class="scorer-chip">Carlos Sarmiento <span class="spts">+1</span></span>
+    <span class="scorer-chip">Florencia Escortichini <span class="spts">+1</span></span>
+    <span class="scorer-chip">Gerardo De Marco <span class="spts">+1</span></span>
+    <span class="scorer-chip">Guille Calde <span class="spts">+1</span></span>
+    <span class="scorer-chip">Juan Manuel Lucero <span class="spts">+1</span></span>
+    <span class="scorer-chip">Franco Pellegrino <span class="spts">+1</span></span>
+    <span class="scorer-chip">elmasternero <span class="spts">+1</span></span>
+    <span class="scorer-chip">Cristian Ochoa <span class="spts">+1</span></span>
+  </div>
 </div>
 
 <!-- ═══ MATCH 93: PORTUGAL vs ESPAÑA ═══ -->
@@ -436,7 +456,7 @@ body::before{
   <div class="results-line">
     <span>PRODEMOS OTRA VEZ ?</span><span class="sep">&bull;</span>
     <span>Match 93 &middot; 06/07</span><span class="sep">&bull;</span>
-    <span>Resultado: <strong class="real-score">&mdash; pendiente &mdash;</strong></span>
+    <span>Final: <strong>Portugal 0</strong> &ndash; <strong>1 Espa&ntilde;a</strong></span>
   </div>
   <div class="divider"></div>
   <div class="credit">
@@ -450,30 +470,30 @@ body::before{
 <script>
 // ── Ranking data (update when adding a new match) ──
 const RANKING = [
-  { pos: 1,  name: "Luis Duprat",              pts: 29 },
-  { pos: 2,  name: "Noly Moreno",               pts: 28 },
-  { pos: 2,  name: "Gabriela Monaco",           pts: 28 },
-  { pos: 3,  name: "Miguel M",                  pts: 26 },
-  { pos: 3,  name: "Mart\u00edn Baigorria",      pts: 26 },
-  { pos: 4,  name: "Mauricio Moreno",           pts: 24 },
-  { pos: 4,  name: "Rodrigo Tumbarello",        pts: 24 },
-  { pos: 5,  name: "Ruben777",                  pts: 23 },
-  { pos: 5,  name: "Gabriel Moreno",            pts: 23 },
+  { pos: 1,  name: "Luis Duprat",              pts: 30 },
+  { pos: 2,  name: "Miguel M",                  pts: 29 },
+  { pos: 2,  name: "Noly Moreno",               pts: 29 },
+  { pos: 2,  name: "Mart\u00edn Baigorria",      pts: 29 },
+  { pos: 2,  name: "Gabriela Monaco",           pts: 29 },
+  { pos: 3,  name: "Mauricio Moreno",           pts: 25 },
+  { pos: 3,  name: "Rodrigo Tumbarello",        pts: 25 },
+  { pos: 4,  name: "Ruben777",                  pts: 24 },
+  { pos: 4,  name: "Gabriel Moreno",            pts: 24 },
+  { pos: 4,  name: "Carlos Sarmiento",          pts: 24 },
   { pos: 5,  name: "Esther M. Ribeiro",         pts: 23 },
-  { pos: 5,  name: "Carlos Sarmiento",          pts: 23 },
-  { pos: 6,  name: "Florencia Escortichini",    pts: 22 },
-  { pos: 7,  name: "Maximiliano Ruiz Diaz",     pts: 20 },
-  { pos: 7,  name: "Juan Martinez Garcia",      pts: 20 },
-  { pos: 7,  name: "Florencia",                 pts: 20 },
-  { pos: 7,  name: "Karen Elizondo",            pts: 20 },
-  { pos: 8,  name: "Gerardo De Marco",          pts: 19 },
-  { pos: 8,  name: "Guille Calde",              pts: 19 },
-  { pos: 9,  name: "Lucas Bejarano",            pts: 18 },
-  { pos: 9,  name: "Gustavo Pereyra",           pts: 18 },
-  { pos: 10, name: "Juan M. Lucero",            pts: 17 },
-  { pos: 11, name: "Franco Pellegrino",         pts: 15 },
-  { pos: 12, name: "elmasternero",              pts: 13 },
-  { pos: 13, name: "Cristian Ochoa",            pts: 9  },
+  { pos: 5,  name: "Florencia Escortichini",    pts: 23 },
+  { pos: 5,  name: "Karen Elizondo",            pts: 23 },
+  { pos: 6,  name: "Maximiliano Ruiz Diaz",     pts: 20 },
+  { pos: 6,  name: "Juan Martinez Garcia",      pts: 20 },
+  { pos: 6,  name: "Florencia",                 pts: 20 },
+  { pos: 6,  name: "Gerardo De Marco",          pts: 20 },
+  { pos: 6,  name: "Guille Calde",              pts: 20 },
+  { pos: 7,  name: "Juan M. Lucero",            pts: 18 },
+  { pos: 7,  name: "Lucas Bejarano",            pts: 18 },
+  { pos: 7,  name: "Gustavo Pereyra",           pts: 18 },
+  { pos: 8,  name: "Franco Pellegrino",         pts: 16 },
+  { pos: 9,  name: "elmasternero",              pts: 14 },
+  { pos: 10, name: "Cristian Ochoa",            pts: 10 },
 ];
 
 // ── Render ranking modal from data ──
