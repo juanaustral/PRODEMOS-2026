@@ -50,49 +50,17 @@ body::before {
 
 .floating-cup {
   position: absolute;
-  opacity: .04;
+  opacity: .035;
   animation: floatCup 20s ease-in-out infinite;
+  object-fit: contain;
+  filter: brightness(1.2) drop-shadow(0 0 8px rgba(251,191,36,.08));
 }
 
-.floating-cup:nth-child(1) {
-  top: 5%;
-  left: 3%;
-  width: 120px;
-  animation-delay: 0s;
-  animation-duration: 25s;
-}
-
-.floating-cup:nth-child(2) {
-  top: 60%;
-  right: 2%;
-  width: 90px;
-  animation-delay: -7s;
-  animation-duration: 22s;
-}
-
-.floating-cup:nth-child(3) {
-  bottom: 8%;
-  left: 12%;
-  width: 70px;
-  animation-delay: -14s;
-  animation-duration: 28s;
-}
-
-.floating-cup:nth-child(4) {
-  top: 25%;
-  right: 8%;
-  width: 50px;
-  animation-delay: -4s;
-  animation-duration: 18s;
-}
-
-.floating-cup:nth-child(5) {
-  top: 80%;
-  left: 50%;
-  width: 60px;
-  animation-delay: -10s;
-  animation-duration: 30s;
-}
+.cup-1 { top: 3%; left: 2%; width: 65px; animation-delay: 0s; animation-duration: 25s; }
+.cup-2 { top: 55%; right: 3%; width: 50px; animation-delay: -7s; animation-duration: 22s; }
+.cup-3 { bottom: 5%; left: 8%; width: 40px; animation-delay: -14s; animation-duration: 28s; }
+.cup-4 { top: 20%; right: 6%; width: 35px; animation-delay: -4s; animation-duration: 18s; }
+.cup-5 { top: 75%; left: 45%; width: 30px; animation-delay: -10s; animation-duration: 30s; }
 
 @keyframes floatCup {
   0%,
@@ -793,49 +761,13 @@ svg.flag-mini {
 </head>
 <body>
 
-<!-- ══ Floating World Cups ══ -->
+<!-- ── Floating World Cups (trophy.png) ── -->
 <div class="floating-cups">
-  <!-- Trophy 1 -->
-  <svg class="floating-cup" viewBox="0 0 100 160" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="50" cy="150" rx="25" ry="6" fill="#fbbf24" opacity=".3"/>
-    <rect x="43" y="80" width="14" height="70" rx="3" fill="#fbbf24"/>
-    <ellipse cx="50" cy="82" rx="16" ry="6" fill="#fbbf24"/>
-    <path d="M35 72 Q20 50 22 30 Q24 10 50 8 Q76 10 78 30 Q80 50 65 72" fill="none" stroke="#fbbf24" stroke-width="3"/>
-    <ellipse cx="50" cy="22" rx="18" ry="6" fill="#fbbf24" opacity=".5"/>
-    <path d="M62 30 Q65 22 60 20" fill="none" stroke="#fbbf24" stroke-width="2"/>
-    <path d="M38 30 Q35 22 40 20" fill="none" stroke="#fbbf24" stroke-width="2"/>
-    <circle cx="50" cy="18" r="4" fill="#fbbf24" opacity=".6"/>
-  </svg>
-  <!-- Trophy 2 -->
-  <svg class="floating-cup" viewBox="0 0 100 160" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="50" cy="150" rx="25" ry="6" fill="#fbbf24" opacity=".3"/>
-    <rect x="43" y="80" width="14" height="70" rx="3" fill="#fbbf24"/>
-    <ellipse cx="50" cy="82" rx="16" ry="6" fill="#fbbf24"/>
-    <path d="M35 72 Q20 50 22 30 Q24 10 50 8 Q76 10 78 30 Q80 50 65 72" fill="none" stroke="#fbbf24" stroke-width="3"/>
-    <ellipse cx="50" cy="22" rx="18" ry="6" fill="#fbbf24" opacity=".5"/>
-  </svg>
-  <!-- Trophy 3 -->
-  <svg class="floating-cup" viewBox="0 0 100 160" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="50" cy="150" rx="25" ry="6" fill="#fbbf24" opacity=".3"/>
-    <rect x="43" y="80" width="14" height="70" rx="3" fill="#fbbf24"/>
-    <ellipse cx="50" cy="82" rx="16" ry="6" fill="#fbbf24"/>
-    <path d="M35 72 Q20 50 22 30 Q24 10 50 8 Q76 10 78 30 Q80 50 65 72" fill="none" stroke="#fbbf24" stroke-width="3"/>
-    <circle cx="50" cy="18" r="4" fill="#fbbf24" opacity=".6"/>
-  </svg>
-  <!-- Trophy 4 -->
-  <svg class="floating-cup" viewBox="0 0 100 160" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="50" cy="150" rx="20" ry="5" fill="#fbbf24" opacity=".3"/>
-    <rect x="44" y="85" width="12" height="65" rx="3" fill="#fbbf24"/>
-    <ellipse cx="50" cy="85" rx="14" ry="5" fill="#fbbf24"/>
-    <path d="M36 76 Q22 55 24 35 Q26 14 50 12 Q74 14 76 35 Q78 55 64 76" fill="none" stroke="#fbbf24" stroke-width="2.5"/>
-  </svg>
-  <!-- Trophy 5 -->
-  <svg class="floating-cup" viewBox="0 0 100 160" xmlns="http://www.w3.org/2000/svg">
-    <ellipse cx="50" cy="150" rx="20" ry="5" fill="#fbbf24" opacity=".3"/>
-    <rect x="44" y="85" width="12" height="65" rx="3" fill="#fbbf24"/>
-    <path d="M36 76 Q22 55 24 35 Q26 14 50 12 Q74 14 76 35 Q78 55 64 76" fill="none" stroke="#fbbf24" stroke-width="2.5"/>
-    <circle cx="50" cy="18" r="3.5" fill="#fbbf24" opacity=".6"/>
-  </svg>
+  <img class="floating-cup cup-1" src="trophy.png" alt="">
+  <img class="floating-cup cup-2" src="trophy.png" alt="">
+  <img class="floating-cup cup-3" src="trophy.png" alt="">
+  <img class="floating-cup cup-4" src="trophy.png" alt="">
+  <img class="floating-cup cup-5" src="ball.png" alt="">
 </div>
 
 <div class="container">
@@ -875,7 +807,7 @@ svg.flag-mini {
   </div>
 
   <div class="header-actions">
-    <a class="btn-fixture" href="https://juanaustral.github.io/visormundial/" target="_blank" rel="noopener">
+    <a class="btn-fixture" href="https://juanaustral.github.io/fixture2026/" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M12 2L2 7l10 5 10-5-10-5z"/>
         <path d="M2 17l10 5 10-5"/>
