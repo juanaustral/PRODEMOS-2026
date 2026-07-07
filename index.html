@@ -212,44 +212,6 @@ body::before{
 .tiebreak-label .dot-por{background:#2ecc71;box-shadow:0 0 5px rgba(46,204,113,.25)}
 .tiebreak-label .dot-esp{background:#e74c3c;box-shadow:0 0 5px rgba(231,76,60,.25)}
 
-/* ── RANKING MODAL ── */
-.modal-overlay{
-  display:none;position:fixed;inset:0;z-index:100;
-  background:rgba(0,0,0,.6);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
-  align-items:center;justify-content:center;padding:20px;
-}
-.modal-overlay.open{display:flex}
-.modal{
-  background:#121216;border:1px solid rgba(255,255,255,.06);border-radius:20px;
-  width:100%;max-width:520px;max-height:80vh;overflow-y:auto;
-  animation:modalIn .25s ease-out;box-shadow:0 24px 80px rgba(0,0,0,.5);
-}
-.modal-header{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:18px 22px 14px;border-bottom:1px solid rgba(255,255,255,.04);
-  position:sticky;top:0;background:#121216;z-index:2;border-radius:20px 20px 0 0;
-}
-.modal-header h2{font-size:16px;font-weight:700;color:#e4e4e7}
-.modal-header .close{
-  width:32px;height:32px;border-radius:50%;border:none;background:rgba(255,255,255,.06);
-  color:#c0c0cc;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;
-  transition:all .2s;font-family:'Inter',sans-serif;
-}
-.modal-header .close:hover{background:rgba(255,255,255,.1);color:#e4e4e7}
-.modal-body{padding:14px 22px 22px}
-.rank-item{
-  display:flex;align-items:center;gap:10px;
-  padding:7px 12px;border-radius:10px;font-size:13px;
-  background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.03);
-  margin-bottom:4px;transition:background .15s;
-}
-.rank-item:hover{background:rgba(255,255,255,.04)}
-.rank-item .rpos{font-weight:600;color:#c0c0cc;min-width:24px;font-size:12px;font-family:'JetBrains Mono',monospace;text-align:right}
-.rank-item .rname{flex:1;color:#d4d4d8;font-weight:500}
-.rank-item .rpts{font-weight:600;color:#a78bfa;font-size:13px;font-family:'JetBrains Mono',monospace}
-.rank-item.top3{background:rgba(167,139,250,.06);border-color:rgba(167,139,250,.1)}
-@keyframes modalIn{from{opacity:0;transform:scale(.95) translateY(10px)}to{opacity:1;transform:scale(1) translateY(0)}}
-
 /* ── Match result divider ── */
 .match-result{margin:18px 0 4px;padding:14px 16px;background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:12px}
 .match-result .scorers{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
@@ -317,12 +279,12 @@ body::before{
       </svg>
       Ver Partidos
     </a>
-    <button class="btn-header btn-ranking" onclick="document.getElementById('rankModal').classList.add('open')">
+    <a class="btn-header btn-ranking" href="ranking.html">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <line x1="4" y1="21" x2="4" y2="14"/><line x1="10" y1="21" x2="10" y2="9"/><line x1="16" y1="21" x2="16" y2="2"/><line x1="22" y1="21" x2="22" y2="12"/>
       </svg>
       Ranking
-    </button>
+    </a>
   </div>
 
   <div class="next-match">
@@ -635,44 +597,7 @@ body::before{
 </div><!-- /container -->
 
 <script>
-// ── Ranking data (update when adding a new match) ──
-const RANKING = [
-  { pos: 1,  name: "Luis Duprat",              pts: 30 },
-  { pos: 2,  name: "Miguel M",                  pts: 29 },
-  { pos: 2,  name: "Noly Moreno",               pts: 29 },
-  { pos: 2,  name: "Mart\u00edn Baigorria",      pts: 29 },
-  { pos: 2,  name: "Gabriela Monaco",           pts: 29 },
-  { pos: 3,  name: "Mauricio Moreno",           pts: 25 },
-  { pos: 3,  name: "Rodrigo Tumbarello",        pts: 25 },
-  { pos: 4,  name: "Ruben777",                  pts: 24 },
-  { pos: 4,  name: "Gabriel Moreno",            pts: 24 },
-  { pos: 3,  name: "Carlos Sarmiento",          pts: 25 },
-  { pos: 5,  name: "Esther M. Ribeiro",         pts: 23 },
-  { pos: 5,  name: "Florencia Escortichini",    pts: 23 },
-  { pos: 5,  name: "Karen Elizondo",            pts: 23 },
-  { pos: 6,  name: "Maximiliano Ruiz Diaz",     pts: 20 },
-  { pos: 6,  name: "Juan Martinez Garcia",      pts: 20 },
-  { pos: 6,  name: "Florencia",                 pts: 22 },
-  { pos: 6,  name: "Gerardo De Marco",          pts: 20 },
-  { pos: 6,  name: "Guille Calde",              pts: 22 },
-  { pos: 7,  name: "Juan M. Lucero",            pts: 18 },
-  { pos: 7,  name: "Lucas Bejarano",            pts: 18 },
-  { pos: 7,  name: "Gustavo Pereyra",           pts: 18 },
-  { pos: 8,  name: "Franco Pellegrino",         pts: 16 },
-  { pos: 9,  name: "elmasternero",              pts: 14 },
-  { pos: 10, name: "Cristian Ochoa",            pts: 10 },
-];
-
 // ── Render ranking modal from data ──
-function renderRank() {
-  const body = document.getElementById('rankBody');
-  body.innerHTML = RANKING.map(r => {
-    const cls = ['rank-item'];
-    if (r.pos <= 2) cls.push('top3');
-    return `<div class="${cls.join(' ')}"><span class="rpos">${r.pos}</span><span class="rname">${r.name}</span><span class="rpts">${r.pts}</span></div>`;
-  }).join('');
-}
-renderRank();
 </script>
 </body>
 </html>
