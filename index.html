@@ -254,6 +254,7 @@ body::before{
 .match-result{margin:18px 0 4px;padding:14px 16px;background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:12px}
 .match-result .scorers{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
 .match-result .scorers .scorer-chip{padding:3px 10px;border-radius:14px;font-size:11px;font-weight:500;background:rgba(39,39,42,.5);border:1px solid rgba(255,255,255,.05);color:#d4d4d8}
+.match-result .result-detail{text-align:center;font-size:11px;color:#52525b;margin-bottom:8px}
 .match-result .scorers .scorer-chip .spts{color:#4ade80;font-weight:600}
 .match-result .scorers.empty{color:#3f3f46;font-style:italic}
 .match-result .no-result{text-align:center;color:#3f3f46;font-size:12px;font-style:italic;padding:4px 0}
@@ -327,11 +328,11 @@ body::before{
   <div class="next-match">
     <div class="label">Proximo Partido</div>
     <div class="match">
-      <span>Estados Unidos</span>
+      <span>Argentina</span>
       <span class="vs-sm">vs</span>
-      <span>Bélgica</span>
+      <span>Egipto</span>
     </div>
-    <div class="time">Hoy &middot; 21:00 ARG</div>
+    <div class="time">Hoy &middot; 13:00 ARG</div>
   </div>
 </div>
 
@@ -362,6 +363,7 @@ body::before{
   </div>
 
   <div class="match-result" id="result-94">
+  <div class="result-detail">Sumaron puntos en este partido</div>
   <div class="scorers">
     <span class="scorer-chip">Carlos Sarmiento <span class="spts">+1</span></span>
     <span class="scorer-chip">Florencia <span class="spts">+1</span></span>
@@ -419,23 +421,14 @@ body::before{
     <div class="column-body">
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">1 &ndash; 1</span><span class="chip-count">2</span></div>
-        <div class="users" style="margin-bottom:4px">
-          <span class="user-chip">Gabriela Monaco <span class="pts">(28)</span></span>
-          <span class="user-chip">Maximiliano Ruiz Diaz <span class="pts">(20)</span></span>
-        </div>
-        <div class="tiebreak-group">
-          <div class="tiebreak-label"><span class="dot dot-por"></span> Creen que gana EE.UU.</div>
-          <div class="users"><span class="user-chip">Gabriela Monaco <span class="pts">(28)</span></span><span class="user-chip">Maximiliano Ruiz Diaz <span class="pts">(20)</span></span></div>
+        <div class="tiebreak-group" style="border:none;padding:0;margin:0">
+          <div class="tiebreak-label"><span class="dot dot-por"></span> Creen que gana EE.UU. <span style="color:#52525b;font-weight:400;margin-left:auto">Gabriela Monaco, Maximiliano Ruiz Diaz</span></div>
         </div>
       </div>
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">2 &ndash; 2</span><span class="chip-count">1</span></div>
-        <div class="users" style="margin-bottom:4px">
-          <span class="user-chip">Gabriel Moreno <span class="pts">(23)</span></span>
-        </div>
-        <div class="tiebreak-group">
-          <div class="tiebreak-label"><span class="dot dot-por"></span> Cree que gana EE.UU.</div>
-          <div class="users"><span class="user-chip">Gabriel Moreno <span class="pts">(23)</span></span></div>
+        <div class="tiebreak-group" style="border:none;padding:0;margin:0">
+          <div class="tiebreak-label"><span class="dot dot-por"></span> Cree que gana EE.UU. <span style="color:#52525b;font-weight:400;margin-left:auto">Gabriel Moreno</span></div>
         </div>
       </div>
     </div>
@@ -450,16 +443,12 @@ body::before{
       </div>
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">2 &ndash; 2</span><span class="chip-count">1</span></div>
-        <div class="users" style="margin-bottom:4px">
-          <span class="user-chip">Carlos Sarmiento <span class="pts">(23)</span></span>
-        </div>
-        <div class="tiebreak-group">
-          <div class="tiebreak-label"><span class="dot dot-esp"></span> Cree que gana B&eacute;lgica</div>
-          <div class="users"><span class="user-chip">Carlos Sarmiento <span class="pts">(23)</span></span></div>
+        <div class="tiebreak-group" style="border:none;padding:0;margin:0">
+          <div class="tiebreak-label"><span class="dot dot-esp"></span> Cree que gana B&eacute;lgica <span style="color:#52525b;font-weight:400;margin-left:auto">Carlos Sarmiento</span></div>
         </div>
       </div>
       <div class="subgroup">
-        <div class="subgroup-header"><span class="score-badge">? &ndash; 2</span><span class="chip-count">1</span></div>
+        <div class="subgroup-header"><span class="score-badge">0 &ndash; 2</span><span class="chip-count">1</span></div>
         <div class="users"><span class="user-chip">Guille Calde <span class="pts">(19)</span></span></div>
       </div>
     </div>
@@ -496,6 +485,7 @@ body::before{
   </div>
 
   <div class="match-result" id="result-93">
+  <div class="result-detail">Sumaron puntos en este partido</div>
   <div class="scorers">
     <span class="scorer-chip">Miguel M <span class="spts">+3</span></span>
     <span class="scorer-chip">Mart&iacute;n Baigorria <span class="spts">+3</span></span>
