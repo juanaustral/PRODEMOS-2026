@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PRODEMOS OTRA VEZ — Pronosticos, Resultados y Ranking | ProdeCA Mundial 2026</title>
 <meta name="description" content="Seguimiento de pronosticos del torneo de amigos PRODEMOS OTRA VEZ en ProdeCA. Resultados, aciertos, puntos y ranking de participantes para el Mundial 2026.">
-<meta name="keywords" content="prode, mundial 2026, prodeca, pronosticos, portugal vs espana, octavos de final, torneo de amigos">
+<meta name="keywords" content="prode, mundial 2026, prodeca, pronosticos, argentina vs egipto, octavos de final, torneo de amigos">
 <link rel="canonical" href="https://juanaustral.github.io/PRODEMOS-2026/">
 
 <!-- Open Graph -->
@@ -29,14 +29,14 @@
 {
   "@context": "https://schema.org",
   "@type": "SportsEvent",
-  "name": "Portugal vs España - Octavos de final Mundial 2026",
-  "description": "Votaciones del torneo PRODEMOS OTRA VEZ para el partido Portugal vs España de los octavos de final del Mundial 2026.",
+  "name": "Argentina vs Egipto - Octavos de final Mundial 2026",
+  "description": "Votaciones del torneo PRODEMOS OTRA VEZ para el partido Argentina vs Egipto de los octavos de final del Mundial 2026.",
   "url": "https://juanaustral.github.io/PRODEMOS-2026/",
-  "startDate": "2026-07-06T16:00:00-03:00",
+  "startDate": "2026-07-07T13:00:00-03:00",
   "sport": "Soccer",
   "competitor": [
-    {"@type": "SportsTeam", "name": "Portugal"},
-    {"@type": "SportsTeam", "name": "Spain"}
+    {"@type": "SportsTeam", "name": "Argentina"},
+    {"@type": "SportsTeam", "name": "Egypt"}
   ],
   "superEvent": {
     "@type": "SportsEvent",
@@ -103,10 +103,22 @@ body::before{
 .team-box.team-por:hover{box-shadow:0 0 20px rgba(0,153,76,.15)}
 .team-box.team-esp{background:linear-gradient(135deg,rgba(198,11,30,.3),rgba(160,10,25,.12));border:1px solid rgba(198,11,30,.2);color:#f28b82}
 .team-box.team-esp:hover{box-shadow:0 0 20px rgba(198,11,30,.15)}
+.team-box.team-arg{background:linear-gradient(135deg,rgba(116,172,223,.3),rgba(116,172,223,.1));border:1px solid rgba(116,172,223,.2);color:#75aadb}
+.team-box.team-arg:hover{box-shadow:0 0 20px rgba(116,172,223,.15)}
+.team-box.team-egy{background:linear-gradient(135deg,rgba(200,30,30,.3),rgba(185,30,30,.1));border:1px solid rgba(200,30,30,.2);color:#e06060}
+.team-box.team-egy:hover{box-shadow:0 0 20px rgba(200,30,30,.15)}
+.team-box.team-sui{background:linear-gradient(135deg,rgba(255,0,0,.3),rgba(200,0,0,.1));border:1px solid rgba(255,0,0,.2);color:#ff6060}
+.team-box.team-sui:hover{box-shadow:0 0 20px rgba(255,0,0,.15)}
+.team-box.team-col{background:linear-gradient(135deg,rgba(255,200,0,.3),rgba(200,160,0,.1));border:1px solid rgba(255,200,0,.2);color:#f0c040}
+.team-box.team-col:hover{box-shadow:0 0 20px rgba(255,200,0,.15)}
 .team-box svg.flag-mini{width:24px;height:16px;border-radius:3px;flex-shrink:0}
 .team-box .team-score{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:18px;background:rgba(0,0,0,.25);padding:0 8px;border-radius:6px;line-height:22px}
 .team-box.team-por .team-score{color:#f4f4f5}
 .team-box.team-esp .team-score{color:#f4f4f5}
+.team-box.team-arg .team-score{color:#f4f4f5}
+.team-box.team-egy .team-score{color:#f4f4f5}
+.team-box.team-sui .team-score{color:#f4f4f5}
+.team-box.team-col .team-score{color:#f4f4f5}
 .match-badge .vs{color:#a0a0b0;font-size:11px;font-weight:600;letter-spacing:1.5px}
 
 /* ── Match card container ── */
@@ -162,12 +174,15 @@ body::before{
 .col-portugal .column-header{background:linear-gradient(180deg,rgba(0,90,45,.25),transparent)}
 .col-portugal .column-header .title{color:#6fcf97}
 .col-portugal .column-header::after{background:linear-gradient(90deg,transparent,rgba(0,153,76,.4),transparent)}
+.col-arg .column-header{background:linear-gradient(180deg,rgba(116,172,223,.2),transparent)}
+.col-arg .column-header .title{color:#75aadb}
+.col-arg .column-header::after{background:linear-gradient(90deg,transparent,rgba(116,172,223,.35),transparent)}
 .col-empate .column-header{background:linear-gradient(180deg,rgba(180,140,30,.18),transparent)}
 .col-empate .column-header .title{color:#e8c45a}
 .col-empate .column-header::after{background:linear-gradient(90deg,transparent,rgba(232,196,90,.3),transparent)}
-.col-espana .column-header{background:linear-gradient(180deg,rgba(180,20,30,.2),transparent)}
-.col-espana .column-header .title{color:#f06a6a}
-.col-espana .column-header::after{background:linear-gradient(90deg,transparent,rgba(240,106,106,.35),transparent)}
+.col-egy .column-header{background:linear-gradient(180deg,rgba(200,30,30,.2),transparent)}
+.col-egy .column-header .title{color:#e06060}
+.col-egy .column-header::after{background:linear-gradient(90deg,transparent,rgba(200,30,30,.35),transparent)}
 
 .column-body{padding:12px 14px 16px}
 
@@ -190,8 +205,9 @@ body::before{
   padding:2px 12px;border-radius:7px;letter-spacing:1px;color:#f4f4f5;
 }
 .col-portugal .score-badge{background:rgba(0,153,76,.13);border:1px solid rgba(0,153,76,.18)}
+.col-arg .score-badge{background:rgba(116,172,223,.13);border:1px solid rgba(116,172,223,.18)}
 .col-empate .score-badge{background:rgba(232,196,90,.11);border:1px solid rgba(232,196,90,.16)}
-.col-espana .score-badge{background:rgba(198,11,30,.13);border:1px solid rgba(198,11,30,.18)}
+.col-egy .score-badge{background:rgba(200,30,30,.13);border:1px solid rgba(200,30,30,.18)}
 .subgroup-header .chip-count{font-size:10px;color:#a0a0b0;font-weight:500;margin-left:auto;background:rgba(255,255,255,.035);padding:2px 8px;border-radius:8px}
 
 .users{display:flex;flex-wrap:wrap;gap:4px}
@@ -211,6 +227,8 @@ body::before{
 .tiebreak-label .dot{width:6px;height:6px;border-radius:50%;display:inline-block;flex-shrink:0}
 .tiebreak-label .dot-por{background:#2ecc71;box-shadow:0 0 5px rgba(46,204,113,.25)}
 .tiebreak-label .dot-esp{background:#e74c3c;box-shadow:0 0 5px rgba(231,76,60,.25)}
+.tiebreak-label .dot-arg{background:#75aadb;box-shadow:0 0 5px rgba(116,172,223,.25)}
+.tiebreak-label .dot-egy{background:#e06060;box-shadow:0 0 5px rgba(200,30,30,.25)}
 
 /* ── Match result divider ── */
 .match-result{margin:18px 0 4px;padding:14px 16px;background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.04);border-radius:12px}
@@ -290,14 +308,124 @@ body::before{
   <div class="next-match">
     <div class="label">Proximo Partido</div>
     <div class="match">
-      <span>Argentina</span>
+      <span>Suiza</span>
       <span class="vs-sm">vs</span>
-      <span>Egipto</span>
+      <span>Colombia</span>
     </div>
-    <div class="time">Hoy &middot; 13:00 ARG</div>
+    <div class="time">Hoy &middot; 17:00 ARG</div>
   </div>
 </div>
 
+<!-- ═══ MATCH 95: ARGENTINA vs EGIPTO ═══ -->
+<div class="match-card">
+
+  <div class="match-card-title">
+    <div class="phase">Octavos de final &middot; Match 95</div>
+    <div class="date">Martes 7 de Julio de 2026</div>
+  </div>
+
+  <div class="match-badge">
+    <div class="team-box team-arg">
+      <svg class="flag-mini" viewBox="0 0 28 19" xmlns="http://www.w3.org/2000/svg">
+        <rect width="28" height="19" fill="#fff"/><rect y="6.3" width="28" height="6.3" fill="#77b5fe"/>
+        <path d="M14 .5l.7 2.2h2.2l-1.8 1.3.7 2.2L14 5l-1.8 1.2.7-2.2-1.8-1.3h2.2z" fill="#f4c430" transform="translate(0,1.5)"/>
+      </svg>
+      <span>Argentina</span>
+    </div>
+    <span class="vs">VS</span>
+    <div class="team-box team-egy">
+      <svg class="flag-mini" viewBox="0 0 28 19" xmlns="http://www.w3.org/2000/svg">
+        <rect width="28" height="19" fill="#ce1126"/><rect y="6" width="28" height="7" fill="#fff"/>
+        <rect y="13" width="28" height="6" fill="#000"/>
+        <path d="M14 3l1 3.2h3.3l-2.7 1.9 1 3.2L14 9.5l-2.6 1.8 1-3.2-2.7-2H13z" fill="#c09300" transform="translate(0,2)"/>
+      </svg>
+      <span>Egipto</span>
+    </div>
+  </div>
+
+  <div class="match-result" id="result-95">
+    <div class="no-result">Partido disputado. Resultado pendiente de carga.</div>
+  </div>
+
+  <div class="match-section">
+  <div class="grid">
+
+  <div class="column col-arg">
+    <div class="column-header"><div class="title">Gana Argentina</div><span class="count">23</span></div>
+    <div class="column-body">
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">1 &ndash; 0</span><span class="chip-count">1</span></div>
+        <div class="users"><span class="user-chip">Maximiliano Ruiz Diaz <span class="pts">(20)</span></span></div>
+      </div>
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">2 &ndash; 0</span><span class="chip-count">10</span></div>
+        <div class="users">
+          <span class="user-chip">Luis Duprat <span class="pts">(30)</span></span>
+          <span class="user-chip">Noly Moreno <span class="pts">(29)</span></span>
+          <span class="user-chip">Mart&iacute;n Baigorria <span class="pts">(29)</span></span>
+          <span class="user-chip">Rodrigo Tumbarello <span class="pts">(25)</span></span>
+          <span class="user-chip">Juan Martinez Garcia <span class="pts">(20)</span></span>
+          <span class="user-chip">Florencia <span class="pts">(21)</span></span>
+          <span class="user-chip">Guille Calde <span class="pts">(21)</span></span>
+          <span class="user-chip">Franco Pellegrino <span class="pts">(16)</span></span>
+          <span class="user-chip">elmasternero <span class="pts">(14)</span></span>
+          <span class="user-chip">Cristian Ochoa <span class="pts">(10)</span></span>
+        </div>
+      </div>
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">2 &ndash; 1</span><span class="chip-count">5</span></div>
+        <div class="users">
+          <span class="user-chip">Miguel M <span class="pts">(29)</span></span>
+          <span class="user-chip">Ruben777 <span class="pts">(24)</span></span>
+          <span class="user-chip">Esther M. Ribeiro <span class="pts">(23)</span></span>
+          <span class="user-chip">Karen Elizondo <span class="pts">(23)</span></span>
+          <span class="user-chip">Gerardo De Marco <span class="pts">(20)</span></span>
+        </div>
+      </div>
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">3 &ndash; 0</span><span class="chip-count">1</span></div>
+        <div class="users"><span class="user-chip">Mauricio Moreno <span class="pts">(25)</span></span></div>
+      </div>
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">3 &ndash; 1</span><span class="chip-count">5</span></div>
+        <div class="users">
+          <span class="user-chip">Gabriela Monaco <span class="pts">(29)</span></span>
+          <span class="user-chip">Carlos Sarmiento <span class="pts">(25)</span></span>
+          <span class="user-chip">Florencia Escortichini <span class="pts">(23)</span></span>
+          <span class="user-chip">Juan Manuel Lucero <span class="pts">(18)</span></span>
+          <span class="user-chip">Lucas Bejarano <span class="pts">(18)</span></span>
+        </div>
+      </div>
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">4 &ndash; 1</span><span class="chip-count">1</span></div>
+        <div class="users"><span class="user-chip">Gabriel Moreno <span class="pts">(24)</span></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column col-empate">
+    <div class="column-header"><div class="title">Empate</div><span class="count">1</span></div>
+    <div class="column-body">
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">1 &ndash; 1</span><span class="chip-count">1</span></div>
+        <div class="tiebreak-group" style="border:none;padding:0;margin:0">
+          <div class="tiebreak-label"><span class="dot dot-arg"></span> Cree que gana Argentina <span style="color:#a0a0b0;font-weight:400;margin-left:auto">Gustavo Pereyra</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column col-egy">
+    <div class="column-header"><div class="title">Gana Egipto</div><span class="count">0</span></div>
+    <div class="column-body">
+    </div>
+  </div>
+
+  </div>
+  </div>
+</div>
+
+<!-- ═══ MATCH 94: USA vs BELGIUM ═══ -->
 <div class="match-card">
 
   <div class="match-card-title">
@@ -341,39 +469,39 @@ body::before{
     <div class="column-body">
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">1 &ndash; 0</span><span class="chip-count">1</span></div>
-        <div class="users"><span class="user-chip">Gerardo De Marco <span class="pts">(19)</span></span></div>
+        <div class="users"><span class="user-chip">Gerardo De Marco <span class="pts">(20)</span></span></div>
       </div>
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">2 &ndash; 0</span><span class="chip-count">3</span></div>
         <div class="users">
-          <span class="user-chip">Rodrigo Tumbarello <span class="pts">(24)</span></span>
-          <span class="user-chip">Juan Manuel Lucero <span class="pts">(17)</span></span>
+          <span class="user-chip">Rodrigo Tumbarello <span class="pts">(25)</span></span>
+          <span class="user-chip">Juan Manuel Lucero <span class="pts">(18)</span></span>
           <span class="user-chip">Gustavo Pereyra <span class="pts">(18)</span></span>
         </div>
       </div>
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">2 &ndash; 1</span><span class="chip-count">10</span></div>
         <div class="users">
-          <span class="user-chip">Luis Duprat <span class="pts">(29)</span></span>
-          <span class="user-chip">Noly Moreno <span class="pts">(28)</span></span>
-          <span class="user-chip">Mart&iacute;n Baigorria <span class="pts">(26)</span></span>
-          <span class="user-chip">Mauricio Moreno <span class="pts">(24)</span></span>
-          <span class="user-chip">Ruben777 <span class="pts">(23)</span></span>
+          <span class="user-chip">Luis Duprat <span class="pts">(30)</span></span>
+          <span class="user-chip">Noly Moreno <span class="pts">(29)</span></span>
+          <span class="user-chip">Mart&iacute;n Baigorria <span class="pts">(29)</span></span>
+          <span class="user-chip">Mauricio Moreno <span class="pts">(25)</span></span>
+          <span class="user-chip">Ruben777 <span class="pts">(24)</span></span>
           <span class="user-chip">Esther M. Ribeiro <span class="pts">(23)</span></span>
-          <span class="user-chip">Karen Elizondo <span class="pts">(20)</span></span>
+          <span class="user-chip">Karen Elizondo <span class="pts">(23)</span></span>
           <span class="user-chip">Juan Martinez Garcia <span class="pts">(20)</span></span>
           <span class="user-chip">Lucas Bejarano <span class="pts">(18)</span></span>
-          <span class="user-chip">Franco Pellegrino <span class="pts">(15)</span></span>
-          <span class="user-chip">elmasternero <span class="pts">(13)</span></span>
+          <span class="user-chip">Franco Pellegrino <span class="pts">(16)</span></span>
+          <span class="user-chip">elmasternero <span class="pts">(14)</span></span>
         </div>
       </div>
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">3 &ndash; 1</span><span class="chip-count">1</span></div>
-        <div class="users"><span class="user-chip">Florencia Escortichini <span class="pts">(22)</span></span></div>
+        <div class="users"><span class="user-chip">Florencia Escortichini <span class="pts">(23)</span></span></div>
       </div>
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">3 &ndash; 2</span><span class="chip-count">1</span></div>
-        <div class="users"><span class="user-chip">Miguel M <span class="pts">(26)</span></span></div>
+        <div class="users"><span class="user-chip">Miguel M <span class="pts">(29)</span></span></div>
       </div>
     </div>
   </div>
@@ -401,7 +529,7 @@ body::before{
     <div class="column-body">
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">1 &ndash; 2</span><span class="chip-count">1</span></div>
-        <div class="users"><span class="user-chip">Florencia <span class="pts">(20)</span></span></div>
+        <div class="users"><span class="user-chip">Florencia <span class="pts">(21)</span></span></div>
       </div>
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">2 &ndash; 2</span><span class="chip-count">1</span></div>
@@ -411,7 +539,7 @@ body::before{
       </div>
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">0 &ndash; 2</span><span class="chip-count">1</span></div>
-        <div class="users"><span class="user-chip">Guille Calde <span class="pts">(19)</span></span></div>
+        <div class="users"><span class="user-chip">Guille Calde <span class="pts">(21)</span></span></div>
       </div>
     </div>
   </div>
@@ -420,6 +548,7 @@ body::before{
   </div>
 </div>
 
+<!-- ═══ MATCH 93: PORTUGAL vs ESPAÑA ═══ -->
 <div class="match-card">
 
   <div class="match-card-title">
@@ -490,7 +619,7 @@ body::before{
       </div>
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">3 &ndash; 2</span><span class="chip-count">1</span></div>
-        <div class="users"><span class="user-chip">Florencia <span class="pts">(20)</span></span></div>
+        <div class="users"><span class="user-chip">Florencia <span class="pts">(21)</span></span></div>
       </div>
     </div>
   </div>
@@ -503,14 +632,14 @@ body::before{
         <div class="users" style="margin-bottom:5px">
           <span class="user-chip">Esther M. Ribeiro <span class="pts">(23)</span></span>
           <span class="user-chip">Lucas Bejarano <span class="pts">(18)</span></span>
-          <span class="user-chip">Gabriel Moreno <span class="pts">(23)</span></span>
-          <span class="user-chip">Franco Pellegrino <span class="pts">(15)</span></span>
+          <span class="user-chip">Gabriel Moreno <span class="pts">(24)</span></span>
+          <span class="user-chip">Franco Pellegrino <span class="pts">(16)</span></span>
         </div>
         <div class="tiebreak-group">
           <div class="tiebreak-label"><span class="dot dot-por"></span> Creen que gana Portugal</div>
           <div class="users" style="margin-bottom:5px"><span class="user-chip">Esther M. Ribeiro <span class="pts">(23)</span></span><span class="user-chip">Lucas Bejarano <span class="pts">(18)</span></span></div>
           <div class="tiebreak-label"><span class="dot dot-esp"></span> Creen que gana Espa&ntilde;a</div>
-          <div class="users"><span class="user-chip">Gabriel Moreno <span class="pts">(23)</span></span><span class="user-chip">Franco Pellegrino <span class="pts">(15)</span></span></div>
+          <div class="users"><span class="user-chip">Gabriel Moreno <span class="pts">(24)</span></span><span class="user-chip">Franco Pellegrino <span class="pts">(16)</span></span></div>
         </div>
       </div>
     </div>
@@ -522,36 +651,36 @@ body::before{
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">0 &ndash; 1</span><span class="chip-count">3</span></div>
         <div class="users">
-          <span class="user-chip">Miguel M <span class="pts">(26)</span></span>
-          <span class="user-chip">Mart&iacute;n Baigorria <span class="pts">(26)</span></span>
-          <span class="user-chip">Karen Elizondo <span class="pts">(20)</span></span>
+          <span class="user-chip">Miguel M <span class="pts">(29)</span></span>
+          <span class="user-chip">Mart&iacute;n Baigorria <span class="pts">(29)</span></span>
+          <span class="user-chip">Karen Elizondo <span class="pts">(23)</span></span>
         </div>
       </div>
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">1 &ndash; 2</span><span class="chip-count">9</span></div>
         <div class="users">
-          <span class="user-chip">Luis Duprat <span class="pts">(29)</span></span>
-          <span class="user-chip">Gabriela Monaco <span class="pts">(28)</span></span>
-          <span class="user-chip">Mauricio Moreno <span class="pts">(24)</span></span>
-          <span class="user-chip">Ruben777 <span class="pts">(23)</span></span>
-          <span class="user-chip">Gerardo De Marco <span class="pts">(19)</span></span>
-          <span class="user-chip">Guille Calde <span class="pts">(19)</span></span>
-          <span class="user-chip">Juan M. Lucero <span class="pts">(17)</span></span>
-          <span class="user-chip">elmasternero <span class="pts">(13)</span></span>
-          <span class="user-chip">Cristian Ochoa <span class="pts">(9)</span></span>
+          <span class="user-chip">Luis Duprat <span class="pts">(30)</span></span>
+          <span class="user-chip">Gabriela Monaco <span class="pts">(29)</span></span>
+          <span class="user-chip">Mauricio Moreno <span class="pts">(25)</span></span>
+          <span class="user-chip">Ruben777 <span class="pts">(24)</span></span>
+          <span class="user-chip">Gerardo De Marco <span class="pts">(20)</span></span>
+          <span class="user-chip">Guille Calde <span class="pts">(21)</span></span>
+          <span class="user-chip">Juan M. Lucero <span class="pts">(18)</span></span>
+          <span class="user-chip">elmasternero <span class="pts">(14)</span></span>
+          <span class="user-chip">Cristian Ochoa <span class="pts">(10)</span></span>
         </div>
       </div>
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">1 &ndash; 3</span><span class="chip-count">3</span></div>
         <div class="users">
-          <span class="user-chip">Noly Moreno <span class="pts">(28)</span></span>
-          <span class="user-chip">Rodrigo Tumbarello <span class="pts">(24)</span></span>
-          <span class="user-chip">Carlos Sarmiento <span class="pts">(23)</span></span>
+          <span class="user-chip">Noly Moreno <span class="pts">(29)</span></span>
+          <span class="user-chip">Rodrigo Tumbarello <span class="pts">(25)</span></span>
+          <span class="user-chip">Carlos Sarmiento <span class="pts">(25)</span></span>
         </div>
       </div>
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">2 &ndash; 3</span><span class="chip-count">1</span></div>
-        <div class="users"><span class="user-chip">Florencia Escortichini <span class="pts">(22)</span></span></div>
+        <div class="users"><span class="user-chip">Florencia Escortichini <span class="pts">(23)</span></span></div>
       </div>
     </div>
   </div>
@@ -582,8 +711,8 @@ body::before{
 <div class="footer">
   <div class="results-line">
     <span>PRODEMOS OTRA VEZ ?</span><span class="sep">&bull;</span>
-    <span>Match 94 &middot; 07/07</span><span class="sep">&bull;</span>
-    <span>Final: <strong>EE.UU. 1</strong> &ndash; <strong>4 B&eacute;lgica</strong></span>
+    <span>Match 95 &middot; 07/07</span><span class="sep">&bull;</span>
+    <span>Argentina vs Egipto</span>
   </div>
   <div class="divider"></div>
   <div class="credit">
@@ -592,12 +721,73 @@ body::before{
   </div>
 </div>
 
-  </div><!-- /match-card -->
-
 </div><!-- /container -->
 
 <script>
+const RANKING = [
+  {pos:1, name:'Luis Duprat', pts:30},
+  {pos:2, name:'Miguel M', pts:29},
+  {pos:2, name:'Noly Moreno', pts:29},
+  {pos:2, name:'Mart&iacute;n Baigorria', pts:29},
+  {pos:2, name:'Gabriela Monaco', pts:29},
+  {pos:3, name:'Mauricio Moreno', pts:25},
+  {pos:3, name:'Rodrigo Tumbarello', pts:25},
+  {pos:3, name:'Carlos Sarmiento', pts:25},
+  {pos:4, name:'Ruben777', pts:24},
+  {pos:4, name:'Gabriel Moreno', pts:24},
+  {pos:5, name:'Esther M. Ribeiro', pts:23},
+  {pos:5, name:'Florencia Escortichini', pts:23},
+  {pos:5, name:'Karen Elizondo', pts:23},
+  {pos:6, name:'Florencia', pts:21},
+  {pos:6, name:'Guille Calde', pts:21},
+  {pos:7, name:'Maximiliano Ruiz Diaz', pts:20},
+  {pos:7, name:'Juan Martinez Garcia', pts:20},
+  {pos:7, name:'Gerardo De Marco', pts:20},
+  {pos:8, name:'Juan Manuel Lucero', pts:18},
+  {pos:8, name:'Lucas Bejarano', pts:18},
+  {pos:8, name:'Gustavo Pereyra', pts:18},
+  {pos:9, name:'Franco Pellegrino', pts:16},
+  {pos:10, name:'elmasternero', pts:14},
+  {pos:11, name:'Cristian Ochoa', pts:10}
+];
+
 // ── Render ranking modal from data ──
+function renderRanking() {
+  const body = document.getElementById('rankBody');
+  if (!body) return;
+  let html = '<table class="rank-table">';
+  html += '<thead><tr><th>#</th><th>Participante</th><th>Pts</th></tr></thead><tbody>';
+  for (const r of RANKING) {
+    const cls = r.pos <= 3 ? ' class="top-'+r.pos+'"' : '';
+    html += '<tr'+cls+'><td class="rank-pos">'+r.pos+'</td><td class="rank-name">'+r.name+'</td><td class="rank-pts">'+r.pts+'</td></tr>';
+  }
+  html += '</tbody></table>';
+  body.innerHTML = html;
+}
+document.addEventListener('DOMContentLoaded', renderRanking);
 </script>
+<style>
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);z-index:1000;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex}
+.modal{background:#18181b;border:1px solid rgba(255,255,255,.06);border-radius:20px;max-width:460px;width:100%;max-height:80vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.modal-header{display:flex;align-items:center;justify-content:space-between;padding:18px 20px 14px;border-bottom:1px solid rgba(255,255,255,.04)}
+.modal-header h2{font-size:16px;font-weight:700;color:#e4e4e7}
+.modal-header .close{background:none;border:none;color:#a0a0b0;font-size:24px;cursor:pointer;padding:4px;line-height:1}
+.modal-header .close:hover{color:#fff}
+.modal-body{padding:12px 20px 20px}
+.rank-table{width:100%;border-collapse:collapse}
+.rank-table th{font-size:10px;font-weight:600;color:#a0a0b0;text-transform:uppercase;letter-spacing:1.5px;padding:8px 6px;text-align:left;border-bottom:1px solid rgba(255,255,255,.04)}
+.rank-table th:last-child,.rank-table td:last-child{text-align:right}
+.rank-table td{padding:10px 6px;font-size:13px;border-bottom:1px solid rgba(255,255,255,.02)}
+.rank-pos{color:#a0a0b0;font-weight:500;width:36px}
+.rank-name{color:#e4e4e7;font-weight:500}
+.rank-pts{color:#fbbf24;font-weight:700;font-family:'JetBrains Mono',monospace}
+.top-1 .rank-pos{color:#ffd700}
+.top-1 .rank-name{color:#ffd700;font-weight:700}
+.top-2 .rank-pos{color:#c0c0c0}
+.top-2 .rank-name{color:#c0c0c0;font-weight:600}
+.top-3 .rank-pos{color:#cd7f32}
+.top-3 .rank-name{color:#cd7f32;font-weight:600}
+</style>
 </body>
 </html>
