@@ -79,9 +79,11 @@ body::before{
 /* ── Header ── */
 .header{text-align:center;margin-bottom:28px;animation:fadeDown .7s var(--ease-out-expo)}
 .header-brand{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:10px}
-.header-logo{width:56px;height:56px;border-radius:14px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 4px 12px rgba(255,200,50,.15))}
-.header h1{font-size:clamp(26px,5vw,42px);font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 30%,#fcd34d 60%,#fbbf24 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1}
-.header .sub{color:#a0a0b0;font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.header-logo{width:56px;height:56px;border-radius:14px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 4px 12px rgba(255,200,50,.15));animation:logoGlow 4s var(--ease-out-expo) infinite}
+@keyframes logoGlow{0%,100%{filter:drop-shadow(0 4px 12px rgba(255,200,50,.15))}50%{filter:drop-shadow(0 4px 24px rgba(255,200,50,.25))}}
+.header h1{font-size:clamp(26px,5vw,42px);font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 25%,#fcd34d 50%,#fbbf24 75%,#f59e0b 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1;background-size:200% auto;animation:shimmer 4s linear infinite}
+@keyframes shimmer{0%{background-position:0% center}50%{background-position:200% center}100%{background-position:0% center}}
+.header .sub{color:#a0a0b0;font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;animation:slideUp .6s var(--ease-out-expo) .2s both}
 .header .sub .highlight{color:#fbbf24}
 
 /* ── Next match widget ── */
@@ -112,18 +114,21 @@ body::before{
 .team-box.team-sui:hover{box-shadow:0 0 20px rgba(255,0,0,.15)}
 .team-box.team-col{background:linear-gradient(135deg,rgba(255,200,0,.3),rgba(200,160,0,.1));border:1px solid rgba(255,200,0,.2);color:#f0c040}
 .team-box.team-col:hover{box-shadow:0 0 20px rgba(255,200,0,.15)}
+.team-box .flag-emoji{font-size:22px;line-height:1;flex-shrink:0}
 .team-box svg.flag-mini{width:24px;height:16px;border-radius:3px;flex-shrink:0}
-.team-box .team-score{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:20px;background:rgba(0,0,0,.3);padding:0 10px;border-radius:8px;line-height:26px;letter-spacing:.5px}
+.team-box .team-score{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:20px;background:rgba(0,0,0,.3);padding:0 10px;border-radius:8px;line-height:26px;letter-spacing:.5px;transition:all .3s var(--ease-spring)}
+.team-box:hover .team-score{transform:scale(1.08);background:rgba(0,0,0,.4)}
 .team-box.team-por .team-score{color:#f4f4f5}
 .team-box.team-esp .team-score{color:#f4f4f5}
 .team-box.team-arg .team-score{color:#f4f4f5}
 .team-box.team-egy .team-score{color:#f4f4f5}
 .team-box.team-sui .team-score{color:#f4f4f5}
 .team-box.team-col .team-score{color:#f4f4f5}
-.match-badge .vs{color:#a0a0b0;font-size:11px;font-weight:600;letter-spacing:2px;padding:0 4px}
+.match-badge .vs{color:#a0a0b0;font-size:11px;font-weight:600;letter-spacing:2px;padding:0 6px;animation:vsPulse 3s var(--ease-out-expo) infinite}
+@keyframes vsPulse{0%,100%{opacity:.6}50%{opacity:1}}
 
 /* ── Match card container ── */
-.match-card{background:rgba(18,18,22,.3);border:1px solid rgba(255,255,255,.04);border-radius:20px;padding:24px 22px 22px;margin-bottom:28px;animation:fadeUp .6s var(--ease-out-expo) .1s both}
+.match-card{background:rgba(18,18,22,.3);border:1px solid rgba(255,255,255,.04);border-radius:20px;padding:24px 22px 22px;margin-bottom:28px;animation:fadeUp .7s var(--ease-out-expo) both}
 .match-card-title{text-align:center;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.04)}
 .match-card-title .phase{font-size:11px;font-weight:600;color:#a0a0b0;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:2px}
 .match-card-title .date{font-size:11px;color:#909098}
@@ -134,7 +139,7 @@ body::before{
   padding:8px 18px;border-radius:10px;font-size:13px;font-weight:600;
   font-family:'Geist','Inter',sans-serif;cursor:pointer;transition:all .2s var(--ease-spring);text-decoration:none;border:1px solid;
 }
-.btn-header:hover{transform:translateY(-1px)}
+.btn-header:hover{transform:translateY(-2px);box-shadow:0 4px 20px rgba(128,128,128,.08)}
 .btn-header svg{width:15px;height:15px;flex-shrink:0}
 .btn-fixture{color:#fbbf24;background:rgba(251,191,36,.08);border-color:rgba(251,191,36,.15)}
 .btn-fixture:hover{background:rgba(251,191,36,.15);border-color:rgba(251,191,36,.25);box-shadow:0 4px 16px rgba(251,191,36,.1)}
@@ -151,7 +156,7 @@ body::before{
 .match-section:last-child{border-bottom:none;margin-bottom:0}
 
 /* ── 3-column grid ── */
-.grid{display:grid;grid-template-columns:1.4fr .7fr 1fr;gap:18px}
+.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
 @media(max-width:960px){.grid{grid-template-columns:1fr 1fr;gap:16px}}
 @media(max-width:620px){.grid{grid-template-columns:1fr;gap:14px}}
 
@@ -192,7 +197,11 @@ body::before{
 .col-col .column-header .title{color:#f0c040}
 .col-col .column-header::after{background:linear-gradient(90deg,transparent,rgba(255,200,0,.35),transparent)}
 
-.column-body{padding:14px 16px 18px}
+.column-body{padding:14px 16px 18px;position:relative}
+.column-body::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;border-radius:0 0 2px 2px}
+.col-portugal .column-body::before{background:linear-gradient(90deg,rgba(0,153,76,.3),rgba(0,153,76,.05))}
+.col-empate .column-body::before{background:linear-gradient(90deg,rgba(232,196,90,.2),rgba(232,196,90,.03))}
+.col-espana .column-body::before{background:linear-gradient(90deg,rgba(198,11,30,.25),rgba(198,11,30,.03))}
 
 /* ── Subgroup cards ── */
 .subgroup{
@@ -275,6 +284,7 @@ body::before{
 .footer .credit .name:hover{opacity:.8}
 
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes slideUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 
@@ -337,18 +347,14 @@ body::before{
 
   <div class="match-badge">
     <div class="team-box team-sui">
-      <svg class="flag-mini" viewBox="0 0 28 19" xmlns="http://www.w3.org/2000/svg">
-        <rect width="28" height="19" fill="#ff0000"/><rect x="9" y="3" width="10" height="13" fill="#fff"/>
-      </svg>
+      <span class="flag-emoji">🇨🇭</span>
       <span>Suiza</span>
       <span class="team-score">0</span>
     </div>
     <span class="vs">VS</span>
       <span style="color:#a78bfa;font-size:10px;font-weight:600;letter-spacing:.5px">(4-3 pen)</span>
     <div class="team-box team-col">
-      <svg class="flag-mini" viewBox="0 0 28 19" xmlns="http://www.w3.org/2000/svg">
-        <rect width="28" height="19" fill="#ffcc00"/><rect y="6" width="28" height="7" fill="#003893"/><polygon points="12.5,0 12.5,19" fill="#ce1126"/><polygon points="14.5,0 14.5,19" fill="#ce1126"/>
-      </svg>
+      <span class="flag-emoji">🇨🇴</span>
       <span>Colombia</span>
       <span class="team-score">0</span>
     </div>
@@ -392,7 +398,7 @@ body::before{
   </div>
 
   <div class="column col-empate">
-    <div class="column-header"><div class="title"><span class="col-icon"></span> Empate</div><span class="count">4</span></div>
+    <div class="column-header"><div class="title"><span class="flag-emoji">⚪</span> Empate</div><span class="count">4</span></div>
     <div class="column-body">
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">1 &ndash; 1</span><span class="chip-count">3</span></div>
@@ -473,19 +479,13 @@ body::before{
 
   <div class="match-badge">
     <div class="team-box team-por">
-      <svg class="flag-mini" viewBox="0 0 28 19" xmlns="http://www.w3.org/2000/svg">
-        <rect width="28" height="19" fill="#75aadb"/><rect y="2" width="28" height="5" fill="#fff"/>
-        <rect y="12" width="28" height="5" fill="#fff"/>
-      </svg>
+      <span class="flag-emoji">🇦🇷</span>
       <span>Argentina</span>
       <span class="team-score">3</span>
     </div>
     <span class="vs">VS</span>
     <div class="team-box team-esp">
-      <svg class="flag-mini" viewBox="0 0 28 19" xmlns="http://www.w3.org/2000/svg">
-        <rect width="28" height="19" fill="#ce1126"/><rect y="2.5" width="28" height="3.5" fill="#fff"/><rect y="9.5" width="28" height="3.5" fill="#fff"/>
-        <circle cx="9" cy="9.5" r="3.8" fill="#ce1126"/><circle cx="9" cy="9.5" r="2.8" fill="#fff"/><circle cx="9" cy="9.5" r="1.8" fill="#ce1126"/>
-      </svg>
+      <span class="flag-emoji">🇪🇬</span>
       <span>Egipto</span>
       <span class="team-score">2</span>
     </div>
@@ -502,7 +502,7 @@ body::before{
   <div class="grid">
 
   <div class="column col-portugal">
-    <div class="column-header"><div class="title"><span class="col-icon"></span> Gana Argentina</div><span class="count">23</span></div>
+    <div class="column-header"><div class="title"><span class="flag-emoji">🇦🇷</span> Gana Argentina</div><span class="count">23</span></div>
     <div class="column-body">
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">1 &ndash; 0</span><span class="chip-count">1</span></div>
@@ -555,7 +555,7 @@ body::before{
   </div>
 
   <div class="column col-empate">
-    <div class="column-header"><div class="title"><span class="col-icon"></span> Empate</div><span class="count">1</span></div>
+    <div class="column-header"><div class="title"><span class="flag-emoji">⚪</span> Empate</div><span class="count">1</span></div>
     <div class="column-body">
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">1 &ndash; 1</span><span class="chip-count">1</span></div>
@@ -567,7 +567,7 @@ body::before{
   </div>
 
   <div class="column col-espana">
-    <div class="column-header"><div class="title"><span class="col-icon"></span> Gana Egipto</div><span class="count">0</span></div>
+    <div class="column-header"><div class="title"><span class="flag-emoji">🇪🇬</span> Gana Egipto</div><span class="count">0</span></div>
     <div class="column-body">
       <div class="scorers empty">Nadie vot&oacute; esta opci&oacute;n</div>
     </div>
@@ -586,18 +586,13 @@ body::before{
 
   <div class="match-badge">
     <div class="team-box team-por">
-      <svg class="flag-mini" viewBox="0 0 28 19" xmlns="http://www.w3.org/2000/svg">
-        <rect width="28" height="19" fill="#3b3b6d"/><rect width="7.5" height="19" fill="#fff"/>
-        <rect x="7.5" width="13" height="19" fill="#b22234"/><rect x="7.5" y="1.5" width="13" height="2.5" fill="#fff"/><rect x="7.5" y="6.5" width="13" height="2.5" fill="#fff"/><rect x="7.5" y="11.5" width="13" height="2.5" fill="#fff"/><rect x="7.5" y="16.5" width="13" height="2.5" fill="#fff"/>
-      </svg>
+      <span class="flag-emoji">🇺🇸</span>
       <span>Estados Unidos</span>
       <span class="team-score">1</span>
     </div>
     <span class="vs">VS</span>
     <div class="team-box team-esp">
-      <svg class="flag-mini" viewBox="0 0 28 19" xmlns="http://www.w3.org/2000/svg">
-        <rect width="28" height="19" fill="#000"/><rect y="2" width="28" height="5" fill="#fdda24"/><rect y="12" width="28" height="5" fill="#fdda24"/><rect y="7" width="28" height="5" fill="#ef3340"/>
-      </svg>
+      <span class="flag-emoji">🇧🇪</span>
       <span>B&eacute;lgica</span>
       <span class="team-score">4</span>
     </div>
@@ -616,7 +611,7 @@ body::before{
   <div class="grid">
 
   <div class="column col-portugal">
-    <div class="column-header"><div class="title"><span class="col-icon"></span> Gana EE.UU.</div><span class="count">18</span></div>
+    <div class="column-header"><div class="title"><span class="flag-emoji">🇺🇸</span> Gana EE.UU.</div><span class="count">18</span></div>
     <div class="column-body">
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">1 &ndash; 0</span><span class="chip-count">1</span></div>
@@ -658,7 +653,7 @@ body::before{
   </div>
 
   <div class="column col-empate">
-    <div class="column-header"><div class="title"><span class="col-icon"></span> Empate</div><span class="count">3</span></div>
+    <div class="column-header"><div class="title"><span class="flag-emoji">⚪</span> Empate</div><span class="count">3</span></div>
     <div class="column-body">
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">1 &ndash; 1</span><span class="chip-count">2</span></div>
@@ -709,18 +704,13 @@ body::before{
 
   <div class="match-badge">
     <div class="team-box team-por">
-      <svg class="flag-mini" viewBox="0 0 28 19" xmlns="http://www.w3.org/2000/svg">
-        <rect width="28" height="19" fill="#060"/><rect width="9.3" height="19" fill="#da291c"/>
-        <circle cx="9.5" cy="9.5" r="4.5" fill="#ffd700"/><circle cx="9.5" cy="9.5" r="3.5" fill="#da291c"/><circle cx="9.5" cy="9.5" r="2.5" fill="#ffd700"/>
-      </svg>
+      <span class="flag-emoji">🇵🇹</span>
       <span>Portugal</span>
       <span class="team-score">0</span>
     </div>
     <span class="vs">VS</span>
     <div class="team-box team-esp">
-      <svg class="flag-mini" viewBox="0 0 28 19" xmlns="http://www.w3.org/2000/svg">
-        <rect width="28" height="19" fill="#c60b1e"/><rect y="3.2" width="28" height="5.5" fill="#ffc400"/><rect y="10.3" width="28" height="5.5" fill="#ffc400"/>
-      </svg>
+      <span class="flag-emoji">🇪🇸</span>
       <span>Espa&ntilde;a</span>
       <span class="team-score">1</span>
     </div>
@@ -755,7 +745,7 @@ body::before{
   <div class="grid">
 
   <div class="column col-portugal">
-    <div class="column-header"><div class="title"><span class="col-icon"></span> Gana Portugal</div><span class="count">4</span></div>
+    <div class="column-header"><div class="title"><span class="flag-emoji">🇵🇹</span> Gana Portugal</div><span class="count">4</span></div>
     <div class="column-body">
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">2 &ndash; 0</span><span class="chip-count">1</span></div>
@@ -776,7 +766,7 @@ body::before{
   </div>
 
   <div class="column col-empate">
-    <div class="column-header"><div class="title"><span class="col-icon"></span> Empate</div><span class="count">4</span></div>
+    <div class="column-header"><div class="title"><span class="flag-emoji">⚪</span> Empate</div><span class="count">4</span></div>
     <div class="column-body">
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">2 &ndash; 2</span><span class="chip-count">4</span></div>
