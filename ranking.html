@@ -49,8 +49,6 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(ellips
 .rank-table .name{font-weight:500;color:#e4e4e7}
 .rank-table .pts{font-family:'JetBrains Mono',monospace;font-weight:700;color:#a78bfa;font-size:14px;text-align:right}
 .rank-table .medal{font-size:14px;width:24px;text-align:center}
-.rank-table .self td{background:rgba(251,191,36,.04)}
-.rank-table .self .name{color:#fbbf24;font-weight:600}
 
 @keyframes fadeDown{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
@@ -137,7 +135,7 @@ const RANKING = [
 const medals = { 1: '\u{1F947}', 2: '\u{1F948}', 3: '\u{1F949}' };
 const body = document.getElementById('rankBody');
 body.innerHTML = RANKING.map(r => {
-  const self = r.name === 'Juan Martinez Garcia' ? ' class="self"' : '';
+  const self = '';
   const medal = medals[r.pos] || '';
   const posClass = r.pos === 1 ? 'gold' : r.pos === 2 ? 'silver' : r.pos === 3 ? 'bronze' : '';
   return `<tr${self}><td class="medal">${medal}</td><td class="pos ${posClass}">${r.pos}</td><td class="name">${r.name}</td><td class="pts">${r.pts}</td></tr>`;
