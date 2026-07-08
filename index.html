@@ -3,66 +3,76 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PRODEMOS OTRA VEZ — Pronosticos, Resultados y Ranking | ProdeCA Mundial 2026</title>
-<meta name="description" content="Seguimiento de pronosticos del torneo de amigos PRODEMOS OTRA VEZ en ProdeCA. Resultados, aciertos, puntos y ranking de participantes para el Mundial 2026.">
-<meta name="keywords" content="prode, mundial 2026, prodeca, pronosticos, suiza vs colombia, octavos de final, torneo de amigos, francia vs marruecos">
+<title>PRODEMOS OTRA VEZ - Pronosticos, Resultados y Ranking | ProdeCA Mundial 2026</title>
+<meta name="description" content="Seguimiento de pronosticos del torneo de amigos PRODEMOS OTRA VEZ en ProdeCA. Resultados, aciertos, puntos y ranking.">
 <link rel="canonical" href="https://juanaustral.github.io/PRODEMOS-2026/">
 
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://juanaustral.github.io/PRODEMOS-2026/">
-<meta property="og:title" content="PRODEMOS OTRA VEZ — Torneo de Pronosticos Mundial 2026">
-<meta property="og:description" content="Pronosticos, resultados y ranking del torneo de amigos PRODEMOS OTRA VEZ. Seguimiento completo de aciertos y puntajes de todos los participantes en el Mundial 2026.">
+<meta property="og:title" content="PRODEMOS OTRA VEZ - Torneo de Pronosticos Mundial 2026">
+<meta property="og:description" content="Pronosticos, resultados y ranking del torneo de amigos PRODEMOS OTRA VEZ en el Mundial 2026.">
 <meta property="og:image" content="https://juanaustral.github.io/PRODEMOS-2026/logo-prodeca.png">
-<meta property="og:image:width" content="508">
-<meta property="og:image:height" content="491">
 <meta property="og:locale" content="es_AR">
-
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PRODEMOS OTRA VEZ — Torneo de Pronosticos Mundial 2026">
-<meta name="twitter:description" content="Pronosticos, resultados y ranking del torneo de amigos PRODEMOS OTRA VEZ para el Mundial 2026 en ProdeCA.">
-<meta name="twitter:image" content="https://juanaustral.github.io/PRODEMOS-2026/logo-prodeca.png">
 
-<!-- Schema.org structured data -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SportsEvent",
   "name": "PRODEMOS OTRA VEZ - Octavos de final Mundial 2026",
-  "description": "Votaciones del torneo de amigos PRODEMOS OTRA VEZ. Pronosticos, resultados y ranking de participantes para el Mundial 2026 en ProdeCA.",
-  "url": "https://juanaustral.github.io/PRODEMOS-2026/",
   "sport": "Soccer",
-  "competitor": [
-    {"@type": "SportsTeam", "name": "Switzerland"},
-    {"@type": "SportsTeam", "name": "Colombia"}
-  ],
-  "superEvent": {
-    "@type": "SportsEvent",
-    "name": "Mundial 2026",
-    "description": "Copa Mundial de la FIFA 2026"
-  }
+  "superEvent": { "@type": "SportsEvent", "name": "Mundial 2026" }
 }
 </script>
 
+<!-- ═══════════════════ FONTS ═══════════════════ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ═══════════════════ GSAP + Lenis ═══════════════════ -->
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800;900&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
-
+/* ═══════ RESET ═══════ */
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--ease-spring:cubic-bezier(.22,.61,.36,1);--var(--ease-out-expo)-expo:cubic-bezier(.16,1,.3,1);--radius-sm:10px;--radius-md:16px;--radius-lg:24px}
+:root{
+  --ease-spring:cubic-bezier(.22,.61,.36,1);
+  --ease-out-expo:cubic-bezier(.16,1,.3,1);
+  --ease-apple:cubic-bezier(.25,.1,.25,1);
+  --radius-sm:10px;--radius-md:16px;--radius-lg:24px;
+  --amber:#fbbf24;--amber-dim:#f59e0b;
+  --text:#e4e4e7;--text-dim:#a0a0b0;--text-dimmer:#70707a;
+  --bg:#07070a;--surface:rgba(18,18,22,.5);--border:rgba(255,255,255,.04);
+}
 
+/* ═══════ BASE ═══════ */
 body{
-  font-family:'Geist','Inter',-apple-system,BlinkMacSystemFont,sans-serif;
-  background:#07070a;color:#e4e4e7;min-height:100vh;position:relative;overflow-x:hidden;
+  font-family:'Geist',system-ui,-apple-system,sans-serif;
+  background:var(--bg);color:var(--text);min-height:100vh;
+  position:relative;overflow-x:hidden;
 }
-body::after{content:'';position:fixed;inset:0;opacity:.015;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");pointer-events:none;z-index:0}
+
+/* Mesh gradient background */
 body::before{
-  content:'';position:fixed;inset:0;
-  background:radial-gradient(ellipse 70% 50% at 15% 25%,rgba(20,80,160,.06),transparent),radial-gradient(ellipse 60% 40% at 85% 75%,rgba(180,40,40,.05),transparent),radial-gradient(ellipse 50% 60% at 50% 50%,rgba(255,200,50,.03),transparent);
-  pointer-events:none;z-index:0;
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
+  background:
+    radial-gradient(ellipse 65% 45% at 10% 20%,rgba(251,191,36,.04),transparent),
+    radial-gradient(ellipse 55% 40% at 90% 80%,rgba(167,139,250,.03),transparent),
+    radial-gradient(ellipse 45% 55% at 50% 50%,rgba(255,200,50,.025),transparent);
 }
+
+/* Noise grain texture */
+body::after{
+  content:'';position:fixed;inset:0;pointer-events:none;z-index:9998;
+  opacity:.012;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ═══════ FLOATING TROPHIES ═══════ */
 .floating-cups{position:fixed;inset:0;pointer-events:none;z-index:0;overflow:hidden}
-.floating-cup{position:absolute;opacity:.035;animation:floatCup 20s ease-in-out infinite;object-fit:contain;filter:brightness(1.2) drop-shadow(0 0 8px rgba(251,191,36,.08))}
+.floating-cup{position:absolute;opacity:.03;animation:floatCup 20s ease-in-out infinite}
 .cup-1{top:3%;left:2%;width:65px;animation-delay:0s;animation-duration:25s}
 .cup-2{top:55%;right:3%;width:50px;animation-delay:-7s;animation-duration:22s}
 .cup-3{bottom:5%;left:8%;width:40px;animation-delay:-14s;animation-duration:28s}
@@ -74,271 +84,267 @@ body::before{
   66%{transform:translateY(-8px) rotate(-2deg)}
 }
 
+/* ═══════ LAYOUT ═══════ */
 .container{max-width:1160px;margin:0 auto;padding:32px 20px;position:relative;z-index:1}
 
-/* ── Header ── */
-.header{text-align:center;margin-bottom:28px;animation:fadeDown .7s var(--ease-out-expo)}
+/* ═══════ HEADER ═══════ */
+.header{text-align:center;margin-bottom:28px;position:relative}
 .header-brand{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:10px}
-.header-logo{width:56px;height:56px;border-radius:14px;object-fit:contain;flex-shrink:0;filter:drop-shadow(0 4px 12px rgba(255,200,50,.15));animation:logoGlow 4s var(--ease-out-expo) infinite}
-@keyframes logoGlow{0%,100%{filter:drop-shadow(0 4px 12px rgba(255,200,50,.15))}50%{filter:drop-shadow(0 4px 24px rgba(255,200,50,.25))}}
-.header h1{font-size:clamp(26px,5vw,42px);font-weight:900;letter-spacing:-1px;background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 25%,#fcd34d 50%,#fbbf24 75%,#f59e0b 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1;background-size:200% auto;animation:shimmer 4s linear infinite}
+.header-logo{width:56px;height:56px;border-radius:14px;object-fit:contain;filter:drop-shadow(0 4px 12px rgba(255,200,50,.2))}
+.header h1{
+  font-size:clamp(26px,5vw,42px);font-weight:900;letter-spacing:-1.5px;line-height:1.1;
+  background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 25%,#fcd34d 50%,#fbbf24 75%,#f59e0b 100%);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  background-size:200% auto;animation:shimmer 4s linear infinite;
+  filter:drop-shadow(0 2px 20px rgba(251,191,36,.08));
+}
 @keyframes shimmer{0%{background-position:0% center}50%{background-position:200% center}100%{background-position:0% center}}
-.header .sub{color:#a0a0b0;font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px;animation:slideUp .6s var(--ease-out-expo) .2s both}
-.header .sub .highlight{color:#fbbf24}
+.header-sub{color:var(--text-dim);font-size:12px;font-weight:500;letter-spacing:2px;text-transform:uppercase;margin-bottom:14px}
+.header-sub .hl{color:var(--amber)}
 
-/* ── Next match widget ── */
-.next-match{margin-bottom:20px;padding:14px 20px;background:rgba(251,191,36,.06);border:1px solid rgba(251,191,36,.12);border-radius:14px;text-align:center;animation:fadeDown .7s var(--ease-out-expo) .05s both;transition:border-color .2s,box-shadow .2s}
-.next-match:hover{border-color:rgba(251,191,36,.25);box-shadow:0 0 30px rgba(251,191,36,.08)}
-.next-match .label{font-size:10px;font-weight:600;color:#fbbf24;text-transform:uppercase;letter-spacing:2px;margin-bottom:3px}
-.next-match .match{font-size:15px;font-weight:700;color:#e4e4e7;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
-.next-match .match .vs-sm{color:#a0a0b0;font-size:11px;font-weight:500;letter-spacing:1px}
-.next-match .time{font-size:12px;color:#a78bfa;font-weight:600;margin-top:4px}
-
-.match-badge{
-  display:inline-flex;align-items:center;gap:14px;
-  background:rgba(20,20,24,.7);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  border:1px solid rgba(255,255,255,.06);border-radius:18px;
-  padding:14px 28px;box-shadow:0 8px 40px rgba(0,0,0,.4);
+/* ═══════ NAV BUTTONS ═══════ */
+.nav-bar{display:flex;align-items:center;justify-content:center;gap:10px;margin:18px 0 24px;flex-wrap:wrap}
+.nav-btn{
+  display:inline-flex;align-items:center;gap:7px;padding:9px 20px;border-radius:10px;
+  font-size:13px;font-weight:600;font-family:inherit;cursor:pointer;
+  transition:all .25s var(--ease-spring);text-decoration:none;border:1px solid;
+  position:relative;overflow:hidden;
 }
-.team-box{display:flex;align-items:center;gap:10px;padding:8px 18px 8px 12px;border-radius:12px;font-weight:600;font-size:14px;transition:transform .2s,box-shadow .2s}
-.team-box:hover{transform:scale(1.03)}
-.team-box.team-por{background:linear-gradient(135deg,rgba(0,102,51,.35),rgba(0,80,40,.15));border:1px solid rgba(0,153,76,.2);color:#6fcf97}
-.team-box.team-por:hover{box-shadow:0 0 20px rgba(0,153,76,.15)}
-.team-box.team-esp{background:linear-gradient(135deg,rgba(198,11,30,.3),rgba(160,10,25,.12));border:1px solid rgba(198,11,30,.2);color:#f28b82}
-.team-box.team-esp:hover{box-shadow:0 0 20px rgba(198,11,30,.15)}
-.team-box.team-arg{background:linear-gradient(135deg,rgba(116,172,223,.3),rgba(116,172,223,.1));border:1px solid rgba(116,172,223,.2);color:#75aadb}
-.team-box.team-arg:hover{box-shadow:0 0 20px rgba(116,172,223,.15)}
-.team-box.team-egy{background:linear-gradient(135deg,rgba(200,30,30,.3),rgba(185,30,30,.1));border:1px solid rgba(200,30,30,.2);color:#e06060}
-.team-box.team-egy:hover{box-shadow:0 0 20px rgba(200,30,30,.15)}
-.team-box.team-sui{background:linear-gradient(135deg,rgba(255,0,0,.3),rgba(200,0,0,.1));border:1px solid rgba(255,0,0,.2);color:#ff6060}
-.team-box.team-sui:hover{box-shadow:0 0 20px rgba(255,0,0,.15)}
-.team-box.team-col{background:linear-gradient(135deg,rgba(255,200,0,.3),rgba(200,160,0,.1));border:1px solid rgba(255,200,0,.2);color:#f0c040}
-.team-box.team-col:hover{box-shadow:0 0 20px rgba(255,200,0,.15)}
-.team-box .flag-emoji{font-size:22px;line-height:1;flex-shrink:0}
-.team-box svg.flag-mini{width:24px;height:16px;border-radius:3px;flex-shrink:0}
-.team-box .team-score{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:20px;background:rgba(0,0,0,.3);padding:0 10px;border-radius:8px;line-height:26px;letter-spacing:.5px;transition:all .3s var(--ease-spring)}
-.team-box:hover .team-score{transform:scale(1.08);background:rgba(0,0,0,.4)}
-.team-box.team-por .team-score{color:#f4f4f5}
-.team-box.team-esp .team-score{color:#f4f4f5}
-.team-box.team-arg .team-score{color:#f4f4f5}
-.team-box.team-egy .team-score{color:#f4f4f5}
-.team-box.team-sui .team-score{color:#f4f4f5}
-.team-box.team-col .team-score{color:#f4f4f5}
-.match-badge .vs{color:#a0a0b0;font-size:11px;font-weight:600;letter-spacing:2px;padding:0 6px;animation:vsPulse 3s var(--ease-out-expo) infinite}
-@keyframes vsPulse{0%,100%{opacity:.6}50%{opacity:1}}
-
-/* ── Match card container ── */
-.match-card{background:rgba(18,18,22,.3);border:1px solid rgba(255,255,255,.04);border-radius:20px;padding:24px 22px 22px;margin-bottom:28px;animation:fadeUp .7s var(--ease-out-expo) both}
-.match-card-title{text-align:center;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid rgba(255,255,255,.04)}
-.match-card-title .phase{font-size:11px;font-weight:600;color:#a0a0b0;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:2px}
-.match-card-title .date{font-size:11px;color:#909098}
-
-.header-actions{display:flex;align-items:center;justify-content:center;gap:12px;margin:18px 0 24px;flex-wrap:wrap}
-.btn-header{
-  display:inline-flex;align-items:center;gap:7px;
-  padding:8px 18px;border-radius:10px;font-size:13px;font-weight:600;
-  font-family:'Geist','Inter',sans-serif;cursor:pointer;transition:all .2s var(--ease-spring);text-decoration:none;border:1px solid;
+.nav-btn::before{
+  content:'';position:absolute;inset:0;border-radius:10px;
+  background:linear-gradient(135deg,rgba(255,255,255,.08),transparent);
+  opacity:0;transition:opacity .25s;
 }
-.btn-header:hover{transform:translateY(-2px);box-shadow:0 4px 20px rgba(128,128,128,.08)}
-.btn-header svg{width:15px;height:15px;flex-shrink:0}
-.btn-fixture{color:#fbbf24;background:rgba(251,191,36,.08);border-color:rgba(251,191,36,.15)}
-.btn-fixture:hover{background:rgba(251,191,36,.15);border-color:rgba(251,191,36,.25);box-shadow:0 4px 16px rgba(251,191,36,.1)}
-.btn-matches{color:#6fcf97;background:rgba(111,207,151,.08);border-color:rgba(111,207,151,.15)}
-.btn-matches:hover{background:rgba(111,207,151,.15);border-color:rgba(111,207,151,.25);box-shadow:0 4px 16px rgba(111,207,151,.1)}
-.btn-ranking{color:#a78bfa;background:rgba(167,139,250,.08);border-color:rgba(167,139,250,.15)}
-.btn-ranking:hover{background:rgba(167,139,250,.15);border-color:rgba(167,139,250,.25);box-shadow:0 4px 16px rgba(167,139,250,.1)}
+.nav-btn:hover::before{opacity:1}
+.nav-btn:hover{transform:translateY(-2px)}
+.nav-btn svg{width:15px;height:15px;flex-shrink:0}
 
-.tournament-info{text-align:center;margin:14px 0 24px;color:#a0a0b0;font-size:12px;font-weight:500;animation:fadeDown .7s var(--ease-out-expo) .1s both;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap}
+.nav-amber{color:var(--amber);background:rgba(251,191,36,.08);border-color:rgba(251,191,36,.15)}
+.nav-amber:hover{background:rgba(251,191,36,.15);border-color:rgba(251,191,36,.25);box-shadow:0 4px 20px rgba(251,191,36,.1)}
+.nav-green{color:#6fcf97;background:rgba(111,207,151,.08);border-color:rgba(111,207,151,.15)}
+.nav-green:hover{background:rgba(111,207,151,.15);border-color:rgba(111,207,151,.25);box-shadow:0 4px 20px rgba(111,207,151,.1)}
+.nav-purple{color:#a78bfa;background:rgba(167,139,250,.08);border-color:rgba(167,139,250,.15)}
+.nav-purple:hover{background:rgba(167,139,250,.15);border-color:rgba(167,139,250,.25);box-shadow:0 4px 20px rgba(167,139,250,.1)}
+
+/* ═══════ TOURNAMENT INFO ═══════ */
+.tournament-info{
+  text-align:center;margin:14px 0 24px;color:var(--text-dim);font-size:12px;font-weight:500;
+  display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;
+}
 .tournament-info .sep{opacity:.25;font-size:8px}
 
-/* ── Match section ── */
-.match-section{margin-bottom:0;padding-bottom:0;border-bottom:none}
-.match-section:last-child{border-bottom:none;margin-bottom:0}
-
-/* ── 3-column grid ── */
-.grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
-@media(max-width:960px){.grid{grid-template-columns:1fr 1fr;gap:16px}}
-@media(max-width:620px){.grid{grid-template-columns:1fr;gap:14px}}
-
-/* ── Column card ── */
-.column{
-  border-radius:16px;overflow:hidden;
-  background:rgba(18,18,22,.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
-  border:1px solid rgba(255,255,255,.04);
-  animation:fadeUp .6s var(--ease-out-expo) both;
+/* ═══════ NEXT MATCH ═══════ */
+.next-match{
+  margin-bottom:20px;padding:16px 24px;
+  background:rgba(251,191,36,.04);border:1px solid rgba(251,191,36,.1);
+  border-radius:var(--radius-md);text-align:center;position:relative;overflow:hidden;
+  transition:border-color .3s,box-shadow .3s;
 }
-.column:nth-child(1){animation-delay:.08s}
-.column:nth-child(2){animation-delay:.18s}
-.column:nth-child(3){animation-delay:.28s}
+.next-match:hover{border-color:rgba(251,191,36,.2);box-shadow:0 0 40px rgba(251,191,36,.05)}
+.next-match .label{font-size:10px;font-weight:600;color:var(--amber);text-transform:uppercase;letter-spacing:2px;margin-bottom:4px}
+.next-match .teams{font-size:16px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.next-match .teams .vs{color:var(--text-dim);font-size:11px;font-weight:500;letter-spacing:1px}
+.next-match .time{font-size:12px;color:#a78bfa;font-weight:600;margin-top:6px;display:flex;align-items:center;justify-content:center;gap:6px}
+.next-match .time svg{width:12px;height:12px}
 
-.column-header{padding:14px 16px 12px;text-align:center;position:relative;overflow:hidden}
-.column-header::after{content:'';position:absolute;bottom:0;left:8%;right:8%;height:2px;border-radius:2px}
-.column-header .icon{font-size:18px;display:block;margin-bottom:1px}
-.column-header .title{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:6px}
-.column-header .count{display:block;font-size:10px;font-weight:500;margin-top:3px;opacity:.55;background:rgba(255,255,255,.04);padding:1px 8px;border-radius:10px;display:inline-block}
-
-.col-portugal .column-header{background:linear-gradient(180deg,rgba(0,90,45,.25),transparent)}
-.col-portugal .column-header .title{color:#6fcf97}
-.col-portugal .column-header::after{background:linear-gradient(90deg,transparent,rgba(0,153,76,.4),transparent)}
-.col-arg .column-header{background:linear-gradient(180deg,rgba(116,172,223,.2),transparent)}
-.col-arg .column-header .title{color:#75aadb}
-.col-arg .column-header::after{background:linear-gradient(90deg,transparent,rgba(116,172,223,.35),transparent)}
-.col-empate .column-header{background:linear-gradient(180deg,rgba(180,140,30,.18),transparent)}
-.col-empate .column-header .title{color:#e8c45a}
-.col-empate .column-header::after{background:linear-gradient(90deg,transparent,rgba(232,196,90,.3),transparent)}
-.col-egy .column-header{background:linear-gradient(180deg,rgba(200,30,30,.2),transparent)}
-.col-egy .column-header .title{color:#e06060}
-.col-egy .column-header::after{background:linear-gradient(90deg,transparent,rgba(200,30,30,.35),transparent)}
-
-.col-sui .column-header{background:linear-gradient(180deg,rgba(255,0,0,.2),transparent)}
-.col-sui .column-header .title{color:#ff6060}
-.col-sui .column-header::after{background:linear-gradient(90deg,transparent,rgba(255,0,0,.35),transparent)}
-.col-col .column-header{background:linear-gradient(180deg,rgba(255,200,0,.2),transparent)}
-.col-col .column-header .title{color:#f0c040}
-.col-col .column-header::after{background:linear-gradient(90deg,transparent,rgba(255,200,0,.35),transparent)}
-
-.column-body{padding:14px 16px 18px;position:relative}
-.column-body::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;border-radius:0 0 2px 2px}
-.col-portugal .column-body::before{background:linear-gradient(90deg,rgba(0,153,76,.3),rgba(0,153,76,.05))}
-.col-empate .column-body::before{background:linear-gradient(90deg,rgba(232,196,90,.2),rgba(232,196,90,.03))}
-.col-espana .column-body::before{background:linear-gradient(90deg,rgba(198,11,30,.25),rgba(198,11,30,.03))}
-
-/* ── Subgroup cards ── */
-.subgroup{
-  margin-bottom:10px;animation:fadeIn .4s var(--ease-out-expo) both;
-  background:rgba(255,255,255,.015);
-  border:1px solid rgba(255,255,255,.03);
-  border-radius:10px;padding:10px 12px 12px
+/* ═══════ MATCH CARD (3D Perspective) ═══════ */
+.match-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--radius-lg);padding:24px 22px 22px;margin-bottom:28px;
+  perspective:2000px;transform-style:preserve-3d;
+  transition:transform .4s var(--ease-spring),box-shadow .4s var(--ease-spring);
 }
-.subgroup:hover{border-color:rgba(255,255,255,.06);background:rgba(255,255,255,.02)}
-.subgroup:last-child{margin-bottom:0}
-.subgroup:nth-child(1){animation-delay:.08s}
-.subgroup:nth-child(2){animation-delay:.16s}
-.subgroup:nth-child(3){animation-delay:.24s}
-.subgroup:nth-child(4){animation-delay:.32s}
-.subgroup-header{display:flex;align-items:center;gap:6px;margin-bottom:8px}
+.match-card:hover{
+  transform:rotateY(-2deg) rotateX(1deg);
+  box-shadow:-8px 8px 40px rgba(0,0,0,.3),0 0 0 1px rgba(251,191,36,.03);
+}
+
+.match-card-title{text-align:center;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+.match-card-title .phase{font-size:11px;font-weight:600;color:var(--text-dim);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:2px}
+.match-card-title .date{font-size:11px;color:var(--text-dimmer)}
+
+/* ═══════ SCORE BADGE ═══════ */
 .score-badge{
-  font-family:'JetBrains Mono',monospace;font-weight:700;font-size:14px;
-  padding:3px 14px;border-radius:8px;letter-spacing:1.2px;color:#f4f4f5;
+  display:inline-flex;align-items:center;gap:16px;
+  background:rgba(20,20,24,.7);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,.06);border-radius:18px;
+  padding:14px 28px;margin-bottom:20px;box-shadow:0 8px 40px rgba(0,0,0,.4);
 }
-.col-portugal .score-badge{background:rgba(0,153,76,.13);border:1px solid rgba(0,153,76,.18)}
-.col-arg .score-badge{background:rgba(116,172,223,.13);border:1px solid rgba(116,172,223,.18)}
-.col-empate .score-badge{background:rgba(232,196,90,.11);border:1px solid rgba(232,196,90,.16)}
-.col-egy .score-badge{background:rgba(200,30,30,.13);border:1px solid rgba(200,30,30,.18)}
-.col-sui .score-badge{background:rgba(255,0,0,.13);border:1px solid rgba(255,0,0,.18)}
-.col-col .score-badge{background:rgba(255,200,0,.13);border:1px solid rgba(255,200,0,.18)}
-.subgroup-header .chip-count{font-size:10px;color:#a0a0b0;font-weight:500;margin-left:auto;background:rgba(255,255,255,.035);padding:2px 8px;border-radius:8px}
-
-.users{display:flex;flex-wrap:wrap;gap:4px}
-.user-chip{
-  display:inline-flex;align-items:center;gap:4px;
-  padding:5px 14px;border-radius:18px;font-size:12px;font-weight:500;
-  background:rgba(39,39,42,.5);border:1px solid rgba(255,255,255,.05);
-  color:#d4d4d8;transition:all .2s;cursor:default;position:relative;overflow:hidden;
+.team-box{
+  display:flex;align-items:center;gap:10px;padding:8px 18px 8px 12px;border-radius:12px;
+  font-weight:600;font-size:14px;transition:transform .25s var(--ease-spring),box-shadow .25s var(--ease-spring);
 }
-.user-chip::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent 60%,rgba(255,255,255,.03));pointer-events:none}
-.user-chip:hover{background:rgba(63,63,70,.7);border-color:rgba(255,255,255,.1);transform:translateY(-1px);box-shadow:0 2px 8px rgba(0,0,0,.25)}
-.user-chip .pts{color:#e4e4e7;font-weight:500;font-size:11px}
+.team-box:hover{transform:scale(1.04)}
+.team-box .flag{font-size:22px;line-height:1;flex-shrink:0}
+.team-box .score{
+  font-family:'JetBrains Mono',monospace;font-weight:700;font-size:20px;
+  background:rgba(0,0,0,.3);padding:0 10px;border-radius:8px;line-height:26px;letter-spacing:.5px;
+  transition:all .3s var(--ease-spring);color:#f4f4f5;
+}
+.team-box:hover .score{transform:scale(1.1);background:rgba(0,0,0,.45)}
+.score-badge .vs-text{color:var(--text-dim);font-size:11px;font-weight:600;letter-spacing:2px;padding:0 6px}
 
-/* ── Tiebreak ── */
-.tiebreak-group{margin-top:8px;padding-top:6px;border-top:1px solid rgba(255,255,255,.04)}
-.tiebreak-label{font-size:10px;font-weight:500;color:#c0c0cc;display:flex;align-items:center;gap:5px;padding:4px 0 5px}
-.tiebreak-label .dot{width:6px;height:6px;border-radius:50%;display:inline-block;flex-shrink:0}
-.tiebreak-label .dot-por{background:#2ecc71;box-shadow:0 0 5px rgba(46,204,113,.25)}
-.tiebreak-label .dot-esp{background:#e74c3c;box-shadow:0 0 5px rgba(231,76,60,.25)}
-.tiebreak-label .dot-arg{background:#75aadb;box-shadow:0 0 5px rgba(116,172,223,.25)}
-.tiebreak-label .dot-egy{background:#e06060;box-shadow:0 0 5px rgba(200,30,30,.25)}
-.tiebreak-label .dot-col{background:#f0c040;box-shadow:0 0 5px rgba(255,200,0,.25)}
+/* Team colors */
+.t-por{background:linear-gradient(135deg,rgba(0,102,51,.35),rgba(0,80,40,.12));border:1px solid rgba(0,153,76,.2);color:#6fcf97}
+.t-esp{background:linear-gradient(135deg,rgba(198,11,30,.28),rgba(160,10,25,.1));border:1px solid rgba(198,11,30,.2);color:#f28b82}
+.t-arg{background:linear-gradient(135deg,rgba(116,172,223,.28),rgba(116,172,223,.08));border:1px solid rgba(116,172,223,.2);color:#75aadb}
+.t-egy{background:linear-gradient(135deg,rgba(200,30,30,.28),rgba(185,30,30,.08));border:1px solid rgba(200,30,30,.2);color:#e06060}
+.t-sui{background:linear-gradient(135deg,rgba(255,0,0,.28),rgba(200,0,0,.08));border:1px solid rgba(255,0,0,.2);color:#ff6060}
+.t-col{background:linear-gradient(135deg,rgba(255,200,0,.28),rgba(200,160,0,.08));border:1px solid rgba(255,200,0,.2);color:#f0c040}
 
-/* ── Match result divider ── */
-.match-result{margin:20px 0 4px;padding:16px 18px;background:rgba(255,255,255,.012);border:1px solid rgba(255,255,255,.03);border-radius:14px}
-.match-result .scorers{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
-.match-result .scorers .scorer-chip{padding:4px 12px;border-radius:16px;font-size:11px;font-weight:500;background:rgba(39,39,42,.4);border:1px solid rgba(255,255,255,.04);color:#d4d4d8}
-.match-result .result-detail{text-align:center;font-size:11px;color:#a0a0b0;margin-bottom:8px}
-.match-result .scorers .scorer-chip .spts{color:#4ade80;font-weight:600}
-.match-result .scorers.empty{color:#909098;font-style:italic}
-.match-result .no-result{text-align:center;color:#909098;font-size:12px;font-style:italic;padding:4px 0}
+/* ═══════ PREDICTION COLUMNS (Bento Grid) ═══════ */
+.pred-grid{
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;
+}
+@media(max-width:860px){.pred-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:540px){.pred-grid{grid-template-columns:1fr}}
 
-/* ── Future matches ── */
-.future-matches{display:none;margin-top:28px}
-.future-matches.visible{display:block}
-.future-matches .section-title{font-size:13px;font-weight:700;color:#a0a0b0;text-transform:uppercase;letter-spacing:2px;text-align:center;margin-bottom:14px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.04)}
+.pred-col{
+  border-radius:var(--radius-md);overflow:hidden;
+  background:rgba(18,18,22,.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border:1px solid var(--border);
+  transform:translateZ(0);transition:transform .3s var(--ease-spring),box-shadow .3s var(--ease-spring);
+}
+.pred-col:hover{transform:translateY(-3px)}
+.pred-col-header{
+  padding:14px 16px 12px;text-align:center;position:relative;overflow:hidden;
+}
+.pred-col-header .icon{font-size:18px;display:block;margin-bottom:1px}
+.pred-col-header .title{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:6px}
+.pred-col-header .count{font-size:10px;font-weight:500;opacity:.55;background:rgba(255,255,255,.04);padding:1px 8px;border-radius:10px;display:inline-block;margin-top:3px}
+.pred-col-body{padding:14px 16px 18px}
 
-/* ── Footer ── */
+/* Column header colors */
+.col-home .pred-col-header{background:linear-gradient(180deg,rgba(0,90,45,.22),transparent)}
+.col-home .pred-col-header .title{color:#6fcf97}
+.col-draw .pred-col-header{background:linear-gradient(180deg,rgba(180,140,30,.16),transparent)}
+.col-draw .pred-col-header .title{color:#e8c45a}
+.col-away .pred-col-header{background:linear-gradient(180deg,rgba(200,30,30,.18),transparent)}
+.col-away .pred-col-header .title{color:#e06060}
+
+/* Score predictions inside columns */
+.score-group{margin-bottom:12px}
+.score-group:last-child{margin-bottom:0}
+.score-label{
+  display:flex;align-items:center;justify-content:space-between;
+  font-size:12px;font-weight:700;font-family:'JetBrains Mono',monospace;
+  padding:6px 10px;background:rgba(255,255,255,.03);border-radius:8px;margin-bottom:6px;
+}
+.score-label .count-badge{
+  font-size:10px;font-weight:500;font-family:'Geist',sans-serif;
+  background:rgba(255,255,255,.06);padding:0 7px;border-radius:6px;color:var(--text-dim);
+}
+.pred-name{
+  font-size:12px;color:var(--text-dim);padding:2px 10px;line-height:1.6;
+  display:flex;align-items:center;gap:6px;
+}
+.pred-name .pts{font-size:10px;color:var(--text-dimmer);font-family:'JetBrains Mono',monospace}
+
+/* ═══════ POINTS SCORERS ═══════ */
+.points-row{
+  display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:16px;padding:0 2px;
+}
+.points-label{font-size:10px;color:var(--text-dim);font-weight:500;text-transform:uppercase;letter-spacing:1px;margin-right:4px}
+.point-pill{
+  display:inline-flex;align-items:center;gap:3px;
+  padding:3px 10px;border-radius:8px;font-size:11px;font-weight:500;
+  background:rgba(111,207,151,.08);border:1px solid rgba(111,207,151,.15);color:#6fcf97;
+  transition:transform .2s var(--ease-spring);
+}
+.point-pill:hover{transform:scale(1.05)}
+.point-pill .pts{font-weight:700;font-family:'JetBrains Mono',monospace;font-size:10px}
+
+/* ═══════ FOOTER ═══════ */
 .footer{
-  margin-top:36px;padding:22px 20px 18px;text-align:center;
-  background:rgba(18,18,22,.5);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
-  border:1px solid rgba(255,255,255,.04);border-radius:16px;
-  animation:fadeUp .6s var(--ease-out-expo) .5s both;
+  text-align:center;padding:28px 0 10px;border-top:1px solid rgba(255,255,255,.04);
+  margin-top:36px;color:var(--text-dim);font-size:12px;
 }
-.footer .results-line{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;font-size:12px;color:#a0a0b0;margin-bottom:10px}
-.footer .results-line .sep{opacity:.25}
-.footer .results-line .real-score{color:#a0a0b0;font-weight:400;font-style:italic}
-.footer .divider{width:50px;height:1px;margin:0 auto 12px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.06),transparent)}
-.footer .credit .label{font-size:10px;font-weight:500;color:#909098;text-transform:uppercase;letter-spacing:2px;margin-bottom:4px}
-.footer .credit .name{
-  font-size:17px;font-weight:700;letter-spacing:.3px;text-decoration:none;display:inline-block;
-  background:linear-gradient(135deg,#fbbf24 0%,#f59e0b 50%,#fcd34d 100%);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;transition:opacity .2s;
+.footer .credit{color:var(--amber);font-weight:600;text-decoration:none;transition:opacity .2s}
+.footer .credit:hover{opacity:.8}
+
+/* ═══════ ANIMATIONS ═══════ */
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s var(--ease-out-expo),transform .7s var(--ease-out-expo)}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+/* ═══════ RESPONSIVE ═══════ */
+@media(max-width:640px){
+  .container{padding:20px 14px}
+  .score-badge{padding:10px 16px;gap:10px}
+  .team-box{padding:6px 12px 6px 8px;font-size:12px}
+  .team-box .score{font-size:16px;padding:0 8px}
+  .match-card{padding:18px 14px}
+  .header-logo{width:44px;height:44px}
 }
-.footer .credit .name:hover{opacity:.8}
-
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-@keyframes slideUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fadeDown{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-
-@media(max-width:920px){.container{padding:20px 12px}.header h1{font-size:22px}.match-badge{gap:10px;padding:10px 16px;flex-wrap:wrap;justify-content:center}}
-@media(max-width:480px){.container{padding:14px 8px}.team-box{padding:4px 8px 4px 6px;font-size:11px}.team-box svg.flag-mini{width:16px;height:11px}.column-body{padding:10px 10px 14px}.user-chip{font-size:10px;padding:3px 8px}.header-logo{width:38px;height:38px}.header h1{font-size:17px}.modal{max-width:100%;border-radius:16px;max-height:90vh}}
 </style>
 </head>
 <body>
 
+<!-- Floating trophies -->
+<svg class="floating-cups" viewBox="0 0 100 100" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="cg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fbbf24"/><stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+</svg>
+
 <div class="floating-cups">
-  <img class="floating-cup cup-1" src="trophy.png" alt="">
-  <img class="floating-cup cup-2" src="trophy.png" alt="">
-  <img class="floating-cup cup-3" src="trophy.png" alt="">
-  <img class="floating-cup cup-4" src="trophy.png" alt="">
-  <img class="floating-cup cup-5" src="ball.png" alt="">
+  <svg class="floating-cup cup-1" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.5"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M12 22V9"/><path d="M12 9H8.5a3.5 3.5 0 0 1 0-7h7a3.5 3.5 0 0 1 0 7H12Z"/></svg>
+  <svg class="floating-cup cup-2" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.5"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M12 22V9"/><path d="M12 9H8.5a3.5 3.5 0 0 1 0-7h7a3.5 3.5 0 0 1 0 7H12Z"/></svg>
+  <svg class="floating-cup cup-3" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.5"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M12 22V9"/><path d="M12 9H8.5a3.5 3.5 0 0 1 0-7h7a3.5 3.5 0 0 1 0 7H12Z"/></svg>
+  <svg class="floating-cup cup-4" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.5"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M12 22V9"/><path d="M12 9H8.5a3.5 3.5 0 0 1 0-7h7a3.5 3.5 0 0 1 0 7H12Z"/></svg>
+  <svg class="floating-cup cup-5" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="1.5"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M12 22V9"/><path d="M12 9H8.5a3.5 3.5 0 0 1 0-7h7a3.5 3.5 0 0 1 0 7H12Z"/></svg>
 </div>
 
 <div class="container">
 
-<div class="header">
-  <div class="header-brand">
-    <img class="header-logo" src="logo-prodeca.png" alt="PRODEMOS OTRA VEZ">
-    <h1>PRODEMOS OTRA VEZ ?</h1>
-  </div>
-  <div class="sub">Torneo de amigos &middot; <span class="highlight">ProdeCA</span> &middot; Mundial 2026</div>
+  <!-- ═══ HEADER ═══ -->
+  <header class="header">
+    <div class="header-brand">
+      <img src="logo-prodeca.png" alt="ProdeCA" class="header-logo" loading="lazy">
+      <h1>PRODEMOS OTRA VEZ</h1>
+    </div>
+    <p class="header-sub">TORNEO DE AMIGOS <span class="hl">•</span> PRODECA <span class="hl">•</span> MUNDIAL 2026</p>
+  </header>
 
-  <div class="header-actions">
-    <a class="btn-header btn-matches" href="https://juanaustral.github.io/visormundial/" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/>
-      </svg>
-      Ver Partidos
+  <!-- ═══ NAV ═══ -->
+  <nav class="nav-bar">
+    <a href="/PRODEMOS-2026/" class="nav-btn nav-amber">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      Partidos
     </a>
-    <a class="btn-header btn-ranking" href="ranking.html">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="4" y1="21" x2="4" y2="14"/><line x1="10" y1="21" x2="10" y2="9"/><line x1="16" y1="21" x2="16" y2="2"/><line x1="22" y1="21" x2="22" y2="12"/>
-      </svg>
+    <a href="/PRODEMOS-2026/ranking" class="nav-btn nav-purple" onclick="event.preventDefault();var m=document.getElementById('ranking-modal');m.style.display=m.style.display==='flex'?'none':'flex';m.style.justifyContent='center';m.style.alignItems='center'">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 20V10M12 20V4M18 20v-6"/></svg>
       Ranking
     </a>
+  </nav>
+
+  <div class="tournament-info">
+    <span>Octavos de final</span>
+    <span class="sep">•</span>
+    <span>Match 96 - 07/07</span>
+    <span class="sep">•</span>
+    <span>Suiza vs Colombia</span>
   </div>
 
-  <div class="next-match">
-    <div class="label">Proximo Partido</div>
-    <div class="match">
+  <!-- ═══ NEXT MATCH ═══ -->
+  <div class="next-match" id="nextMatch">
+    <div class="label">Proximo partido</div>
+    <div class="teams">
       <span>Francia</span>
-      <span class="vs-sm">vs</span>
+      <span class="vs">vs</span>
       <span>Marruecos</span>
     </div>
-    <div class="time">Jueves 09/07 &middot; 17:00 ARG</div>
+    <div class="time">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Jueves 09/07 - 17:00 ARG
+    </div>
   </div>
-</div>
-
+<!-- ═══ MATCH CARDS SECTION ═══ -->
+<div class="container" id="matchesContainer">
+  <div id="matchContent">
 <!-- ═══ MATCH 96: SUIZA vs COLOMBIA ═══ -->
-<div class="match-card">
+<div class="match-card fade-up">
 
   <div class="match-card-title">
     <div class="phase">Octavos de final &middot; Match 96</div>
@@ -346,17 +352,17 @@ body::before{
   </div>
 
   <div class="match-badge">
-    <div class="team-box team-sui">
-      <span class="flag-emoji">🇨🇭</span>
+    <div class="team-box t-sui">
+      <span class="flag">🇨🇭</span>
       <span>Suiza</span>
-      <span class="team-score">0</span>
+      <span class="score">0</span>
     </div>
     <span class="vs">VS</span>
       <span style="color:#a78bfa;font-size:10px;font-weight:600;letter-spacing:.5px">(4-3 pen)</span>
-    <div class="team-box team-col">
-      <span class="flag-emoji">🇨🇴</span>
+    <div class="team-box t-col">
+      <span class="flag">🇨🇴</span>
       <span>Colombia</span>
-      <span class="team-score">0</span>
+      <span class="score">0</span>
     </div>
   </div>
 
@@ -373,9 +379,9 @@ body::before{
   </div>
 
   <div class="match-section">
-  <div class="grid">
+  <div class="pred-grid">
 
-  <div class="column col-sui">
+  <div class="column col-away">
     <div class="column-header"><div class="title"><span class="col-icon"></span> Gana Suiza</div><span class="count">6</span></div>
     <div class="column-body">
       <div class="subgroup">
@@ -397,8 +403,8 @@ body::before{
     </div>
   </div>
 
-  <div class="column col-empate">
-    <div class="column-header"><div class="title"><span class="flag-emoji">⚪</span> Empate</div><span class="count">4</span></div>
+  <div class="column col-draw">
+    <div class="column-header"><div class="title"><span class="flag">⚪</span> Empate</div><span class="count">4</span></div>
     <div class="column-body">
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">1 &ndash; 1</span><span class="chip-count">3</span></div>
@@ -421,7 +427,7 @@ body::before{
     </div>
   </div>
 
-  <div class="column col-col">
+  <div class="column col-away">
     <div class="column-header"><div class="title"><span class="col-icon"></span> Gana Colombia</div><span class="count">13</span></div>
     <div class="column-body">
       <div class="subgroup">
@@ -470,7 +476,7 @@ body::before{
 </div>
 
 <!-- ═══ MATCH 95: ARGENTINA vs EGIPTO ═══ -->
-<div class="match-card">
+<div class="match-card fade-up">
 
   <div class="match-card-title">
     <div class="phase">Octavos de final &middot; Match 95</div>
@@ -478,16 +484,16 @@ body::before{
   </div>
 
   <div class="match-badge">
-    <div class="team-box team-por">
-      <span class="flag-emoji">🇦🇷</span>
+    <div class="team-box t-por">
+      <span class="flag">🇦🇷</span>
       <span>Argentina</span>
-      <span class="team-score">3</span>
+      <span class="score">3</span>
     </div>
     <span class="vs">VS</span>
-    <div class="team-box team-esp">
-      <span class="flag-emoji">🇪🇬</span>
+    <div class="team-box t-esp">
+      <span class="flag">🇪🇬</span>
       <span>Egipto</span>
-      <span class="team-score">2</span>
+      <span class="score">2</span>
     </div>
   </div>
 
@@ -499,10 +505,10 @@ body::before{
   </div>
 
   <div class="match-section">
-  <div class="grid">
+  <div class="pred-grid">
 
-  <div class="column col-portugal">
-    <div class="column-header"><div class="title"><span class="flag-emoji">🇦🇷</span> Gana Argentina</div><span class="count">23</span></div>
+  <div class="column col-home">
+    <div class="column-header"><div class="title"><span class="flag">🇦🇷</span> Gana Argentina</div><span class="count">23</span></div>
     <div class="column-body">
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">1 &ndash; 0</span><span class="chip-count">1</span></div>
@@ -554,8 +560,8 @@ body::before{
     </div>
   </div>
 
-  <div class="column col-empate">
-    <div class="column-header"><div class="title"><span class="flag-emoji">⚪</span> Empate</div><span class="count">1</span></div>
+  <div class="column col-draw">
+    <div class="column-header"><div class="title"><span class="flag">⚪</span> Empate</div><span class="count">1</span></div>
     <div class="column-body">
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">1 &ndash; 1</span><span class="chip-count">1</span></div>
@@ -567,7 +573,7 @@ body::before{
   </div>
 
   <div class="column col-espana">
-    <div class="column-header"><div class="title"><span class="flag-emoji">🇪🇬</span> Gana Egipto</div><span class="count">0</span></div>
+    <div class="column-header"><div class="title"><span class="flag">🇪🇬</span> Gana Egipto</div><span class="count">0</span></div>
     <div class="column-body">
       <div class="scorers empty">Nadie vot&oacute; esta opci&oacute;n</div>
     </div>
@@ -577,7 +583,7 @@ body::before{
   </div>
 </div>
 
-<div class="match-card">
+<div class="match-card fade-up">
 
   <div class="match-card-title">
     <div class="phase">Octavos de final &middot; Match 94</div>
@@ -585,16 +591,16 @@ body::before{
   </div>
 
   <div class="match-badge">
-    <div class="team-box team-por">
-      <span class="flag-emoji">🇺🇸</span>
+    <div class="team-box t-por">
+      <span class="flag">🇺🇸</span>
       <span>Estados Unidos</span>
-      <span class="team-score">1</span>
+      <span class="score">1</span>
     </div>
     <span class="vs">VS</span>
-    <div class="team-box team-esp">
-      <span class="flag-emoji">🇧🇪</span>
+    <div class="team-box t-esp">
+      <span class="flag">🇧🇪</span>
       <span>B&eacute;lgica</span>
-      <span class="team-score">4</span>
+      <span class="score">4</span>
     </div>
   </div>
 
@@ -608,10 +614,10 @@ body::before{
   </div>
 
   <div class="match-section">
-  <div class="grid">
+  <div class="pred-grid">
 
-  <div class="column col-portugal">
-    <div class="column-header"><div class="title"><span class="flag-emoji">🇺🇸</span> Gana EE.UU.</div><span class="count">18</span></div>
+  <div class="column col-home">
+    <div class="column-header"><div class="title"><span class="flag">🇺🇸</span> Gana EE.UU.</div><span class="count">18</span></div>
     <div class="column-body">
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">1 &ndash; 0</span><span class="chip-count">1</span></div>
@@ -652,8 +658,8 @@ body::before{
     </div>
   </div>
 
-  <div class="column col-empate">
-    <div class="column-header"><div class="title"><span class="flag-emoji">⚪</span> Empate</div><span class="count">3</span></div>
+  <div class="column col-draw">
+    <div class="column-header"><div class="title"><span class="flag">⚪</span> Empate</div><span class="count">3</span></div>
     <div class="column-body">
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">1 &ndash; 1</span><span class="chip-count">2</span></div>
@@ -695,7 +701,7 @@ body::before{
 </div>
 
 <!-- ═══ MATCH 93: PORTUGAL vs ESPAÑA ═══ -->
-<div class="match-card">
+<div class="match-card fade-up">
 
   <div class="match-card-title">
     <div class="phase">Octavos de final &middot; Match 93</div>
@@ -703,16 +709,16 @@ body::before{
   </div>
 
   <div class="match-badge">
-    <div class="team-box team-por">
-      <span class="flag-emoji">🇵🇹</span>
+    <div class="team-box t-por">
+      <span class="flag">🇵🇹</span>
       <span>Portugal</span>
-      <span class="team-score">0</span>
+      <span class="score">0</span>
     </div>
     <span class="vs">VS</span>
-    <div class="team-box team-esp">
-      <span class="flag-emoji">🇪🇸</span>
+    <div class="team-box t-esp">
+      <span class="flag">🇪🇸</span>
       <span>Espa&ntilde;a</span>
-      <span class="team-score">1</span>
+      <span class="score">1</span>
     </div>
   </div>
 
@@ -742,10 +748,10 @@ body::before{
 
 <!-- ═══ MATCH 93: PORTUGAL vs ESPAÑA ═══ -->
 <div class="match-section">
-  <div class="grid">
+  <div class="pred-grid">
 
-  <div class="column col-portugal">
-    <div class="column-header"><div class="title"><span class="flag-emoji">🇵🇹</span> Gana Portugal</div><span class="count">4</span></div>
+  <div class="column col-home">
+    <div class="column-header"><div class="title"><span class="flag">🇵🇹</span> Gana Portugal</div><span class="count">4</span></div>
     <div class="column-body">
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">2 &ndash; 0</span><span class="chip-count">1</span></div>
@@ -765,8 +771,8 @@ body::before{
     </div>
   </div>
 
-  <div class="column col-empate">
-    <div class="column-header"><div class="title"><span class="flag-emoji">⚪</span> Empate</div><span class="count">4</span></div>
+  <div class="column col-draw">
+    <div class="column-header"><div class="title"><span class="flag">⚪</span> Empate</div><span class="count">4</span></div>
     <div class="column-body">
       <div class="subgroup">
         <div class="subgroup-header"><span class="score-badge">2 &ndash; 2</span><span class="chip-count">4</span></div>
@@ -829,47 +835,25 @@ body::before{
   </div>
 </div>
 
-<!-- ═══ FUTURE MATCHES (hidden) ═══ -->
-<div class="future-matches" id="future-matches">
-  <div class="section-title">Proximos Partidos</div>
-  <div id="future-grid"></div>
+
+
 </div>
 
 <!-- ═══ RANKING MODAL ═══ -->
-<div class="modal-overlay" id="rankModal" onclick="if(event.target===this)this.classList.remove('open')">
-  <div class="modal">
-    <div class="modal-header">
-      <h2>Ranking PRODEMOS OTRA VEZ</h2>
-      <button class="close" onclick="document.getElementById('rankModal').classList.remove('open')">&times;</button>
-    </div>
-    <div class="modal-body" id="rankBody">
-      <!-- injected by JS -->
-    </div>
+<div id="ranking-modal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);justify-content:center;align-items:center;padding:20px" onclick="if(event.target===this)this.style.display='none'">
+  <div style="max-width:480px;width:100%;background:#121216;border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:24px;position:relative">
+    <button onclick="document.getElementById('ranking-modal').style.display='none'" style="position:absolute;top:12px;right:14px;background:none;border:none;color:#70707a;font-size:20px;cursor:pointer">&times;</button>
+    <h2 style="font-size:18px;font-weight:700;margin-bottom:16px;color:#fbbf24;text-align:center;letter-spacing:-.5px">Ranking</h2>
+    <div id="rankBody"></div>
   </div>
 </div>
-
-<!-- ═══ FOOTER ═══ -->
-<div class="footer">
-  <div class="results-line">
-    <span>PRODEMOS OTRA VEZ ?</span><span class="sep">&bull;</span>
-    <span>Match 96 &middot; 07/07</span><span class="sep">&bull;</span>
-    <span>Suiza vs Colombia</span>
-  </div>
-  <div class="divider"></div>
-  <div class="credit">
-    <div class="label">Desarrollado por</div>
-    <a class="name" href="https://juanmartinezgarcia.com" target="_blank" rel="noopener">Juan Martinez Garcia</a>
-  </div>
-</div>
-
-</div><!-- /container -->
 
 <script>
 const RANKING = [
   {pos:1, name:'Luis Duprat', pts:31},
   {pos:2, name:'Miguel M', pts:31},
   {pos:2, name:'Noly Moreno', pts:30},
-  {pos:2, name:'Mart&iacute;n Baigorria', pts:30},
+  {pos:2, name:'Martin Baigorria', pts:30},
   {pos:2, name:'Gabriela Monaco', pts:30},
   {pos:3, name:'Mauricio Moreno', pts:26},
   {pos:3, name:'Rodrigo Tumbarello', pts:26},
@@ -892,43 +876,72 @@ const RANKING = [
   {pos:11, name:'Cristian Ochoa', pts:11}
 ];
 
-// ── Render ranking modal from data ──
 function renderRanking() {
   const body = document.getElementById('rankBody');
   if (!body) return;
-  let html = '<table class="rank-table">';
-  html += '<thead><tr><th>#</th><th>Participante</th><th>Pts</th></tr></thead><tbody>';
+  let h = '<table style="width:100%;border-collapse:collapse">';
+  h += '<thead><tr>';
+  h += '<th style="text-align:left;padding:8px 6px;font-size:10px;color:#70707a;text-transform:uppercase;letter-spacing:1.5px;font-weight:600">#</th>';
+  h += '<th style="text-align:left;padding:8px 6px;font-size:10px;color:#70707a;text-transform:uppercase;letter-spacing:1.5px;font-weight:600">Participante</th>';
+  h += '<th style="text-align:right;padding:8px 6px;font-size:10px;color:#70707a;text-transform:uppercase;letter-spacing:1.5px;font-weight:600">Pts</th>';
+  h += '</tr></thead><tbody>';
   for (const r of RANKING) {
-    const cls = r.pos <= 3 ? ' class="top-'+r.pos+'"' : '';
-    html += '<tr'+cls+'><td class="rank-pos">'+r.pos+'</td><td class="rank-name">'+r.name+'</td><td class="rank-pts">'+r.pts+'</td></tr>';
+    const bg = r.pos <= 3 ? 'background:rgba(251,191,36,.04)' : '';
+    const medal = r.pos === 1 ? '🥇' : r.pos === 2 ? '🥈' : r.pos === 3 ? '🥉' : '';
+    h += '<tr style="'+bg+'">';
+    h += '<td style="padding:7px 6px;font-size:13px;font-weight:600;font-family:JetBrains Mono,monospace;color:'+(r.pos<=3?'#fbbf24':'#a0a0b0')+'">'+medal+' '+r.pos+'</td>';
+    h += '<td style="padding:7px 6px;font-size:13px;color:#e4e4e7">'+r.name+'</td>';
+    h += '<td style="padding:7px 6px;font-size:13px;font-weight:700;font-family:JetBrains Mono,monospace;text-align:right;color:#fbbf24">'+r.pts+'</td>';
+    h += '</tr>';
   }
-  html += '</tbody></table>';
-  body.innerHTML = html;
+  h += '</tbody></table>';
+  body.innerHTML = h;
 }
-document.addEventListener('DOMContentLoaded', renderRanking);
+
+// ── GSAP + Lenis init ──
+document.addEventListener('DOMContentLoaded', () => {
+  renderRanking();
+
+  // Lenis smooth scroll
+  const lenis = new Lenis({
+    duration: 1.1,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    orientation: 'vertical',
+    smoothWheel: true,
+  });
+  lenis.on('scroll', () => ScrollTrigger.update());
+  const raf = (time) => { lenis.raf(time); requestAnimationFrame(raf); };
+  requestAnimationFrame(raf);
+
+  // Register GSAP ScrollTrigger
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Stagger entry for match cards
+  gsap.utils.toArray('.match-card').forEach((card, i) => {
+    gsap.from(card, {
+      y: 40, opacity: 0, duration: 0.8, ease: 'power3.out',
+      scrollTrigger: { trigger: card, start: 'top 90%', toggleActions: 'play none none none' },
+      delay: i * 0.08
+    });
+  });
+
+  // Fade-up elements via IntersectionObserver
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.fade-up, .match-card').forEach(el => observer.observe(el));
+});
 </script>
+
 <style>
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);z-index:1000;align-items:center;justify-content:center;padding:20px}
-.modal-overlay.open{display:flex}
-.modal{background:#18181b;border:1px solid rgba(255,255,255,.06);border-radius:20px;max-width:460px;width:100%;max-height:80vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.5)}
-.modal-header{display:flex;align-items:center;justify-content:space-between;padding:18px 20px 14px;border-bottom:1px solid rgba(255,255,255,.04)}
-.modal-header h2{font-size:16px;font-weight:700;color:#e4e4e7}
-.modal-header .close{background:none;border:none;color:#a0a0b0;font-size:24px;cursor:pointer;padding:4px;line-height:1}
-.modal-header .close:hover{color:#fff}
-.modal-body{padding:12px 20px 20px}
 .rank-table{width:100%;border-collapse:collapse}
-.rank-table th{font-size:10px;font-weight:600;color:#a0a0b0;text-transform:uppercase;letter-spacing:1.5px;padding:8px 6px;text-align:left;border-bottom:1px solid rgba(255,255,255,.04)}
-.rank-table th:last-child,.rank-table td:last-child{text-align:right}
-.rank-table td{padding:10px 6px;font-size:13px;border-bottom:1px solid rgba(255,255,255,.02)}
-.rank-pos{color:#a0a0b0;font-weight:500;width:36px}
-.rank-name{color:#e4e4e7;font-weight:500}
-.rank-pts{color:#fbbf24;font-weight:700;font-family:'JetBrains Mono',monospace}
-.top-1 .rank-pos{color:#ffd700}
-.top-1 .rank-name{color:#ffd700;font-weight:700}
-.top-2 .rank-pos{color:#c0c0c0}
-.top-2 .rank-name{color:#c0c0c0;font-weight:600}
-.top-3 .rank-pos{color:#cd7f32}
-.top-3 .rank-name{color:#cd7f32;font-weight:600}
+.rank-table th{text-align:left;padding:8px 6px;font-size:10px;color:#70707a;text-transform:uppercase;letter-spacing:1.5px;font-weight:600}
+.rank-table td{padding:7px 6px;font-size:13px}
+.rank-pos{font-weight:600;font-family:'JetBrains Mono',monospace;color:#a0a0b0}
+.top-1 .rank-pos,.top-2 .rank-pos,.top-3 .rank-pos{color:#fbbf24}
+.rank-name{color:#e4e4e7}
+.rank-pts{font-weight:700;font-family:'JetBrains Mono',monospace;text-align:right;color:#fbbf24}
 </style>
 </body>
 </html>
