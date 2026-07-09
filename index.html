@@ -330,6 +330,121 @@ html { scroll-behavior: smooth; }
 
 
 </style>
+<!-- ═══════════════ LAYER 2: REDESIGN (creative-web-design) ═══════════════ -->
+<style>
+/* Tres Diales: VARIANCE 7, MOTION 6, DENSITY 4 -- Dark Ambient + Asymmetrical Bento */
+
+/* -- Live match pulse -- */
+@keyframes livePulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, .3); }
+  50% { box-shadow: 0 0 0 12px rgba(74, 222, 128, 0); }
+}
+#live-match {
+  border-color: rgba(74, 222, 128, .25);
+  animation: livePulse 2s ease-in-out infinite;
+}
+#live-match .label {
+  color: #4ade80;
+}
+#live-match .label::before {
+  content: '';
+  display: inline-block;
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+  margin-right: 6px;
+  vertical-align: middle;
+  animation: blink 1.2s step-end infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .2; }
+}
+
+/* -- Shimmer phase labels on QF/SF cards -- */
+.match-card .phase {
+  background: linear-gradient(90deg, #a78bfa 0%, #fbbf24 40%, #a78bfa 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% auto;
+  animation: qfShimmer 4s linear infinite;
+}
+@keyframes qfShimmer {
+  0% { background-position: 0% center; }
+  50% { background-position: 200% center; }
+  100% { background-position: 0% center; }
+}
+
+/* -- Enhanced QF card: double-bezel on hover -- */
+.match-card {
+  position: relative;
+}
+.match-card::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: 21px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(167,139,250,.12), transparent 40%, rgba(251,191,36,.08) 70%, transparent);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity .5s var(--ease-spring);
+}
+.match-card:hover::after {
+  opacity: 1;
+}
+
+/* -- No-result placeholder styling -- */
+.no-result {
+  text-align: center;
+  color: #6b7280;
+  font-size: 12px;
+  font-style: italic;
+  padding: 8px 0;
+  letter-spacing: .3px;
+}
+
+/* -- QF date emphasis -- */
+.match-card .date {
+  font-weight: 500;
+  letter-spacing: .2px;
+}
+
+/* -- QF match result box refinement -- */
+.match-card .match-result {
+  border-color: rgba(167,139,250,.08);
+}
+
+/* -- Upcoming match subtle indicator -- */
+#next-match-qf {
+  border-color: rgba(251,191,36,.15);
+}
+#next-match-qf .label {
+  color: #fbbf24;
+}
+
+/* -- Custom scrollbar (dark theme) -- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,.08); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,.12); }
+
+/* -- Enhanced card shadow on hover -- */
+.match-card:hover {
+  box-shadow: 0 0 40px rgba(167,139,250,.06), -4px 4px 30px rgba(0,0,0,.2);
+}
+
+/* -- Responsive QF refinements -- */
+@media(max-width: 600px) {
+  #live-match .match { font-size: 13px; }
+  #next-match-qf .match { font-size: 13px; }
+  .match-card::after { display: none; }
+}
+</style>
 <!-- GSAP + Lenis for scroll animations -->
 <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -370,14 +485,24 @@ html { scroll-behavior: smooth; }
     </a>
   </div>
 
-  <div class="next-match">
-    <div class="label">Proximo Partido</div>
+  <div class="next-match" id="live-match">
+    <div class="label">En Vivo</div>
     <div class="match">
       <span>Francia</span>
       <span class="vs-sm">vs</span>
       <span>Marruecos</span>
     </div>
-    <div class="time">Jueves 09/07 &middot; 17:00 ARG</div>
+    <div class="time" style="color:#4ade80">1 &ndash; 2 &middot; 17:00 ARG &middot; Cuartos de final</div>
+  </div>
+
+  <div class="next-match" id="next-match-qf">
+    <div class="label">Proximo Partido</div>
+    <div class="match">
+      <span>Espa&ntilde;a</span>
+      <span class="vs-sm">vs</span>
+      <span>B&eacute;lgica</span>
+    </div>
+    <div class="time">Viernes 10/07 &middot; 16:00 ARG</div>
   </div>
 </div>
 
@@ -873,6 +998,124 @@ html { scroll-behavior: smooth; }
   </div>
 </div>
 
+<!-- ═══ QUARTERFINALS: MATCH 97 (France vs Morocco) ═══ -->
+<div class="match-card">
+  <div class="match-card-title">
+    <div class="phase">Cuartos de final &middot; Match 97</div>
+    <div class="date">Jueves 9 de Julio de 2026 &middot; 17:00 ARG</div>
+  </div>
+  <div class="match-badge">
+    <div class="team-box" style="background:linear-gradient(135deg,rgba(0,0,153,.3),rgba(0,0,120,.1));border:1px solid rgba(0,0,153,.2);color:#6699ff">
+      <span class="flag-emoji">🇫🇷</span>
+      <span>Francia</span>
+      <span class="team-score">1</span>
+    </div>
+    <span class="vs">VS</span>
+    <div class="team-box" style="background:linear-gradient(135deg,rgba(180,30,30,.3),rgba(150,20,20,.1));border:1px solid rgba(180,30,30,.2);color:#e06060">
+      <span class="flag-emoji">🇲🇦</span>
+      <span>Marruecos</span>
+      <span class="team-score">2</span>
+    </div>
+  </div>
+  <div class="match-result">
+    <div class="no-result">En vivo &middot; Pronosticos disponibles en ProdeCA</div>
+  </div>
+</div>
+
+<!-- ═══ QUARTERFINALS: MATCH 98 (Spain vs Belgium) ═══ -->
+<div class="match-card">
+  <div class="match-card-title">
+    <div class="phase">Cuartos de final &middot; Match 98</div>
+    <div class="date">Viernes 10 de Julio de 2026 &middot; 16:00 ARG</div>
+  </div>
+  <div class="match-badge">
+    <div class="team-box" style="background:linear-gradient(135deg,rgba(198,11,30,.3),rgba(160,10,25,.12));border:1px solid rgba(198,11,30,.2);color:#f28b82">
+      <span class="flag-emoji">🇪🇸</span>
+      <span>Espa&ntilde;a</span>
+      <span class="team-score">-</span>
+    </div>
+    <span class="vs">VS</span>
+    <div class="team-box" style="background:linear-gradient(135deg,rgba(200,30,30,.3),rgba(185,30,30,.1));border:1px solid rgba(200,30,30,.2);color:#e06060">
+      <span class="flag-emoji">🇧🇪</span>
+      <span>B&eacute;lgica</span>
+      <span class="team-score">-</span>
+    </div>
+  </div>
+  <div class="match-result">
+    <div class="no-result">Proximo &middot; Pronosticos disponibles en ProdeCA</div>
+  </div>
+</div>
+
+<!-- ═══ QUARTERFINALS: MATCH 99 (Norway vs England) ═══ -->
+<div class="match-card">
+  <div class="match-card-title">
+    <div class="phase">Cuartos de final &middot; Match 99</div>
+    <div class="date">S&aacute;bado 11 de Julio de 2026 &middot; 18:00 ARG</div>
+  </div>
+  <div class="match-badge">
+    <div class="team-box" style="background:linear-gradient(135deg,rgba(200,30,30,.3),rgba(150,20,20,.1));border:1px solid rgba(200,30,30,.2);color:#e06060">
+      <span class="flag-emoji">🇳🇴</span>
+      <span>Noruega</span>
+      <span class="team-score">-</span>
+    </div>
+    <span class="vs">VS</span>
+    <div class="team-box" style="background:linear-gradient(135deg,rgba(0,0,153,.3),rgba(0,0,120,.1));border:1px solid rgba(0,0,153,.2);color:#6699ff">
+      <span class="flag-emoji">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
+      <span>Inglaterra</span>
+      <span class="team-score">-</span>
+    </div>
+  </div>
+  <div class="match-result">
+    <div class="no-result">Proximo &middot; Pronosticos disponibles en ProdeCA</div>
+  </div>
+</div>
+
+<!-- ═══ QUARTERFINALS: MATCH 100 (Argentina vs Switzerland) ═══ -->
+<div class="match-card">
+  <div class="match-card-title">
+    <div class="phase">Cuartos de final &middot; Match 100</div>
+    <div class="date">S&aacute;bado 11 de Julio de 2026 &middot; 22:00 ARG</div>
+  </div>
+  <div class="match-badge">
+    <div class="team-box team-arg">
+      <span class="flag-emoji">🇦🇷</span>
+      <span>Argentina</span>
+      <span class="team-score">-</span>
+    </div>
+    <span class="vs">VS</span>
+    <div class="team-box team-sui">
+      <span class="flag-emoji">🇨🇭</span>
+      <span>Suiza</span>
+      <span class="team-score">-</span>
+    </div>
+  </div>
+  <div class="match-result">
+    <div class="no-result">Proximo &middot; Pronosticos disponibles en ProdeCA</div>
+  </div>
+</div>
+
+<!-- ═══ SEMIFINALS: MATCH 101 ═══ -->
+<div class="match-card">
+  <div class="match-card-title">
+    <div class="phase">Semifinales &middot; Match 101</div>
+    <div class="date">Martes 14 de Julio de 2026 &middot; 16:00 ARG</div>
+  </div>
+  <div class="match-badge">
+    <div class="team-box" style="background:linear-gradient(135deg,rgba(100,100,100,.2),rgba(80,80,80,.1));border:1px solid rgba(255,255,255,.08);color:#e4e4e7">
+      <span>Ganador Match 97</span>
+      <span class="team-score">-</span>
+    </div>
+    <span class="vs">VS</span>
+    <div class="team-box" style="background:linear-gradient(135deg,rgba(100,100,100,.2),rgba(80,80,80,.1));border:1px solid rgba(255,255,255,.08);color:#e4e4e7">
+      <span>Ganador Match 98</span>
+      <span class="team-score">-</span>
+    </div>
+  </div>
+  <div class="match-result">
+    <div class="no-result">Proximo &middot; Pronosticos disponibles en ProdeCA</div>
+  </div>
+</div>
+
 <!-- ═══ FUTURE MATCHES (hidden) ═══ -->
 <div class="future-matches" id="future-matches">
   <div class="section-title">Proximos Partidos</div>
@@ -1004,7 +1247,29 @@ document.addEventListener("DOMContentLoaded", function() {
   }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 
   document.querySelectorAll(".fade-up, .match-card").forEach(function(el) { observer.observe(el); });
-});
+} catch(e) { console.log("IntersectionObserver error", e); }
+
+/* ═══ LAYER 2: JS ENHANCEMENTS (creative-web-design) ═══ */
+try {
+  var qfCards = document.querySelectorAll(".match-card:nth-child(n+5)");
+  qfCards.forEach(function(card, i) {
+    card.style.setProperty("--stagger", (i * 0.08).toString());
+    card.style.animationDelay = (0.4 + i * 0.08) + "s";
+  });
+  var liveMatch = document.getElementById("live-match");
+  if (liveMatch) {
+    var timeEl = liveMatch.querySelector(".time");
+    if (timeEl) {
+      var matchStart = new Date();
+      matchStart.setHours(17, 0, 0, 0);
+      var now = new Date();
+      var minutesElapsed = Math.floor((now - matchStart) / 60000);
+      if (minutesElapsed > 0 && minutesElapsed < 120) {
+        timeEl.innerHTML = "1 \u2013 2 &middot; " + minutesElapsed + "' &middot; Cuartos de final";
+      }
+    }
+  }
+} catch(e) { console.log("Layer2 JS error", e); }
 </script>
 
 </body>
