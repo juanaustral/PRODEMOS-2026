@@ -444,6 +444,26 @@ html { scroll-behavior: smooth; }
   #next-match-qf .match { font-size: 13px; }
   .match-card::after { display: none; }
 }
+
+/* -- Francia team colors -- */
+.team-fra{background:linear-gradient(135deg,rgba(0,0,153,.35),rgba(0,0,100,.15));border:1px solid rgba(0,0,153,.2);color:#6699ff}
+.team-fra:hover{box-shadow:0 0 20px rgba(0,0,153,.15)}
+.team-fra .team-score{color:#f4f4f5}
+.col-fra .column-header{background:linear-gradient(180deg,rgba(0,0,153,.25),transparent)}
+.col-fra .column-header .title{color:#6699ff}
+.col-fra .column-header::after{background:linear-gradient(90deg,transparent,rgba(0,0,153,.4),transparent)}
+.col-fra .score-badge,.badge-fra{background:rgba(0,0,153,.13);border:1px solid rgba(0,0,153,.18)}
+.dot-fra{background:#6699ff;box-shadow:0 0 5px rgba(0,0,153,.25)}
+
+/* -- Marruecos team colors -- */
+.team-mar{background:linear-gradient(135deg,rgba(180,30,30,.35),rgba(150,20,20,.15));border:1px solid rgba(180,30,30,.2);color:#e06060}
+.team-mar:hover{box-shadow:0 0 20px rgba(180,30,30,.15)}
+.team-mar .team-score{color:#f4f4f5}
+.col-mar .column-header{background:linear-gradient(180deg,rgba(180,30,30,.25),transparent)}
+.col-mar .column-header .title{color:#e06060}
+.col-mar .column-header::after{background:linear-gradient(90deg,transparent,rgba(180,30,30,.4),transparent)}
+.col-mar .score-badge,.badge-mar{background:rgba(180,30,30,.13);border:1px solid rgba(180,30,30,.18)}
+.dot-mar{background:#e06060;box-shadow:0 0 5px rgba(180,30,30,.25)}
 </style>
 <!-- GSAP + Lenis for scroll animations -->
 <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
@@ -1004,21 +1024,115 @@ html { scroll-behavior: smooth; }
     <div class="phase">Cuartos de final &middot; Match 97</div>
     <div class="date">Jueves 9 de Julio de 2026 &middot; 17:00 ARG</div>
   </div>
+
   <div class="match-badge">
-    <div class="team-box" style="background:linear-gradient(135deg,rgba(0,0,153,.3),rgba(0,0,120,.1));border:1px solid rgba(0,0,153,.2);color:#6699ff">
+    <div class="team-box team-fra">
       <span class="flag-emoji">🇫🇷</span>
       <span>Francia</span>
       <span class="team-score">1</span>
     </div>
     <span class="vs">VS</span>
-    <div class="team-box" style="background:linear-gradient(135deg,rgba(180,30,30,.3),rgba(150,20,20,.1));border:1px solid rgba(180,30,30,.2);color:#e06060">
+    <div class="team-box team-mar">
       <span class="flag-emoji">🇲🇦</span>
       <span>Marruecos</span>
       <span class="team-score">2</span>
     </div>
   </div>
-  <div class="match-result">
-    <div class="no-result">En vivo &middot; Pronosticos disponibles en ProdeCA</div>
+
+  <div class="match-result" id="result-97">
+    <div class="result-detail">En vivo &middot; Pronosticos registrados</div>
+  </div>
+
+  <div class="match-section">
+  <div class="grid">
+
+  <div class="column col-fra">
+    <div class="column-header"><div class="title"><span class="flag-emoji">🇫🇷</span> Gana Francia</div><span class="count">12</span></div>
+    <div class="column-body">
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge badge-fra">2 &ndash; 1</span><span class="chip-count">5</span></div>
+        <div class="users">
+          <span class="user-chip">Luis Duprat <span class="pts">(31)</span></span>
+          <span class="user-chip">Mart&iacute;n Baigorria <span class="pts">(30)</span></span>
+          <span class="user-chip">Esther M. Ribeiro <span class="pts">(24)</span></span>
+          <span class="user-chip">Florencia Escortichini <span class="pts">(24)</span></span>
+          <span class="user-chip">Karen Elizondo <span class="pts">(25)</span></span>
+        </div>
+      </div>
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge badge-fra">3 &ndash; 1</span><span class="chip-count">3</span></div>
+        <div class="users">
+          <span class="user-chip">Mauricio Moreno <span class="pts">(26)</span></span>
+          <span class="user-chip">Rodrigo Tumbarello <span class="pts">(26)</span></span>
+          <span class="user-chip">Lucas Bejarano <span class="pts">(19)</span></span>
+        </div>
+      </div>
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge badge-fra">3 &ndash; 2</span><span class="chip-count">4</span></div>
+        <div class="users">
+          <span class="user-chip">Miguel M <span class="pts">(31)</span></span>
+          <span class="user-chip">Noly Moreno <span class="pts">(30)</span></span>
+          <span class="user-chip">Ruben777 <span class="pts">(25)</span></span>
+          <span class="user-chip">Florencia <span class="pts">(22)</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column col-empate">
+    <div class="column-header"><div class="title"><span class="flag-emoji">⚪</span> Empate</div><span class="count">4</span></div>
+    <div class="column-body">
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge badge-empate">1 &ndash; 1</span><span class="chip-count">2</span></div>
+        <div class="users" style="margin-bottom:5px">
+          <span class="user-chip">Gabriela Monaco <span class="pts">(30)</span></span>
+          <span class="user-chip">elmasternero <span class="pts">(15)</span></span>
+        </div>
+        <div class="tiebreak-group">
+          <div class="tiebreak-label"><span class="dot dot-fra"></span> Cree que gana Francia</div>
+          <div class="users"><span class="user-chip">Gabriela Monaco <span class="pts">(30)</span></span></div>
+          <div class="tiebreak-label"><span class="dot dot-mar"></span> Creen que gana Marruecos</div>
+          <div class="users"><span class="user-chip">elmasternero <span class="pts">(15)</span></span></div>
+        </div>
+      </div>
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge badge-empate">2 &ndash; 2</span><span class="chip-count">2</span></div>
+        <div class="tiebreak-group" style="border:none;padding:0;margin:0">
+          <div class="tiebreak-label"><span class="dot dot-mar"></span> Creen que gana Marruecos</div>
+          <div class="users" style="margin-bottom:5px"><span class="user-chip">Carlos Sarmiento <span class="pts">(27)</span></span><span class="user-chip">Gustavo Pereyra <span class="pts">(20)</span></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column col-mar">
+    <div class="column-header"><div class="title"><span class="flag-emoji">🇲🇦</span> Gana Marruecos</div><span class="count">6</span></div>
+    <div class="column-body">
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge badge-mar">1 &ndash; 2</span><span class="chip-count">4</span></div>
+        <div class="users">
+          <span class="user-chip">Maximiliano Ruiz Diaz <span class="pts">(21)</span></span>
+          <span class="user-chip">Juan Martinez Garcia <span class="pts">(21)</span></span>
+          <span class="user-chip">Gerardo De Marco <span class="pts">(22)</span></span>
+          <span class="user-chip">Juan Manuel Lucero <span class="pts">(20)</span></span>
+        </div>
+      </div>
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge badge-mar">1 &ndash; 3</span><span class="chip-count">1</span></div>
+        <div class="users">
+          <span class="user-chip">Gabriel Moreno <span class="pts">(25)</span></span>
+        </div>
+      </div>
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge badge-mar">2 &ndash; 3</span><span class="chip-count">1</span></div>
+        <div class="users">
+          <span class="user-chip">Franco Pellegrino <span class="pts">(17)</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
   </div>
 </div>
 
