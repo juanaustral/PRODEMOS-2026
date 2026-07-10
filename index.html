@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PRODEMOS OTRA VEZ — Pronosticos, Resultados y Ranking | ProdeCA Mundial 2026</title>
 <meta name="description" content="Seguimiento de pronosticos del torneo de amigos PRODEMOS OTRA VEZ en ProdeCA. Resultados, aciertos, puntos y ranking de participantes para el Mundial 2026.">
-<meta name="keywords" content="prode, mundial 2026, prodeca, pronosticos, suiza vs colombia, octavos de final, torneo de amigos, francia vs marruecos">
+<meta name="keywords" content="prode, mundial 2026, prodeca, pronosticos, españa vs bélgica, cuartos de final, torneo de amigos, francia vs marruecos">
 <link rel="canonical" href="https://juanaustral.github.io/PRODEMOS-2026/">
 
 <!-- Open Graph -->
@@ -29,13 +29,15 @@
 {
   "@context": "https://schema.org",
   "@type": "SportsEvent",
-  "name": "PRODEMOS OTRA VEZ - Octavos de final Mundial 2026",
+  "name": "PRODEMOS OTRA VEZ - Cuartos de final Mundial 2026",
   "description": "Votaciones del torneo de amigos PRODEMOS OTRA VEZ. Pronosticos, resultados y ranking de participantes para el Mundial 2026 en ProdeCA.",
   "url": "https://juanaustral.github.io/PRODEMOS-2026/",
   "sport": "Soccer",
   "competitor": [
-    {"@type": "SportsTeam", "name": "Switzerland"},
-    {"@type": "SportsTeam", "name": "Colombia"}
+    {"@type": "SportsTeam", "name": "France"},
+    {"@type": "SportsTeam", "name": "Morocco"},
+    {"@type": "SportsTeam", "name": "Spain"},
+    {"@type": "SportsTeam", "name": "Belgium"}
   ],
   "superEvent": {
     "@type": "SportsEvent",
@@ -114,6 +116,10 @@ body::before{
 .team-box.team-sui:hover{box-shadow:0 0 20px rgba(255,0,0,.15)}
 .team-box.team-col{background:linear-gradient(135deg,rgba(255,200,0,.3),rgba(200,160,0,.1));border:1px solid rgba(255,200,0,.2);color:#f0c040}
 .team-box.team-col:hover{box-shadow:0 0 20px rgba(255,200,0,.15)}
+.team-box.team-fra{background:linear-gradient(135deg,rgba(0,35,149,.3),rgba(0,35,149,.1));border:1px solid rgba(0,35,149,.2);color:#4488ff}
+.team-box.team-fra:hover{box-shadow:0 0 20px rgba(0,35,149,.15)}
+.team-box.team-mar{background:linear-gradient(135deg,rgba(193,39,45,.3),rgba(193,39,45,.1));border:1px solid rgba(193,39,45,.2);color:#ff6060}
+.team-box.team-mar:hover{box-shadow:0 0 20px rgba(193,39,45,.15)}
 .team-box .flag-emoji{font-size:22px;line-height:1;flex-shrink:0}
 .team-box svg.flag-mini{width:24px;height:16px;border-radius:3px;flex-shrink:0}
 .team-box .team-score{font-family:'JetBrains Mono',monospace;font-weight:700;font-size:20px;background:rgba(0,0,0,.3);padding:0 10px;border-radius:8px;line-height:26px;letter-spacing:.5px;transition:all .3s var(--ease-spring)}
@@ -175,7 +181,7 @@ body::before{
 .column-header::after{content:'';position:absolute;bottom:0;left:8%;right:8%;height:2px;border-radius:2px}
 .column-header .icon{font-size:18px;display:block;margin-bottom:1px}
 .column-header .title{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;display:flex;align-items:center;justify-content:center;gap:6px}
-.column-header .count{display:block;font-size:10px;font-weight:500;margin-top:3px;opacity:.55;background:rgba(255,255,255,.04);padding:1px 8px;border-radius:10px;display:inline-block}
+..column-header .count{display:block;font-size:10px;font-weight:500;margin-top:3px;opacity:.55;background:rgba(255,255,255,.04);padding:1px 8px;border-radius:10px;display:inline-block}
 
 .col-portugal .column-header{background:linear-gradient(180deg,rgba(0,90,45,.25),transparent)}
 .col-portugal .column-header .title{color:#6fcf97}
@@ -189,19 +195,34 @@ body::before{
 .col-egy .column-header{background:linear-gradient(180deg,rgba(200,30,30,.2),transparent)}
 .col-egy .column-header .title{color:#e06060}
 .col-egy .column-header::after{background:linear-gradient(90deg,transparent,rgba(200,30,30,.35),transparent)}
-
 .col-sui .column-header{background:linear-gradient(180deg,rgba(255,0,0,.2),transparent)}
 .col-sui .column-header .title{color:#ff6060}
 .col-sui .column-header::after{background:linear-gradient(90deg,transparent,rgba(255,0,0,.35),transparent)}
 .col-col .column-header{background:linear-gradient(180deg,rgba(255,200,0,.2),transparent)}
 .col-col .column-header .title{color:#f0c040}
 .col-col .column-header::after{background:linear-gradient(90deg,transparent,rgba(255,200,0,.35),transparent)}
+.col-fra .column-header{background:linear-gradient(180deg,rgba(0,35,149,.2),transparent)}
+.col-fra .column-header .title{color:#4488ff}
+.col-fra .column-header::after{background:linear-gradient(90deg,transparent,rgba(0,35,149,.35),transparent)}
+.col-mar .column-header{background:linear-gradient(180deg,rgba(193,39,45,.2),transparent)}
+.col-mar .column-header .title{color:#ff6060}
+.col-mar .column-header::after{background:linear-gradient(90deg,transparent,rgba(193,39,45,.35),transparent)}
 
+.column-body{padding:14px 16px 18px;position:relative}
 .column-body{padding:14px 16px 18px;position:relative}
 .column-body::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;border-radius:0 0 2px 2px}
 .col-portugal .column-body::before{background:linear-gradient(90deg,rgba(0,153,76,.3),rgba(0,153,76,.05))}
 .col-empate .column-body::before{background:linear-gradient(90deg,rgba(232,196,90,.2),rgba(232,196,90,.03))}
 .col-espana .column-body::before{background:linear-gradient(90deg,rgba(198,11,30,.25),rgba(198,11,30,.03))}
+
+.team-box.team-bel{background:linear-gradient(135deg,rgba(218,41,28,.3),rgba(200,30,20,.1));border:1px solid rgba(218,41,28,.2);color:#ff6060}
+.team-box.team-bel:hover{box-shadow:0 0 20px rgba(218,41,28,.15)}
+.team-box.team-bel .team-score{color:#f4f4f5}
+.col-bel .column-header{background:linear-gradient(180deg,rgba(218,41,28,.2),transparent)}
+.col-bel .column-header .title{color:#ff6060}
+.col-bel .column-header::after{background:linear-gradient(90deg,transparent,rgba(218,41,28,.35),transparent)}
+.col-bel .score-badge{background:rgba(218,41,28,.13);border:1px solid rgba(218,41,28,.18)}
+.dot-bel{background:#ff6060;box-shadow:0 0 5px rgba(218,41,28,.25)}
 
 /* ── Subgroup cards ── */
 .subgroup{
@@ -227,6 +248,8 @@ body::before{
 .col-egy .score-badge{background:rgba(200,30,30,.13);border:1px solid rgba(200,30,30,.18)}
 .col-sui .score-badge{background:rgba(255,0,0,.13);border:1px solid rgba(255,0,0,.18)}
 .col-col .score-badge{background:rgba(255,200,0,.13);border:1px solid rgba(255,200,0,.18)}
+.col-fra .score-badge{background:rgba(0,35,149,.13);border:1px solid rgba(0,35,149,.18)}
+.col-mar .score-badge{background:rgba(193,39,45,.13);border:1px solid rgba(193,39,45,.18)}
 .subgroup-header .chip-count{font-size:10px;color:#a0a0b0;font-weight:500;margin-left:auto;background:rgba(255,255,255,.035);padding:2px 8px;border-radius:8px}
 
 .users{display:flex;flex-wrap:wrap;gap:4px}
@@ -249,6 +272,8 @@ body::before{
 .tiebreak-label .dot-arg{background:#75aadb;box-shadow:0 0 5px rgba(116,172,223,.25)}
 .tiebreak-label .dot-egy{background:#e06060;box-shadow:0 0 5px rgba(200,30,30,.25)}
 .tiebreak-label .dot-col{background:#f0c040;box-shadow:0 0 5px rgba(255,200,0,.25)}
+.tiebreak-label .dot-fra{background:#4488ff;box-shadow:0 0 5px rgba(0,35,149,.25)}
+.tiebreak-label .dot-mar{background:#ff6060;box-shadow:0 0 5px rgba(193,39,45,.25)}
 
 /* ── Match result divider ── */
 .match-result{margin:20px 0 4px;padding:16px 18px;background:rgba(255,255,255,.012);border:1px solid rgba(255,255,255,.03);border-radius:14px}
@@ -290,186 +315,7 @@ body::before{
 
 @media(max-width:920px){.container{padding:20px 12px}.header h1{font-size:22px}.match-badge{gap:10px;padding:10px 16px;flex-wrap:wrap;justify-content:center}}
 @media(max-width:480px){.container{padding:14px 8px}.team-box{padding:4px 8px 4px 6px;font-size:11px}.team-box svg.flag-mini{width:16px;height:11px}.column-body{padding:10px 10px 14px}.user-chip{font-size:10px;padding:3px 8px}.header-logo{width:38px;height:38px}.header h1{font-size:17px}.modal{max-width:100%;border-radius:16px;max-height:90vh}}
-
-/* ═══════════════════ ENHANCEMENTS (creative-web-design) ═══════════════════ */
-:root {
-  --ease-spring: cubic-bezier(.22,.61,.36,1);
-  --ease-out-expo: cubic-bezier(.16,1,.3,1);
-}
-
-/* 3D perspective on match cards */
-.match-card {
-  perspective: 2000px;
-  transform-style: preserve-3d;
-  transition: transform .4s var(--ease-spring), box-shadow .4s var(--ease-spring);
-}
-.match-card:hover {
-  transform: rotateY(-2deg) rotateX(1deg);
-  box-shadow: -8px 8px 40px rgba(0,0,0,.3);
-}
-
-/* Smooth scroll */
-html { scroll-behavior: smooth; }
-
-/* Fade-up scroll reveals */
-.fade-up {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity .7s var(--ease-out-expo), transform .7s var(--ease-out-expo);
-}
-.fade-up.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Match card stagger delay for GSAP */
-.match-card:nth-child(1) { --stagger: 0; }
-.match-card:nth-child(2) { --stagger: 0.08; }
-.match-card:nth-child(3) { --stagger: 0.16; }
-.match-card:nth-child(4) { --stagger: 0.24; }
-
-
 </style>
-<!-- ═══════════════ LAYER 2: REDESIGN (creative-web-design) ═══════════════ -->
-<style>
-/* Tres Diales: VARIANCE 7, MOTION 6, DENSITY 4 -- Dark Ambient + Asymmetrical Bento */
-
-/* -- Live match pulse -- */
-@keyframes livePulse {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, .3); }
-  50% { box-shadow: 0 0 0 12px rgba(74, 222, 128, 0); }
-}
-#live-match {
-  border-color: rgba(74, 222, 128, .25);
-  animation: livePulse 2s ease-in-out infinite;
-}
-#live-match .label {
-  color: #4ade80;
-}
-#live-match .label::before {
-  content: '';
-  display: inline-block;
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: #4ade80;
-  margin-right: 6px;
-  vertical-align: middle;
-  animation: blink 1.2s step-end infinite;
-}
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: .2; }
-}
-
-/* -- Shimmer phase labels on QF/SF cards -- */
-.match-card .phase {
-  background: linear-gradient(90deg, #a78bfa 0%, #fbbf24 40%, #a78bfa 80%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  background-size: 200% auto;
-  animation: qfShimmer 4s linear infinite;
-}
-@keyframes qfShimmer {
-  0% { background-position: 0% center; }
-  50% { background-position: 200% center; }
-  100% { background-position: 0% center; }
-}
-
-/* -- Enhanced QF card: double-bezel on hover -- */
-.match-card {
-  position: relative;
-}
-.match-card::after {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: 21px;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(167,139,250,.12), transparent 40%, rgba(251,191,36,.08) 70%, transparent);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity .5s var(--ease-spring);
-}
-.match-card:hover::after {
-  opacity: 1;
-}
-
-/* -- No-result placeholder styling -- */
-.no-result {
-  text-align: center;
-  color: #6b7280;
-  font-size: 12px;
-  font-style: italic;
-  padding: 8px 0;
-  letter-spacing: .3px;
-}
-
-/* -- QF date emphasis -- */
-.match-card .date {
-  font-weight: 500;
-  letter-spacing: .2px;
-}
-
-/* -- QF match result box refinement -- */
-.match-card .match-result {
-  border-color: rgba(167,139,250,.08);
-}
-
-/* -- Upcoming match subtle indicator -- */
-#next-match-qf {
-  border-color: rgba(251,191,36,.15);
-}
-#next-match-qf .label {
-  color: #fbbf24;
-}
-
-/* -- Custom scrollbar (dark theme) -- */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: rgba(255,255,255,.08); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,.12); }
-
-/* -- Enhanced card shadow on hover -- */
-.match-card:hover {
-  box-shadow: 0 0 40px rgba(167,139,250,.06), -4px 4px 30px rgba(0,0,0,.2);
-}
-
-/* -- Responsive QF refinements -- */
-@media(max-width: 600px) {
-  #live-match .match { font-size: 13px; }
-  #next-match-qf .match { font-size: 13px; }
-  .match-card::after { display: none; }
-}
-
-/* -- Francia team colors -- */
-.team-fra{background:linear-gradient(135deg,rgba(0,0,153,.35),rgba(0,0,100,.15));border:1px solid rgba(0,0,153,.2);color:#6699ff}
-.team-fra:hover{box-shadow:0 0 20px rgba(0,0,153,.15)}
-.team-fra .team-score{color:#f4f4f5}
-.col-fra .column-header{background:linear-gradient(180deg,rgba(0,0,153,.25),transparent)}
-.col-fra .column-header .title{color:#6699ff}
-.col-fra .column-header::after{background:linear-gradient(90deg,transparent,rgba(0,0,153,.4),transparent)}
-.col-fra .score-badge,.badge-fra{background:rgba(0,0,153,.13);border:1px solid rgba(0,0,153,.18)}
-.dot-fra{background:#6699ff;box-shadow:0 0 5px rgba(0,0,153,.25)}
-
-/* -- Marruecos team colors -- */
-.team-mar{background:linear-gradient(135deg,rgba(180,30,30,.35),rgba(150,20,20,.15));border:1px solid rgba(180,30,30,.2);color:#e06060}
-.team-mar:hover{box-shadow:0 0 20px rgba(180,30,30,.15)}
-.team-mar .team-score{color:#f4f4f5}
-.col-mar .column-header{background:linear-gradient(180deg,rgba(180,30,30,.25),transparent)}
-.col-mar .column-header .title{color:#e06060}
-.col-mar .column-header::after{background:linear-gradient(90deg,transparent,rgba(180,30,30,.4),transparent)}
-.col-mar .score-badge,.badge-mar{background:rgba(180,30,30,.13);border:1px solid rgba(180,30,30,.18)}
-.dot-mar{background:#e06060;box-shadow:0 0 5px rgba(180,30,30,.25)}
-</style>
-<!-- GSAP + Lenis for scroll animations -->
-<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-
 </head>
 <body>
 
@@ -505,82 +351,166 @@ html { scroll-behavior: smooth; }
     </a>
   </div>
 
-  <div class="next-match" id="next-match-qf">
+  <div class="next-match">
     <div class="label">Proximo Partido</div>
     <div class="match">
-      <span>Espa&ntilde;a</span>
+      <span>Noruega</span>
       <span class="vs-sm">vs</span>
-      <span>B&eacute;lgica</span>
+      <span>Inglaterra</span>
     </div>
-    <div class="time">Viernes 10/07 &middot; 16:00 ARG &middot; Cuartos de final</div>
+    <div class="time">S&aacute;bado 11/07 &middot; 18:00 ARG</div>
   </div>
 </div>
 
-
-<!-- ═══ QUARTERFINALS: MATCH 98 (Spain vs Belgium) ═══ -->
+<!-- ═══ MATCH 98: ESPAÑA vs BÉLGICA ═══ -->
 <div class="match-card">
+
   <div class="match-card-title">
     <div class="phase">Cuartos de final &middot; Match 98</div>
-    <div class="date">Viernes 10 de Julio de 2026 &middot; 16:00 ARG</div>
+    <div class="date">Viernes 10 de Julio de 2026</div>
   </div>
+
   <div class="match-badge">
-    <div class="team-box" style="background:linear-gradient(135deg,rgba(198,11,30,.3),rgba(160,10,25,.12));border:1px solid rgba(198,11,30,.2);color:#f28b82">
+    <div class="team-box team-esp">
       <span class="flag-emoji">🇪🇸</span>
       <span>Espa&ntilde;a</span>
-      <span class="team-score">-</span>
+      <span class="team-score">&mdash;</span>
     </div>
     <span class="vs">VS</span>
-    <div class="team-box" style="background:linear-gradient(135deg,rgba(200,30,30,.3),rgba(185,30,30,.1));border:1px solid rgba(200,30,30,.2);color:#e06060">
+    <div class="team-box team-bel">
       <span class="flag-emoji">🇧🇪</span>
       <span>B&eacute;lgica</span>
-      <span class="team-score">-</span>
+      <span class="team-score">&mdash;</span>
     </div>
   </div>
-  <div class="match-result">
-    <div class="no-result">Proximo &middot; Pronosticos disponibles en ProdeCA</div>
+
+  <div class="match-result" id="result-98">
+  <div class="no-result">Partido en disputa</div>
+  </div>
+
+  <div class="match-section">
+  <div class="grid">
+
+  <div class="column col-espana">
+    <div class="column-header"><div class="title"><span class="flag-emoji">🇪🇸</span> Gana Espa&ntilde;a</div><span class="count">18</span></div>
+    <div class="column-body">
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">5 &ndash; 2</span><span class="chip-count">1</span></div>
+        <div class="users">
+          <span class="user-chip">Gabriel Moreno <span class="pts">(25)</span></span>
+        </div>
+      </div>
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">3 &ndash; 1</span><span class="chip-count">4</span></div>
+        <div class="users">
+          <span class="user-chip">Noly Moreno <span class="pts">(31)</span></span>
+          <span class="user-chip">Rodrigo Tumbarello <span class="pts">(27)</span></span>
+          <span class="user-chip">Florencia Escortichini <span class="pts">(25)</span></span>
+          <span class="user-chip">Lucas Bejarano <span class="pts">(20)</span></span>
+        </div>
+      </div>
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">3 &ndash; 0</span><span class="chip-count">1</span></div>
+        <div class="users">
+          <span class="user-chip">Carlos Sarmiento <span class="pts">(27)</span></span>
+        </div>
+      </div>
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">2 &ndash; 1</span><span class="chip-count">7</span></div>
+        <div class="users">
+          <span class="user-chip">Martín Baigorria <span class="pts">(31)</span></span>
+          <span class="user-chip">Ruben777 <span class="pts">(26)</span></span>
+          <span class="user-chip">Esther M. Ribeiro <span class="pts">(25)</span></span>
+          <span class="user-chip">Karen Elizondo <span class="pts">(26)</span></span>
+          <span class="user-chip">Juan Martinez Garcia <span class="pts">(21)</span></span>
+          <span class="user-chip">Juan Manuel Lucero <span class="pts">(20)</span></span>
+          <span class="user-chip">elmasternero <span class="pts">(15)</span></span>
+        </div>
+      </div>
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">2 &ndash; 0</span><span class="chip-count">3</span></div>
+        <div class="users">
+          <span class="user-chip">Miguel M <span class="pts">(32)</span></span>
+          <span class="user-chip">Franco Pellegrino <span class="pts">(17)</span></span>
+          <span class="user-chip">Cristian Ochoa <span class="pts">(11)</span></span>
+        </div>
+      </div>
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">1 &ndash; 0</span><span class="chip-count">2</span></div>
+        <div class="users">
+          <span class="user-chip">Luis Duprat <span class="pts">(32)</span></span>
+          <span class="user-chip">Gabriela Monaco <span class="pts">(31)</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column col-empate">
+    <div class="column-header"><div class="title"><span class="flag-emoji">⚪</span> Empate</div><span class="count">1</span></div>
+    <div class="column-body">
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">1 &ndash; 1</span><span class="chip-count">1</span></div>
+        <div class="users">
+          <span class="user-chip">Mauricio Moreno <span class="pts">(27)</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column col-bel">
+    <div class="column-header"><div class="title"><span class="flag-emoji">🇧🇪</span> Gana B&eacute;lgica</div><span class="count">2</span></div>
+    <div class="column-body">
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">1 &ndash; 2</span><span class="chip-count">1</span></div>
+        <div class="users">
+          <span class="user-chip">Florencia <span class="pts">(23)</span></span>
+        </div>
+      </div>
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">0 &ndash; 1</span><span class="chip-count">1</span></div>
+        <div class="users">
+          <span class="user-chip">Gustavo Pereyra <span class="pts">(20)</span></span>
+        </div>
+      </div>
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">Sin pron&oacute;stico</span><span class="chip-count">3</span></div>
+        <div class="users">
+          <span class="user-chip">Maximiliano Ruiz Diaz <span class="pts">(21)</span></span>
+          <span class="user-chip">Gerardo De Marco <span class="pts">(22)</span></span>
+          <span class="user-chip">Guille Calde <span class="pts">(22)</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </div>
   </div>
 </div>
 
-<!-- ═══ QUARTERFINALS: MATCH 99 (Norway vs England) ═══ -->
-
-
-<!-- ═══ QUARTERFINALS: MATCH 97 (France vs Morocco) ═══ -->
+<!-- ═══ MATCH 97: FRANCIA vs MARRUECOS ═══ -->
 <div class="match-card">
+
   <div class="match-card-title">
     <div class="phase">Cuartos de final &middot; Match 97</div>
-    <div class="date">Jueves 9 de Julio de 2026 &middot; 17:00 ARG</div>
+    <div class="date">Jueves 9 de Julio de 2026</div>
   </div>
 
   <div class="match-badge">
     <div class="team-box team-fra">
       <span class="flag-emoji">🇫🇷</span>
       <span>Francia</span>
-      <span class="team-score">1</span>
+      <span class="team-score">&mdash;</span>
     </div>
     <span class="vs">VS</span>
     <div class="team-box team-mar">
       <span class="flag-emoji">🇲🇦</span>
       <span>Marruecos</span>
-      <span class="team-score">2</span>
+      <span class="team-score">&mdash;</span>
     </div>
   </div>
 
   <div class="match-result" id="result-97">
-    <div class="result-detail">Finalizado &middot; Francia 2-0 Marruecos</div>
-    <div class="scorers">
-      <span class="scorer-chip">Luis Duprat <span class="spts">+1</span></span>
-      <span class="scorer-chip">Miguel M <span class="spts">+1</span></span>
-      <span class="scorer-chip">Noly Moreno <span class="spts">+1</span></span>
-      <span class="scorer-chip">Mart&iacute;n Baigorria <span class="spts">+1</span></span>
-      <span class="scorer-chip">Mauricio Moreno <span class="spts">+1</span></span>
-      <span class="scorer-chip">Rodrigo Tumbarello <span class="spts">+1</span></span>
-      <span class="scorer-chip">Ruben777 <span class="spts">+1</span></span>
-      <span class="scorer-chip">Esther M. Ribeiro <span class="spts">+1</span></span>
-      <span class="scorer-chip">Florencia Escortichini <span class="spts">+1</span></span>
-      <span class="scorer-chip">Karen Elizondo <span class="spts">+1</span></span>
-      <span class="scorer-chip">Florencia <span class="spts">+1</span></span>
-      <span class="scorer-chip">Lucas Bejarano <span class="spts">+1</span></span>
-    </div>
+  <div class="no-result">Partido aun no disputado</div>
   </div>
 
   <div class="match-section">
@@ -590,30 +520,30 @@ html { scroll-behavior: smooth; }
     <div class="column-header"><div class="title"><span class="flag-emoji">🇫🇷</span> Gana Francia</div><span class="count">12</span></div>
     <div class="column-body">
       <div class="subgroup">
-        <div class="subgroup-header"><span class="score-badge badge-fra">2 &ndash; 1</span><span class="chip-count">5</span></div>
+        <div class="subgroup-header"><span class="score-badge">2 &ndash; 1</span><span class="chip-count">5</span></div>
         <div class="users">
-          <span class="user-chip">Luis Duprat <span class="pts">(31)</span></span>
-          <span class="user-chip">Mart&iacute;n Baigorria <span class="pts">(30)</span></span>
-          <span class="user-chip">Esther M. Ribeiro <span class="pts">(24)</span></span>
-          <span class="user-chip">Florencia Escortichini <span class="pts">(24)</span></span>
-          <span class="user-chip">Karen Elizondo <span class="pts">(25)</span></span>
+          <span class="user-chip">Luis Duprat <span class="pts"></span></span>
+          <span class="user-chip">Mart&iacute;n Baigorria <span class="pts"></span></span>
+          <span class="user-chip">Esther M. Ribeiro <span class="pts">(25)</span></span>
+          <span class="user-chip">Florencia Escortichini <span class="pts"></span></span>
+          <span class="user-chip">Karen Elizondo <span class="pts"></span></span>
         </div>
       </div>
       <div class="subgroup">
-        <div class="subgroup-header"><span class="score-badge badge-fra">3 &ndash; 1</span><span class="chip-count">3</span></div>
+        <div class="subgroup-header"><span class="score-badge">3 &ndash; 1</span><span class="chip-count">3</span></div>
         <div class="users">
-          <span class="user-chip">Mauricio Moreno <span class="pts">(26)</span></span>
-          <span class="user-chip">Rodrigo Tumbarello <span class="pts">(26)</span></span>
-          <span class="user-chip">Lucas Bejarano <span class="pts">(19)</span></span>
+          <span class="user-chip">Mauricio Moreno <span class="pts"></span></span>
+          <span class="user-chip">Rodrigo Tumbarello <span class="pts"></span></span>
+          <span class="user-chip">Lucas Bejarano <span class="pts"></span></span>
         </div>
       </div>
       <div class="subgroup">
-        <div class="subgroup-header"><span class="score-badge badge-fra">3 &ndash; 2</span><span class="chip-count">4</span></div>
+        <div class="subgroup-header"><span class="score-badge">3 &ndash; 2</span><span class="chip-count">4</span></div>
         <div class="users">
-          <span class="user-chip">Miguel M <span class="pts">(31)</span></span>
-          <span class="user-chip">Noly Moreno <span class="pts">(30)</span></span>
-          <span class="user-chip">Ruben777 <span class="pts">(25)</span></span>
-          <span class="user-chip">Florencia <span class="pts">(22)</span></span>
+          <span class="user-chip">Miguel M <span class="pts"></span></span>
+          <span class="user-chip">Noly Moreno <span class="pts"></span></span>
+          <span class="user-chip">Ruben777 <span class="pts"></span></span>
+          <span class="user-chip">Florencia <span class="pts"></span></span>
         </div>
       </div>
     </div>
@@ -623,23 +553,26 @@ html { scroll-behavior: smooth; }
     <div class="column-header"><div class="title"><span class="flag-emoji">⚪</span> Empate</div><span class="count">4</span></div>
     <div class="column-body">
       <div class="subgroup">
-        <div class="subgroup-header"><span class="score-badge badge-empate">1 &ndash; 1</span><span class="chip-count">2</span></div>
-        <div class="users" style="margin-bottom:5px">
-          <span class="user-chip">Gabriela Monaco <span class="pts">(30)</span></span>
-          <span class="user-chip">elmasternero <span class="pts">(15)</span></span>
-        </div>
-        <div class="tiebreak-group">
-          <div class="tiebreak-label"><span class="dot dot-fra"></span> Cree que gana Francia</div>
-          <div class="users"><span class="user-chip">Gabriela Monaco <span class="pts">(30)</span></span></div>
-          <div class="tiebreak-label"><span class="dot dot-mar"></span> Creen que gana Marruecos</div>
-          <div class="users"><span class="user-chip">elmasternero <span class="pts">(15)</span></span></div>
+        <div class="subgroup-header"><span class="score-badge">1 &ndash; 1</span><span class="chip-count">1</span></div>
+        <div class="tiebreak-group" style="border:none;padding:0;margin:0">
+          <div class="tiebreak-label"><span class="dot dot-fra"></span> Cree que gana Francia <span style="color:#a0a0b0;font-weight:400;margin-left:auto">Gabriela Monaco</span></div>
         </div>
       </div>
       <div class="subgroup">
-        <div class="subgroup-header"><span class="score-badge badge-empate">2 &ndash; 2</span><span class="chip-count">2</span></div>
-        <div class="tiebreak-group" style="border:none;padding:0;margin:0">
+        <div class="subgroup-header"><span class="score-badge">2 &ndash; 2</span><span class="chip-count">2</span></div>
+        <div class="users" style="margin-bottom:5px">
+          <span class="user-chip">Carlos Sarmiento <span class="pts"></span></span>
+          <span class="user-chip">Gustavo Pereyra <span class="pts"></span></span>
+        </div>
+        <div class="tiebreak-group">
           <div class="tiebreak-label"><span class="dot dot-mar"></span> Creen que gana Marruecos</div>
-          <div class="users" style="margin-bottom:5px"><span class="user-chip">Carlos Sarmiento <span class="pts">(27)</span></span><span class="user-chip">Gustavo Pereyra <span class="pts">(20)</span></span></div>
+          <div class="users"><span class="user-chip">Carlos Sarmiento <span class="pts"></span></span><span class="user-chip">Gustavo Pereyra <span class="pts"></span></span></div>
+        </div>
+      </div>
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">1 &ndash; 1</span><span class="chip-count">1</span></div>
+        <div class="tiebreak-group" style="border:none;padding:0;margin:0">
+          <div class="tiebreak-label"><span class="dot dot-mar"></span> Cree que gana Marruecos <span style="color:#a0a0b0;font-weight:400;margin-left:auto">elmasternero</span></div>
         </div>
       </div>
     </div>
@@ -649,24 +582,24 @@ html { scroll-behavior: smooth; }
     <div class="column-header"><div class="title"><span class="flag-emoji">🇲🇦</span> Gana Marruecos</div><span class="count">6</span></div>
     <div class="column-body">
       <div class="subgroup">
-        <div class="subgroup-header"><span class="score-badge badge-mar">1 &ndash; 2</span><span class="chip-count">4</span></div>
+        <div class="subgroup-header"><span class="score-badge">1 &ndash; 2</span><span class="chip-count">4</span></div>
         <div class="users">
-          <span class="user-chip">Maximiliano Ruiz Diaz <span class="pts">(21)</span></span>
-          <span class="user-chip">Juan Martinez Garcia <span class="pts">(21)</span></span>
-          <span class="user-chip">Gerardo De Marco <span class="pts">(22)</span></span>
-          <span class="user-chip">Juan Manuel Lucero <span class="pts">(20)</span></span>
+          <span class="user-chip">Maximiliano Ruiz Diaz <span class="pts"></span></span>
+          <span class="user-chip">Juan Martinez Garcia <span class="pts"></span></span>
+          <span class="user-chip">Gerardo De Marco <span class="pts"></span></span>
+          <span class="user-chip">Juan Manuel Lucero <span class="pts"></span></span>
         </div>
       </div>
       <div class="subgroup">
-        <div class="subgroup-header"><span class="score-badge badge-mar">1 &ndash; 3</span><span class="chip-count">1</span></div>
+        <div class="subgroup-header"><span class="score-badge">1 &ndash; 3</span><span class="chip-count">1</span></div>
         <div class="users">
-          <span class="user-chip">Gabriel Moreno <span class="pts">(25)</span></span>
+          <span class="user-chip">Gabriel Moreno <span class="pts"></span></span>
         </div>
       </div>
       <div class="subgroup">
-        <div class="subgroup-header"><span class="score-badge badge-mar">2 &ndash; 3</span><span class="chip-count">1</span></div>
+        <div class="subgroup-header"><span class="score-badge">2 &ndash; 3</span><span class="chip-count">1</span></div>
         <div class="users">
-          <span class="user-chip">Franco Pellegrino <span class="pts">(17)</span></span>
+          <span class="user-chip">Franco Pellegrino <span class="pts"></span></span>
         </div>
       </div>
     </div>
@@ -675,9 +608,6 @@ html { scroll-behavior: smooth; }
   </div>
   </div>
 </div>
-
-<!-- ═══ QUARTERFINALS: MATCH 98 (Spain vs Belgium) ═══ -->
-
 
 <!-- ═══ MATCH 96: SUIZA vs COLOMBIA ═══ -->
 <div class="match-card">
@@ -812,9 +742,6 @@ html { scroll-behavior: smooth; }
 </div>
 
 <!-- ═══ MATCH 95: ARGENTINA vs EGIPTO ═══ -->
-
-
-<!-- ═══ MATCH 95: ARGENTINA vs EGIPTO ═══ -->
 <div class="match-card">
 
   <div class="match-card-title">
@@ -921,8 +848,6 @@ html { scroll-behavior: smooth; }
   </div>
   </div>
 </div>
-
-
 
 <div class="match-card">
 
@@ -1040,9 +965,6 @@ html { scroll-behavior: smooth; }
   </div>
   </div>
 </div>
-
-<!-- ═══ MATCH 93: PORTUGAL vs ESPAÑA ═══ -->
-
 
 <!-- ═══ MATCH 93: PORTUGAL vs ESPAÑA ═══ -->
 <div class="match-card">
@@ -1179,91 +1101,11 @@ html { scroll-behavior: smooth; }
   </div>
 </div>
 
-<!-- ═══ QUARTERFINALS: MATCH 97 (France vs Morocco) ═══ -->
-
-
-<!-- ═══ QUARTERFINALS: MATCH 99 (Norway vs England) ═══ -->
-<div class="match-card">
-  <div class="match-card-title">
-    <div class="phase">Cuartos de final &middot; Match 99</div>
-    <div class="date">S&aacute;bado 11 de Julio de 2026 &middot; 18:00 ARG</div>
-  </div>
-  <div class="match-badge">
-    <div class="team-box" style="background:linear-gradient(135deg,rgba(200,30,30,.3),rgba(150,20,20,.1));border:1px solid rgba(200,30,30,.2);color:#e06060">
-      <span class="flag-emoji">🇳🇴</span>
-      <span>Noruega</span>
-      <span class="team-score">-</span>
-    </div>
-    <span class="vs">VS</span>
-    <div class="team-box" style="background:linear-gradient(135deg,rgba(0,0,153,.3),rgba(0,0,120,.1));border:1px solid rgba(0,0,153,.2);color:#6699ff">
-      <span class="flag-emoji">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span>
-      <span>Inglaterra</span>
-      <span class="team-score">-</span>
-    </div>
-  </div>
-  <div class="match-result">
-    <div class="no-result">Proximo &middot; Pronosticos disponibles en ProdeCA</div>
-  </div>
-</div>
-
-<!-- ═══ QUARTERFINALS: MATCH 100 (Argentina vs Switzerland) ═══ -->
-
-
-<!-- ═══ QUARTERFINALS: MATCH 100 (Argentina vs Switzerland) ═══ -->
-<div class="match-card">
-  <div class="match-card-title">
-    <div class="phase">Cuartos de final &middot; Match 100</div>
-    <div class="date">S&aacute;bado 11 de Julio de 2026 &middot; 22:00 ARG</div>
-  </div>
-  <div class="match-badge">
-    <div class="team-box team-arg">
-      <span class="flag-emoji">🇦🇷</span>
-      <span>Argentina</span>
-      <span class="team-score">-</span>
-    </div>
-    <span class="vs">VS</span>
-    <div class="team-box team-sui">
-      <span class="flag-emoji">🇨🇭</span>
-      <span>Suiza</span>
-      <span class="team-score">-</span>
-    </div>
-  </div>
-  <div class="match-result">
-    <div class="no-result">Proximo &middot; Pronosticos disponibles en ProdeCA</div>
-  </div>
-</div>
-
-<!-- ═══ SEMIFINALS: MATCH 101 ═══ -->
-
-
-<!-- ═══ SEMIFINALS: MATCH 101 ═══ -->
-<div class="match-card">
-  <div class="match-card-title">
-    <div class="phase">Semifinales &middot; Match 101</div>
-    <div class="date">Martes 14 de Julio de 2026 &middot; 16:00 ARG</div>
-  </div>
-  <div class="match-badge">
-    <div class="team-box" style="background:linear-gradient(135deg,rgba(100,100,100,.2),rgba(80,80,80,.1));border:1px solid rgba(255,255,255,.08);color:#e4e4e7">
-      <span>Ganador Match 97</span>
-      <span class="team-score">-</span>
-    </div>
-    <span class="vs">VS</span>
-    <div class="team-box" style="background:linear-gradient(135deg,rgba(100,100,100,.2),rgba(80,80,80,.1));border:1px solid rgba(255,255,255,.08);color:#e4e4e7">
-      <span>Ganador Match 98</span>
-      <span class="team-score">-</span>
-    </div>
-  </div>
-  <div class="match-result">
-    <div class="no-result">Proximo &middot; Pronosticos disponibles en ProdeCA</div>
-  </div>
-</div>
-
 <!-- ═══ FUTURE MATCHES (hidden) ═══ -->
 <div class="future-matches" id="future-matches">
   <div class="section-title">Proximos Partidos</div>
   <div id="future-grid"></div>
 </div>
-
 
 <!-- ═══ RANKING MODAL ═══ -->
 <div class="modal-overlay" id="rankModal" onclick="if(event.target===this)this.classList.remove('open')">
@@ -1282,8 +1124,8 @@ html { scroll-behavior: smooth; }
 <div class="footer">
   <div class="results-line">
     <span>PRODEMOS OTRA VEZ ?</span><span class="sep">&bull;</span>
-    <span>Match 97 &middot; 09/07</span><span class="sep">&bull;</span>
-    <span>Francia vs Marruecos</span>
+    <span>Match 98 &middot; 10/07</span><span class="sep">&bull;</span>
+    <span>Espa&ntilde;a vs B&eacute;lgica</span>
   </div>
   <div class="divider"></div>
   <div class="credit">
@@ -1296,30 +1138,30 @@ html { scroll-behavior: smooth; }
 
 <script>
 const RANKING = [
-  {pos:1, name:'Luis Duprat', pts:31},
-  {pos:2, name:'Miguel M', pts:31},
-  {pos:2, name:'Noly Moreno', pts:30},
-  {pos:2, name:'Mart&iacute;n Baigorria', pts:30},
-  {pos:2, name:'Gabriela Monaco', pts:30},
-  {pos:3, name:'Mauricio Moreno', pts:26},
-  {pos:3, name:'Rodrigo Tumbarello', pts:26},
+  {pos:1, name:'Luis Duprat', pts:32},
+  {pos:1, name:'Miguel M', pts:32},
+  {pos:2, name:'Noly Moreno', pts:31},
+  {pos:2, name:'Mart&iacute;n Baigorria', pts:31},
+  {pos:2, name:'Gabriela Monaco', pts:31},
+  {pos:3, name:'Mauricio Moreno', pts:27},
+  {pos:3, name:'Rodrigo Tumbarello', pts:27},
   {pos:3, name:'Carlos Sarmiento', pts:27},
-  {pos:4, name:'Ruben777', pts:25},
-  {pos:4, name:'Gabriel Moreno', pts:25},
-  {pos:5, name:'Esther M. Ribeiro', pts:24},
-  {pos:5, name:'Florencia Escortichini', pts:24},
-  {pos:5, name:'Karen Elizondo', pts:25},
-  {pos:6, name:'Florencia', pts:22},
-  {pos:6, name:'Guille Calde', pts:22},
-  {pos:7, name:'Maximiliano Ruiz Diaz', pts:21},
-  {pos:7, name:'Juan Martinez Garcia', pts:21},
+  {pos:4, name:'Ruben777', pts:26},
+  {pos:4, name:'Karen Elizondo', pts:26},
+  {pos:5, name:'Gabriel Moreno', pts:25},
+  {pos:5, name:'Esther M. Ribeiro', pts:25},
+  {pos:5, name:'Florencia Escortichini', pts:25},
+  {pos:6, name:'Florencia', pts:23},
   {pos:7, name:'Gerardo De Marco', pts:22},
-  {pos:8, name:'Juan Manuel Lucero', pts:20},
-  {pos:8, name:'Lucas Bejarano', pts:19},
-  {pos:8, name:'Gustavo Pereyra', pts:20},
-  {pos:9, name:'Franco Pellegrino', pts:17},
-  {pos:10, name:'elmasternero', pts:15},
-  {pos:11, name:'Cristian Ochoa', pts:11}
+  {pos:7, name:'Guille Calde', pts:22},
+  {pos:8, name:'Maximiliano Ruiz Diaz', pts:21},
+  {pos:8, name:'Juan Martinez Garcia', pts:21},
+  {pos:9, name:'Juan Manuel Lucero', pts:20},
+  {pos:9, name:'Lucas Bejarano', pts:20},
+  {pos:9, name:'Gustavo Pereyra', pts:20},
+  {pos:10, name:'Franco Pellegrino', pts:17},
+  {pos:11, name:'elmasternero', pts:15},
+  {pos:12, name:'Cristian Ochoa', pts:11}
 ];
 
 // ── Render ranking modal from data ──
@@ -1360,60 +1202,5 @@ document.addEventListener('DOMContentLoaded', renderRanking);
 .top-3 .rank-pos{color:#cd7f32}
 .top-3 .rank-name{color:#cd7f32;font-weight:600}
 </style>
-<!-- JS enhancements (creative-web-design + js-creative-effects) -->
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  try {
-    /* Lenis smooth scroll */
-    const lenis = new Lenis({ duration: 1.1, easing: function(t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); } });
-    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-    requestAnimationFrame(raf);
-  } catch(e) { console.log("Lenis not loaded"); }
-
-  try {
-    gsap.registerPlugin(ScrollTrigger);
-    /* Stagger entry for match cards */
-    gsap.utils.toArray(".match-card").forEach(function(card, i) {
-      gsap.from(card, {
-        y: 30, opacity: 0, duration: 0.7, ease: "power3.out",
-        scrollTrigger: { trigger: card, start: "top 92%", toggleActions: "play none none none" },
-        delay: i * 0.08
-      });
-    });
-  } catch(e) { console.log("GSAP not loaded"); }
-
-  /* IntersectionObserver for fade-up */
-  var observer = new IntersectionObserver(function(entries) {
-    entries.forEach(function(entry) {
-      if (entry.isIntersecting) entry.target.classList.add("visible");
-    });
-  }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
-
-  document.querySelectorAll(".fade-up, .match-card").forEach(function(el) { observer.observe(el); });
-} catch(e) { console.log("IntersectionObserver error", e); }
-
-/* ═══ LAYER 2: JS ENHANCEMENTS (creative-web-design) ═══ */
-try {
-  var qfCards = document.querySelectorAll(".match-card:nth-child(n+5)");
-  qfCards.forEach(function(card, i) {
-    card.style.setProperty("--stagger", (i * 0.08).toString());
-    card.style.animationDelay = (0.4 + i * 0.08) + "s";
-  });
-  var liveMatch = document.getElementById("live-match");
-  if (liveMatch) {
-    var timeEl = liveMatch.querySelector(".time");
-    if (timeEl) {
-      var matchStart = new Date();
-      matchStart.setHours(17, 0, 0, 0);
-      var now = new Date();
-      var minutesElapsed = Math.floor((now - matchStart) / 60000);
-      if (minutesElapsed > 0 && minutesElapsed < 120) {
-        timeEl.innerHTML = "1 \u2013 2 &middot; " + minutesElapsed + "' &middot; Cuartos de final";
-      }
-    }
-  }
-} catch(e) { console.log("Layer2 JS error", e); }
-</script>
-
 </body>
 </html>
