@@ -34,10 +34,16 @@
   "url": "https://juanaustral.github.io/PRODEMOS-2026/",
   "sport": "Soccer",
   "competitor": [
+    {"@type": "SportsTeam", "name": "Norway"},
+    {"@type": "SportsTeam", "name": "England"},
+    {"@type": "SportsTeam", "name": "Spain"},
+    {"@type": "SportsTeam", "name": "Belgium"},
     {"@type": "SportsTeam", "name": "France"},
     {"@type": "SportsTeam", "name": "Morocco"},
-    {"@type": "SportsTeam", "name": "Spain"},
-    {"@type": "SportsTeam", "name": "Belgium"}
+    {"@type": "SportsTeam", "name": "Argentina"},
+    {"@type": "SportsTeam", "name": "Egypt"},
+    {"@type": "SportsTeam", "name": "Switzerland"},
+    {"@type": "SportsTeam", "name": "Colombia"}
   ],
   "superEvent": {
     "@type": "SportsEvent",
@@ -315,6 +321,26 @@ body::before{
 
 @media(max-width:920px){.container{padding:20px 12px}.header h1{font-size:22px}.match-badge{gap:10px;padding:10px 16px;flex-wrap:wrap;justify-content:center}}
 @media(max-width:480px){.container{padding:14px 8px}.team-box{padding:4px 8px 4px 6px;font-size:11px}.team-box svg.flag-mini{width:16px;height:11px}.column-body{padding:10px 10px 14px}.user-chip{font-size:10px;padding:3px 8px}.header-logo{width:38px;height:38px}.header h1{font-size:17px}.modal{max-width:100%;border-radius:16px;max-height:90vh}}
+
+.team-box.team-nor{background:linear-gradient(135deg,rgba(186,12,47,.3),rgba(186,12,47,.1));border:1px solid rgba(186,12,47,.2);color:#f06060}
+.team-box.team-nor:hover{box-shadow:0 0 20px rgba(186,12,47,.15)}
+.team-box.team-nor .team-score{color:#f4f4f5}
+.team-box.team-eng{background:linear-gradient(135deg,rgba(0,32,91,.3),rgba(0,32,91,.1));border:1px solid rgba(0,32,91,.2);color:#6699ff}
+.team-box.team-eng:hover{box-shadow:0 0 20px rgba(0,32,91,.15)}
+.team-box.team-eng .team-score{color:#f4f4f5}
+.col-nor .column-header{background:linear-gradient(180deg,rgba(186,12,47,.2),transparent)}
+.col-nor .column-header .title{color:#f06060}
+.col-nor .column-header::after{background:linear-gradient(90deg,transparent,rgba(186,12,47,.35),transparent)}
+.col-eng .column-header{background:linear-gradient(180deg,rgba(0,32,91,.2),transparent)}
+.col-eng .column-header .title{color:#6699ff}
+.col-eng .column-header::after{background:linear-gradient(90deg,transparent,rgba(0,32,91,.35),transparent)}
+.col-nor .score-badge{background:rgba(186,12,47,.13);border:1px solid rgba(186,12,47,.18)}
+.col-eng .score-badge{background:rgba(0,32,91,.13);border:1px solid rgba(0,32,91,.18)}
+.col-nor .column-body::before{background:linear-gradient(90deg,rgba(186,12,47,.25),rgba(186,12,47,.03))}
+.col-eng .column-body::before{background:linear-gradient(90deg,rgba(0,32,91,.25),rgba(0,32,91,.03))}
+.tiebreak-label .dot-nor{background:#f06060;box-shadow:0 0 5px rgba(186,12,47,.25)}
+.tiebreak-label .dot-eng{background:#6699ff;box-shadow:0 0 5px rgba(0,32,91,.25)}
+
 </style>
 </head>
 <body>
@@ -351,8 +377,8 @@ body::before{
     </a>
   </div>
 
-  <div class="next-match" id="next-match-qf">
-    <div class="label">Proximo Partido</div>
+  <div class="next-match" id="next-match-live">
+    <div class="label">En Vivo</div>
     <div class="match">
       <span>Noruega</span>
       <span class="vs-sm">vs</span>
@@ -360,7 +386,128 @@ body::before{
     </div>
     <div class="time">S&aacute;bado 11/07 &middot; 18:00 ARG &middot; Cuartos de final</div>
   </div>
+
+<!-- ═══ MATCH 99: NORUEGA vs INGLATERRA ═══ -->
+<div class="match-card">
+
+  <div class="match-card-title">
+    <div class="phase">Cuartos de final &middot; Match 99</div>
+    <div class="date">Sábado 11 de Julio de 2026</div>
+  </div>
+
+  <div class="match-badge">
+    <div class="team-box team-nor">
+      <svg class="flag-mini" viewBox="0 0 28 19"><rect width="28" height="19" fill="#BA0C2F"/><rect x="7" y="0" width="5.5" height="19" fill="#fff"/><rect x="0" y="6" width="28" height="5.5" fill="#fff"/><rect x="9" y="0" width="2" height="19" fill="#002868"/><rect x="0" y="8" width="28" height="2" fill="#002868"/></svg>
+      <span>Noruega</span>
+      <span class="team-score">2</span>
+    </div>
+    <span class="vs">VS</span>
+    <div class="team-box team-eng">
+      <svg class="flag-mini" viewBox="0 0 28 19"><rect width="28" height="19" fill="#fff"/><rect x="12" y="0" width="4" height="19" fill="#CE1124"/><rect x="0" y="7" width="28" height="5" fill="#CE1124"/></svg>
+      <span>Inglaterra</span>
+      <span class="team-score">1</span>
+    </div>
+  </div>
+
+  <div class="match-result" id="result-99">
+    <div class="no-result">En Vivo &middot; Noruega vs Inglaterra</div>
+  </div>
+
+  <div class="match-section">
+  <div class="grid">
+
+  <div class="column col-nor">
+    <div class="column-header"><div class="title"><span class="flag-emoji"></span> Gana Noruega</div><span class="count">13</span></div>
+    <div class="column-body">
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">2 &ndash; 0</span><span class="chip-count">1</span></div>
+        <div class="users">
+          <span class="user-chip">Luis Duprat <span class="pts"></span></span>
+        </div>
+      </div>
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">2 &ndash; 1</span><span class="chip-count">9</span></div>
+        <div class="users">
+          <span class="user-chip">Noly Moreno <span class="pts"></span></span>
+          <span class="user-chip">Gabriela Monaco <span class="pts"></span></span>
+          <span class="user-chip">Mauricio Moreno <span class="pts"></span></span>
+          <span class="user-chip">Ruben777 <span class="pts"></span></span>
+          <span class="user-chip">Carlos Sarmiento <span class="pts"></span></span>
+          <span class="user-chip">Esther M. Ribeiro <span class="pts"></span></span>
+          <span class="user-chip">Juan Martinez Garcia <span class="pts"></span></span>
+          <span class="user-chip">Juan Manuel Lucero <span class="pts"></span></span>
+          <span class="user-chip">Gustavo Pereyra <span class="pts"></span></span>
+        </div>
+      </div>
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">3 &ndash; 1</span><span class="chip-count">1</span></div>
+        <div class="users">
+          <span class="user-chip">Franco Pellegrino <span class="pts"></span></span>
+        </div>
+      </div>
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">3 &ndash; 2</span><span class="chip-count">2</span></div>
+        <div class="users">
+          <span class="user-chip">Gabriel Moreno <span class="pts"></span></span>
+          <span class="user-chip">elmasternero <span class="pts"></span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column col-empate">
+    <div class="column-header"><div class="title"><span class="flag-emoji">⚪</span> Empate</div><span class="count">1</span></div>
+    <div class="column-body">
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">2 &ndash; 2</span><span class="chip-count">1</span></div>
+        <div class="users">
+          <span class="user-chip">Florencia Escortichini <span class="pts"></span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="column col-eng">
+    <div class="column-header"><div class="title"><span class="flag-emoji"></span> Gana Inglaterra</div><span class="count">8</span></div>
+    <div class="column-body">
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">0 &ndash; 1</span><span class="chip-count">2</span></div>
+        <div class="users">
+          <span class="user-chip">Miguel M <span class="pts"></span></span>
+          <span class="user-chip">Guille Calde <span class="pts"></span></span>
+        </div>
+      </div>
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">1 &ndash; 2</span><span class="chip-count">5</span></div>
+        <div class="users">
+          <span class="user-chip">Martín Baigorria <span class="pts"></span></span>
+          <span class="user-chip">Rodrigo Tumbarello <span class="pts"></span></span>
+          <span class="user-chip">Karen Elizondo <span class="pts"></span></span>
+          <span class="user-chip">Lucas Bejarano <span class="pts"></span></span>
+          <span class="user-chip">Cristian Ochoa <span class="pts"></span></span>
+        </div>
+      </div>
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">1 &ndash; 3</span><span class="chip-count">1</span></div>
+        <div class="users">
+          <span class="user-chip">Florencia <span class="pts"></span></span>
+        </div>
+      </div>
+      <div class="subgroup">
+        <div class="subgroup-header"><span class="score-badge">&mdash;</span><span class="chip-count">2</span></div>
+        <div class="users">
+          <span class="user-chip">Maximiliano Ruiz Diaz <span class="pts"></span></span>
+          <span class="user-chip">Gerardo De Marco <span class="pts"></span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  </div>
+  </div>
 </div>
+
 
 <!-- ═══ MATCH 98: ESPAÑA vs BÉLGICA ═══ -->
 <div class="match-card">
@@ -1158,8 +1305,8 @@ body::before{
 <div class="footer">
   <div class="results-line">
     <span>PRODEMOS OTRA VEZ ?</span><span class="sep">&bull;</span>
-    <span>Match 98 &middot; 10/07</span><span class="sep">&bull;</span>
-    <span>Espa&ntilde;a vs B&eacute;lgica</span>
+    <span>Match 99 &middot; 11/07</span><span class="sep">&bull;</span>
+    <span>Noruega vs Inglaterra</span>
   </div>
   <div class="divider"></div>
   <div class="credit">
@@ -1175,16 +1322,16 @@ const RANKING = [
   {pos:1, name:'Martin Baigorria', pts:34},
   {pos:2, name:'Luis Duprat', pts:33},
   {pos:2, name:'Miguel M', pts:33},
-  {pos:4, name:'Gabriela Monaco', pts:32},
   {pos:4, name:'Noly Moreno', pts:32},
-  {pos:6, name:'Karen Elizondo', pts:29},
+  {pos:4, name:'Gabriela Monaco', pts:32},
   {pos:6, name:'Ruben777', pts:29},
+  {pos:6, name:'Karen Elizondo', pts:29},
   {pos:8, name:'Carlos Sarmiento', pts:28},
   {pos:8, name:'Esther M. Ribeiro', pts:28},
   {pos:8, name:'Rodrigo Tumbarello', pts:28},
-  {pos:11, name:'Mauricio Moreno', pts:27},
-  {pos:12, name:'Florencia Escortichini', pts:26},
+  {pos:8, name:'Mauricio Moreno', pts:28},
   {pos:12, name:'Gabriel Moreno', pts:26},
+  {pos:12, name:'Florencia Escortichini', pts:26},
   {pos:14, name:'Juan Martinez Garcia', pts:24},
   {pos:15, name:'Florencia', pts:23},
   {pos:15, name:'Juan Manuel Lucero', pts:23},
@@ -1193,8 +1340,8 @@ const RANKING = [
   {pos:19, name:'Lucas Bejarano', pts:21},
   {pos:19, name:'Maximiliano Ruiz Diaz', pts:21},
   {pos:21, name:'Gustavo Pereyra', pts:20},
-  {pos:22, name:'Franco Pellegrino', pts:18},
   {pos:22, name:'elmasternero', pts:18},
+  {pos:22, name:'Franco Pellegrino', pts:18},
   {pos:24, name:'Cristian Ochoa', pts:12},
 ];
 
