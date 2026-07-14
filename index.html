@@ -29,7 +29,7 @@
 {
   "@context": "https://schema.org",
   "@type": "SportsEvent",
-  "name": "PRODEMOS OTRA VEZ - Semifinales Mundial 2026",
+  "name": "PRODEMOS OTRA VEZ - Semifinales Mundial 2026 - Actualizado",
   "description": "Votaciones del torneo de amigos PRODEMOS OTRA VEZ. Pronosticos, resultados y ranking de participantes para el Mundial 2026 en ProdeCA.",
   "url": "https://juanaustral.github.io/PRODEMOS-2026/",
   "sport": "Soccer",
@@ -403,18 +403,32 @@ body::before{
     <div class="team-box team-fra">
       <span class="flag-emoji">🇫🇷</span>
       <span>Francia</span>
-      <span class="team-score">&mdash;</span>
+      <span class="team-score">0</span>
     </div>
     <span class="vs">VS</span>
     <div class="team-box team-esp">
       <span class="flag-emoji">🇪🇸</span>
       <span>España</span>
-      <span class="team-score">&mdash;</span>
+      <span class="team-score">2</span>
     </div>
   </div>
 
   <div class="match-result" id="result-101">
-    <div class="no-result">Partido a disputarse el Martes 14/07 a las 16:00 ARG</div>
+    <div class="result-detail">Finalizado &middot; Francia 0-2 España</div>
+    <div class="scorers">
+      <span class="scorer-chip">Cristian Ochoa <span class="spts">+3</span></span>
+      <span class="scorer-chip">Luis Duprat <span class="spts">+1</span></span>
+      <span class="scorer-chip">Miguel M <span class="spts">+1</span></span>
+      <span class="scorer-chip">Gabriela Monaco <span class="spts">+1</span></span>
+      <span class="scorer-chip">Mauricio Moreno <span class="spts">+1</span></span>
+      <span class="scorer-chip">Rodrigo Tumbarello <span class="spts">+1</span></span>
+      <span class="scorer-chip">Carlos Sarmiento <span class="spts">+1</span></span>
+      <span class="scorer-chip">Juan Martinez Garcia <span class="spts">+1</span></span>
+      <span class="scorer-chip">Guille Calde <span class="spts">+1</span></span>
+      <span class="scorer-chip">Gustavo Pereyra <span class="spts">+1</span></span>
+      <span class="scorer-chip">Franco Pellegrino <span class="spts">+1</span></span>
+      <span class="scorer-chip">elmasternero <span class="spts">+1</span></span>
+    </div>
   </div>
 
   <div class="match-section">
@@ -1583,30 +1597,30 @@ body::before{
 
 <script>
 const RANKING = [
-  {pos:1, name:'Martín Baigorria', pts:38},
-  {pos:1, name:'Miguel M', pts:38},
-  {pos:2, name:'Gabriela Monaco', pts:36},
-  {pos:3, name:'Luis Duprat', pts:34},
-  {pos:4, name:'Noly Moreno', pts:33},
-  {pos:4, name:'Karen Elizondo', pts:33},
-  {pos:5, name:'Rodrigo Tumbarello', pts:32},
+  {pos:1, name:'Miguel M', pts:39},
+  {pos:2, name:'Martín Baigorria', pts:38},
+  {pos:3, name:'Gabriela Monaco', pts:37},
+  {pos:4, name:'Luis Duprat', pts:35},
+  {pos:5, name:'Noly Moreno', pts:33},
+  {pos:5, name:'Rodrigo Tumbarello', pts:33},
+  {pos:5, name:'Karen Elizondo', pts:33},
   {pos:6, name:'Florencia Escortichini', pts:31},
   {pos:7, name:'Ruben777', pts:30},
+  {pos:7, name:'Mauricio Moreno', pts:30},
+  {pos:7, name:'Carlos Sarmiento', pts:30},
   {pos:8, name:'Esther M. Ribeiro', pts:29},
-  {pos:8, name:'Mauricio Moreno', pts:29},
-  {pos:8, name:'Carlos Sarmiento', pts:29},
   {pos:9, name:'Gabriel Moreno', pts:27},
-  {pos:10, name:'Juan Martinez Garcia', pts:25},
-  {pos:10, name:'Lucas Bejarano', pts:25},
-  {pos:10, name:'Florencia', pts:25},
-  {pos:11, name:'Juan Manuel Lucero', pts:24},
-  {pos:12, name:'Guille Calde', pts:23},
-  {pos:13, name:'Maximiliano Ruiz Diaz', pts:22},
-  {pos:13, name:'Gerardo De Marco', pts:22},
-  {pos:14, name:'Gustavo Pereyra', pts:21},
-  {pos:15, name:'elmasternero', pts:19},
-  {pos:15, name:'Franco Pellegrino', pts:19},
-  {pos:16, name:'Cristian Ochoa', pts:15},
+  {pos:10, name:'Juan Martinez Garcia', pts:26},
+  {pos:11, name:'Lucas Bejarano', pts:25},
+  {pos:11, name:'Florencia', pts:25},
+  {pos:12, name:'Juan Manuel Lucero', pts:24},
+  {pos:13, name:'Guille Calde', pts:23},
+  {pos:14, name:'Maximiliano Ruiz Diaz', pts:22},
+  {pos:14, name:'Gerardo De Marco', pts:22},
+  {pos:15, name:'Gustavo Pereyra', pts:21},
+  {pos:16, name:'elmasternero', pts:20},
+  {pos:16, name:'Franco Pellegrino', pts:20},
+  {pos:17, name:'Cristian Ochoa', pts:15},
 ];
 
 // ── Render ranking modal from data ──
